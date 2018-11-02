@@ -8,7 +8,7 @@ public class Clock : MonoBehaviour {
     public int hour = 0;
 	public int seconds = 0;
 	public bool realTime=true;
-   // public AudioClip clip;
+    public AudioClip clip;
 	public GameObject pointerSeconds;
     public GameObject pointerMinutes;
     public GameObject pointerHours;

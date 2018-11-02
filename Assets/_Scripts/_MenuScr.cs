@@ -8,7 +8,7 @@ public class _MenuScr : MonoBehaviour
 {
     public GameObject paiseMenu;
     public GameObject gameUI;
-   // public GameObject startMenu;
+    public GameObject startMenu;
    // public GameObject connectLoader;
     public GameObject statMenu;
     // public GameObject howMenu;
@@ -20,7 +20,12 @@ public class _MenuScr : MonoBehaviour
 
     private void Start()
     {
-     
+        startMenu.SetActive(true);
+    }
+
+    public void HideStartMenu()
+    {
+        startMenu.SetActive(false);
     }
 
     void Update()

@@ -5,6 +5,6 @@ public class PreserveOnReload : MonoBehaviour
 {
     void Awake()
     {
-       // DontDestroyOnLoad(this);
+       DontDestroyOnLoad(this);
     }
 }

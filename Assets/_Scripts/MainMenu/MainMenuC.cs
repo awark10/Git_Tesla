@@ -67,6 +67,12 @@ public class MainMenuC : MonoBehaviour {
             connectionDone = false;
             }
     }
+    
+    public void Demo()
+    {
+        connectMenu.SetActive(false);
+        modeMenu.SetActive(true);
+    }
 
     public void Connection()
     {
