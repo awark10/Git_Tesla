@@ -42,7 +42,7 @@ public class MainMenuC : MonoBehaviour {
         connecting = true;
          longTimeConnection.text = "";
         statusConnectionImage.SetActive(false);
-          UnityThinkGear.StartStream();
+          UnityThinkGear.StartStream();            ////  ЗАЧЕМ?
     }
 
     public void ConnectionStatus(int startwork )
@@ -85,7 +85,6 @@ public class MainMenuC : MonoBehaviour {
                 modeMenu.SetActive(true);
                 connectMenu.SetActive(false);
                 statusConnectionImage.SetActive(false);
-                MyShowToastMethod("Connected");
                 timeConnection = 0;
                 connecting = false;
             connected = true;
@@ -131,35 +130,6 @@ public class MainMenuC : MonoBehaviour {
     {
         SceneManager.LoadScene("EarthScene");
         _StatScript.PoorSignal = PoorSignal;
-    }
-
-    string toastString;
-    AndroidJavaObject currentActivity;
-
-    public void MyShowToastMethod(string str)
-    {
-        if (Application.platform == RuntimePlatform.Android)
-            showToastOnUiThread(str);
-    }
-
-    void showToastOnUiThread(string toastString)
-    {
-        AndroidJavaClass UnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-
-        currentActivity = UnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-        this.toastString = toastString;
-
-        currentActivity.Call("runOnUiThread", new AndroidJavaRunnable(showToast));
-    }
-
-    void showToast()
-    {
-        Debug.Log("Running on UI thread");
-        AndroidJavaObject context = currentActivity.Call<AndroidJavaObject>("getApplicationContext");
-        AndroidJavaClass Toast = new AndroidJavaClass("android.widget.Toast");
-        AndroidJavaObject javaString = new AndroidJavaObject("java.lang.String", toastString);
-        AndroidJavaObject toast = Toast.CallStatic<AndroidJavaObject>("makeText", context, javaString, Toast.GetStatic<int>("LENGTH_SHORT"));
-        toast.Call("show");
     }
 
 

@@ -61,12 +61,7 @@ public class DisplayData : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        
-
-       
-
-
-        controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
+		controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
 
 		controller.UpdateRawdataEvent += OnUpdateRaw;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
@@ -138,7 +133,6 @@ public class DisplayData : MonoBehaviour {
     {
         Algo_Gamma = value;
     }
-
 
     void OnUpdatePoorSignal(int value){
 		PoorSignal = value;

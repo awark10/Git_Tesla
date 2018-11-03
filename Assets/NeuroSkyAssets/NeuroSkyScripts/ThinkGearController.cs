@@ -50,13 +50,13 @@ public class ThinkGearController : MonoBehaviour {
 			DontDestroyOnLoad (gameObject);
 			UnityThinkGear.Init (true);
 			InvokeRepeating ("CheckUpdateEvent", 0.0f, 1f);
-			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		}
 		else 
 		{
 			Destroy (gameObject);
 		}
 
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 	// Use this for initialization
 	void Start () {
@@ -68,10 +68,12 @@ public class ThinkGearController : MonoBehaviour {
 	}
 	
 	void CheckUpdateEvent(){
+		
 		if(!sendRawEnable && (UpdateRawdataEvent != null)){
 			sendRawEnable = true;
 			UnityThinkGear.SetSendRawEnable(true);
 		}
+
 		if(sendRawEnable && UpdateRawdataEvent == null){
 			sendRawEnable = false;
 			UnityThinkGear.SetSendRawEnable(false);
@@ -283,9 +285,6 @@ public class ThinkGearController : MonoBehaviour {
 		UnityThinkGear.Close();
 
         Screen.sleepTimeout = SleepTimeout.SystemSetting;
-
     }
-
-
-
+		
 }
