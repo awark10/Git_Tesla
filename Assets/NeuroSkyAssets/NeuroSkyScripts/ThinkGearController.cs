@@ -40,8 +40,7 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
 
-	public static ThinkGearController Instance { get; private set;}
-	public int Value;
+	public static ThinkGearController Instance { get; set;}
 
 	void Awake(){
 
@@ -57,6 +56,7 @@ public class ThinkGearController : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
     }
 	// Use this for initialization
 	void Start () {

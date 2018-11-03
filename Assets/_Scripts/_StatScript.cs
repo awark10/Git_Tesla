@@ -74,7 +74,8 @@ public class _StatScript : MonoBehaviour
     // Initialization
     void Start()
     {
-       controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
+
+        controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
         controller.UpdateAttentionEvent += OnUpdateAttention;
         controller.UpdateMeditationEvent += OnUpdateMeditation;
         controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;

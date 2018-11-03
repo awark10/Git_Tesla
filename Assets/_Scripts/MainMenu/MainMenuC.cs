@@ -125,11 +125,11 @@ public class MainMenuC : MonoBehaviour {
 
     public void LoadTimeGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("ClockScene");
     }
     public void LoadEarthGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("EarthScene");
         _StatScript.PoorSignal = PoorSignal;
     }
 

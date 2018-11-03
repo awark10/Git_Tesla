@@ -147,7 +147,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 100000, guid: 79f15994e58f34cafa601e7401a4531c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 79f15994e58f34cafa601e7401a4531c, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 79f15994e58f34cafa601e7401a4531c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 79f15994e58f34cafa601e7401a4531c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &41157290
@@ -1230,6 +1239,15 @@ Prefab:
       propertyPath: longTimeConnection
       value: 
       objectReference: {fileID: 527143168}
+    - target: {fileID: 114270565815943776, guid: 7d926fa6e5666284790fa10768e91463,
+        type: 2}
+      propertyPath: PoorSignal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037558016760190, guid: 7d926fa6e5666284790fa10768e91463, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d926fa6e5666284790fa10768e91463, type: 2}
   m_IsPrefabParent: 0
