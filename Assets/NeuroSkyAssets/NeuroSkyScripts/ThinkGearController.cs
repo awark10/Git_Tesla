@@ -39,12 +39,24 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendEEGEnable = false;
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
-	
+
+	public static ThinkGearController Instance { get; private set;}
+	public int Value;
+
 	void Awake(){
-		UnityThinkGear.Init(true);
-		InvokeRepeating("CheckUpdateEvent", 0.0f, 1f);
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        // InvokeRepeating("CheckUpdateEvent", 0.0f, 0.30f);
+
+		if (Instance == null) 
+		{
+			Instance = this;
+			DontDestroyOnLoad (gameObject);
+			UnityThinkGear.Init (true);
+			InvokeRepeating ("CheckUpdateEvent", 0.0f, 1f);
+			Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		}
+		else 
+		{
+			Destroy (gameObject);
+		}
     }
 	// Use this for initialization
 	void Start () {
