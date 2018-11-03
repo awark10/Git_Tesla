@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1002 &100001
 EditorExtensionImpl:
@@ -49,8 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30d21f54aded403288c2dcbfe846690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AwakeValue: 0
-  StartValue: 0
 --- !u!1002 &11400003
 EditorExtensionImpl:
   serializedVersion: 6

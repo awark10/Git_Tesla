@@ -104,8 +104,7 @@ public class DisplayData : MonoBehaviour {
     public void OnAlgo_UpdateAttentionEvent(int value)
     {
         Algo_Attention = value;
-        
-        
+   
     }
    public void OnAlgo_UpdateMeditationEvent(int value)
     {
