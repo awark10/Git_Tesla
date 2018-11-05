@@ -366,8 +366,7 @@ public class _StatScript : MonoBehaviour
             }
 
         }
-
-    
+			
         if (PoorSignal == 200 && btnGame==0 )
         {
 
