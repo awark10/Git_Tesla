@@ -20,19 +20,31 @@ public class MainMenuC : MonoBehaviour {
     public bool connecting;
     public bool challenge=false;
     public bool connected;
-    public static bool connectionDone= false;
+    public static bool connectionDone;
     // Use this for initialization
     void Start () {
         controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
        controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-        longTimeConnection.text = "Мотивационный текст для старта взаимодействия с приложением";
+        if (!connectionDone)
+        {
+            longTimeConnection.text = "Мотивационный текст для старта взаимодействия с приложением";
+            connectMenu.SetActive(true);
+            modeMenu.SetActive(false);
+            connectLoader.SetActive(false);
+        }
+        else
+        {
+            modeMenu.SetActive(true);
+            connectMenu.SetActive(false);
+            connectLoader.SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
        if (connecting) Connection();
        if (connectionDone)
-            ConnectionStatus(PoorSignal);
+            ConnectionStatus();
        }
 
     public void StartConnection()
@@ -45,9 +57,9 @@ public class MainMenuC : MonoBehaviour {
           UnityThinkGear.StartStream();            ////  ЗАЧЕМ?
     }
 
-    public void ConnectionStatus(int startwork )
+    public void ConnectionStatus()
     { 
-            if (startwork ==0)   //PoorSignal == 0 Debug
+            if (PoorSignal != 200)   //PoorSignal == 0 Debug
         {
             connected = true;
                 connectLoader.SetActive(false);
