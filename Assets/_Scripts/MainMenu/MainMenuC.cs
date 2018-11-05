@@ -15,7 +15,7 @@ public class MainMenuC : MonoBehaviour {
     public Button connectButton;
     public float timeConnection;
     public Text longTimeConnection;
-   // ThinkGearController controller;
+    ThinkGearController controller;
     public int PoorSignal;
     public bool connecting;
     public bool challenge=false;
@@ -23,8 +23,8 @@ public class MainMenuC : MonoBehaviour {
     public static bool connectionDone= false;
     // Use this for initialization
     void Start () {
-     //   controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
-     //  controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+        controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
+       controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
         longTimeConnection.text = "Мотивационный текст для старта взаимодействия с приложением";
     }
 	
