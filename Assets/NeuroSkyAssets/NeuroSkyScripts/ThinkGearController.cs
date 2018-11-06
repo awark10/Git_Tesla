@@ -40,7 +40,7 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
 
-	public int PoorSignal;
+	public int poorSignalStatus;
 
 	public static ThinkGearController Instance { get; set;}
 
@@ -141,8 +141,19 @@ public class ThinkGearController : MonoBehaviour {
 	
 	void receivePoorSignal(string value){
 
-		PoorSignal = value;
-
+		if (int.Parse(value) == 200) //No connection
+		{   
+			poorSignalStatus = 0;
+		} 
+		else if (int.Parse(value) == 0)  // Stable connection
+		{
+			poorSignalStatus = 2;
+		} 
+		else // Weak connection
+		{
+			poorSignalStatus = 1;
+		}
+			
 		if(UpdatePoorSignalEvent != null){
 			UpdatePoorSignalEvent(int.Parse(value));
 		}
