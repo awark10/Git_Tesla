@@ -24,7 +24,7 @@ public class Clock : MonoBehaviour {
 {
         //  clockSpeed = 120.0f;
         //-- set real time
-      //  GetComponent<AudioSource>().clip = clip;
+        GetComponent<AudioSource>().clip = clip;
         if (realTime)
 	{
 		hour=System.DateTime.Now.Hour;
@@ -46,7 +46,7 @@ void Update()
     {
         msecs -= 1.0f;
             seconds++;
-           // GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Play();
             // AudioSource
             //clip.// = seconds+ Time.deltaTime;
             if (seconds >= 60)
