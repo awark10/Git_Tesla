@@ -10,10 +10,6 @@ public class GamesMenu : MonoBehaviour {
 	public GameObject gamesMenus;
 	public Texture2D[] signalIcons;
 
-	void Start () {
-		
-	}
-
 	// Update is called once per frame
 	void Update () {
 
@@ -29,6 +25,7 @@ public class GamesMenu : MonoBehaviour {
 	{
 		SceneManager.LoadScene("ClockScene");
 	}
+
 	public void LoadEarthGame()
 	{
 		SceneManager.LoadScene("EarthScene");
