@@ -40,6 +40,8 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
 
+	public int PoorSignal;
+
 	public static ThinkGearController Instance { get; set;}
 
 	void Awake(){
@@ -49,7 +51,7 @@ public class ThinkGearController : MonoBehaviour {
 			Instance = this;
 			DontDestroyOnLoad (gameObject);
 			UnityThinkGear.Init (true);
-			InvokeRepeating ("CheckUpdateEvent", 0.0f, 1f);
+			InvokeRepeating ("CheckUpdateEvent", 0.5f, 1f);
 		}
 		else 
 		{
@@ -58,6 +60,7 @@ public class ThinkGearController : MonoBehaviour {
 
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
+
 	// Use this for initialization
 	void Start () {
 	
@@ -137,6 +140,9 @@ public class ThinkGearController : MonoBehaviour {
 	
 	
 	void receivePoorSignal(string value){
+
+		PoorSignal = value;
+
 		if(UpdatePoorSignalEvent != null){
 			UpdatePoorSignalEvent(int.Parse(value));
 		}
