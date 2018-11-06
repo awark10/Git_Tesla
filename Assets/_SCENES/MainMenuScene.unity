@@ -892,7 +892,7 @@ Prefab:
     - target: {fileID: 114770007364358612, guid: 8f16921827c3b0c448c7d6d5cf30dabb,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartConnection
+      value: StartBtn
       objectReference: {fileID: 0}
     - target: {fileID: 114770007364358612, guid: 8f16921827c3b0c448c7d6d5cf30dabb,
         type: 2}
@@ -1997,10 +1997,13 @@ MonoBehaviour:
   connectButton: {fileID: 1515367376}
   timeConnection: 0
   longTimeConnection: {fileID: 527143168}
-  PoorSignal: 200
   connecting: 0
   challenge: 0
   connected: 0
+  ConnectionStatus: 0
+  ConnectionInit: 0
+  signalIcons: []
+  enableAnimation: 0
 --- !u!114 &1515367376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,7 +2046,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1444931971}
-        m_MethodName: StartConnection
+        m_MethodName: StartBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
