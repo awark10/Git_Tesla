@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400000}
-  - component: {fileID: 114244129257472552}
   - component: {fileID: 114995254659669760}
+  - component: {fileID: 114277929217654140}
   m_Layer: 0
   m_Name: DisplayDataDemo
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Prefab:
 --- !u!1002 &100100001
 EditorExtensionImpl:
   serializedVersion: 6
---- !u!114 &114244129257472552
+--- !u!114 &114277929217654140
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -61,12 +61,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99b492364f755644a8a6944e2f5361c, type: 3}
+  m_Script: {fileID: 11500000, guid: 53f9152d7e51f934c9a9aa0a942800af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paiseMenu: {fileID: 0}
-  gameUI: {fileID: 0}
-  statMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  startMenu: {fileID: 0}
+  statisticMenu: {fileID: 0}
 --- !u!114 &114995254659669760
 MonoBehaviour:
   m_ObjectHideFlags: 1

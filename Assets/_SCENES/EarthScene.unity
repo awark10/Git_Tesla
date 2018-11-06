@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.387
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926113378}
-  m_IndirectSpecularColor: {r: 0.040711753, g: 0.040626578, b: 0.040674716, a: 0.387}
+  m_IndirectSpecularColor: {r: 0.040842585, g: 0.04075469, b: 0.040801965, a: 0.387}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &47836131
 RectTransform:
   m_ObjectHideFlags: 0
@@ -535,12 +535,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120369783}
---- !u!114 &125783528 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114244129257472552, guid: 9ee7d7dfcea144514878d2f0728d4349,
-    type: 2}
-  m_PrefabInternal: {fileID: 1842305363}
-  m_Script: {fileID: 11500000, guid: a99b492364f755644a8a6944e2f5361c, type: 3}
 --- !u!1 &143329816
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +901,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125783528}
+      - m_Target: {fileID: 1310249437}
         m_MethodName: HideStartMenu
         m_Mode: 1
         m_Arguments:
@@ -1953,7 +1947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125783528}
+      - m_Target: {fileID: 1310249437}
         m_MethodName: HideStat
         m_Mode: 1
         m_Arguments:
@@ -2986,7 +2980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125783528}
+      - m_Target: {fileID: 1310249437}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -3242,6 +3236,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1280600633}
+--- !u!114 &1310249437 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
+    type: 2}
+  m_PrefabInternal: {fileID: 1842305363}
+  m_Script: {fileID: 11500000, guid: 53f9152d7e51f934c9a9aa0a942800af, type: 3}
 --- !u!1 &1310730610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +4300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125783528}
+      - m_Target: {fileID: 1310249437}
         m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
@@ -4557,7 +4557,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125783528}
+      - m_Target: {fileID: 1310249437}
         m_MethodName: ShowStat
         m_Mode: 1
         m_Arguments:
@@ -4642,6 +4642,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
+        type: 2}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 47836130}
+    - target: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
+        type: 2}
+      propertyPath: startMenu
+      value: 
+      objectReference: {fileID: 2042399131}
+    - target: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
+        type: 2}
+      propertyPath: statisticMenu
+      value: 
+      objectReference: {fileID: 376486253}
+    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
+        type: 2}
+      propertyPath: aura
+      value: 
+      objectReference: {fileID: 826632695}
     - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
         type: 2}
       propertyPath: gameUI
@@ -4682,31 +4702,6 @@ Prefab:
       propertyPath: medSlImage
       value: 
       objectReference: {fileID: 319664430}
-    - target: {fileID: 114244129257472552, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: paiseMenu
-      value: 
-      objectReference: {fileID: 47836130}
-    - target: {fileID: 114244129257472552, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: gameUI
-      value: 
-      objectReference: {fileID: 348682577}
-    - target: {fileID: 114244129257472552, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: statMenu
-      value: 
-      objectReference: {fileID: 376486253}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: aura
-      value: 
-      objectReference: {fileID: 826632695}
-    - target: {fileID: 114244129257472552, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: startMenu
-      value: 
-      objectReference: {fileID: 2042399131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
   m_IsPrefabParent: 0
