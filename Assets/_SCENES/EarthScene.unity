@@ -1313,7 +1313,7 @@ RectTransform:
   - {fileID: 810712835}
   - {fileID: 1390807932}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1749,7 +1749,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512433339
 GameObject:
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 826632696}
   - component: {fileID: 826632698}
   m_Layer: 0
-  m_Name: Glow_orb1
+  m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2565,11 +2565,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826632695}
   m_LocalRotation: {x: -0, y: -0, z: -0.09477046, w: 0.99549913}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8092556, y: 2.8092558, z: 2.8092558}
+  m_LocalPosition: {x: -457.31613, y: -296.15, z: 0}
+  m_LocalScale: {x: 2.809256, y: 2.8092563, z: 2.8092558}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1969497512}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10.876}
 --- !u!95 &826632698
 Animator:
@@ -5810,6 +5810,7 @@ Transform:
   - {fileID: 926113379}
   - {fileID: 480306507}
   - {fileID: 947209595}
+  - {fileID: 826632697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
