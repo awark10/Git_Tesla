@@ -38,7 +38,7 @@ public class Time_UI : MonoBehaviour {
     }
     public void HideStatP()
     {
-        statMenu.SetActive(true);
+        statMenu.SetActive(false);
         pauseMenu.SetActive(false);
     }
     public void Quit()
