@@ -43,7 +43,7 @@ public class Time_UI : MonoBehaviour {
     }
     public void Quit()
     {
-        MainMenuC.connectionDone = true;
+      //  MainMenuC.connectionDone = true;
         SceneManager.LoadScene(0);
     }
 

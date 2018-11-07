@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Earth_UI : MonoBehaviour {
+public class Earth_Game_Menu : MonoBehaviour {
 
 
     public GameObject pauseMenu;
@@ -13,6 +13,8 @@ public class Earth_UI : MonoBehaviour {
     private void Start()
     {
         startMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+        statisticMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,12 +39,13 @@ public class Earth_UI : MonoBehaviour {
     }
     public void Quit()
     {
-        MainMenuC.connectionDone = true;
+       // MainMenuC.connectionDone = true;
         SceneManager.LoadScene(0);
     }
     public void ShowStat()
     {
         statisticMenu.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void HideStartMenu()
