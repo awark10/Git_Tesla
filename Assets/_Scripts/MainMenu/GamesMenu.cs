@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GamesMenu : MonoBehaviour {
-
+    public static bool demo;
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
 	public Texture2D[] signalIcons;
@@ -13,13 +13,15 @@ public class GamesMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (!demo){ 
 		if (ThinkGearController.Instance.poorSignalStatus == 0)
 		{
 			connectMenu.SetActive (true);
 			gamesMenus.SetActive (false);
 		}
-				
-	}
+        }
+
+    }
 
 	public void LoadTimeGame()
 	{

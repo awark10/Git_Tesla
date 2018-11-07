@@ -26,13 +26,21 @@ public class Time_UI : MonoBehaviour {
     {
         pauseMenu.SetActive(true);
     }
+    public void HidePauseMenu()
+    {
+        pauseMenu.SetActive(true);
+    }
 
     public void ShowStatP()
     {
         statMenu.SetActive(true);
         pauseMenu.SetActive(false);
     }
-
+    public void HideStatP()
+    {
+        statMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
     public void Quit()
     {
         MainMenuC.connectionDone = true;

@@ -104,4 +104,12 @@ public class ConnectMenu : MonoBehaviour {
 		}
 
 	}
+
+    public void Demo()
+    {
+        GamesMenu.demo = true;
+        connectMenu.SetActive(false);
+        gamesMenus.SetActive(true);
+        
+    }
 }
