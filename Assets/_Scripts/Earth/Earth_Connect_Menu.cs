@@ -15,7 +15,6 @@ public class Earth_Connect_Menu : MonoBehaviour {
 	public Button connectButton;
 	public Text longTimeConnection;
 
-
 	public Texture2D[] signalIcons;
 	public static float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
@@ -29,22 +28,17 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		timeConnection = 0;
 		indexSignalIcons = 1;
 
-		//connectLoader.SetActive(false);
 		connectButton.interactable = true;
-		//statusConnectionImage.SetActive(true);
 	}
 
 	public void StartBtn()
 	{
 		connectionStart = true;
-		//connectLoader.SetActive(true);
 		connectButton.interactable = false;
 		longTimeConnection.text = "";
-		//statusConnectionImage.SetActive(false);
 		timeConnection = 0;
 		StartCoroutine(ConnectionFunc());
 		UnityThinkGear.StartStream();
-
 	}
 
 	IEnumerator ConnectionFunc()
@@ -57,23 +51,17 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 				connectMenu.SetActive (false);
 				gameUI.SetActive (true);
-				Debug.Log("ok");
 				break;
 
 			} else if (timeConnection > 10) 
 			{
-				Debug.Log("not ok");
 				longTimeConnection.text = "No connection" + "\r\n" + "Try reconnect";
 				connectButton.interactable = true;
-				//statusConnectionImage.SetActive (true);
-				//connectLoader.SetActive (false);
-
 				connectionStart = false;
 				indexSignalIcons = 1;
 
 				UnityThinkGear.StopStream();
 				break;
-
 			}
 
 			timeConnection++;
