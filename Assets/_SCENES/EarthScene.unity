@@ -1330,6 +1330,8 @@ GameObject:
   - component: {fileID: 348682578}
   - component: {fileID: 348682579}
   - component: {fileID: 348682580}
+  - component: {fileID: 348682582}
+  - component: {fileID: 348682581}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -1378,11 +1380,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 348682577}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b57aa9d71a63844b5129dae1f6871e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &348682581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348682577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0948bf2a3875414bab71042101ec99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  auraSprite: {fileID: 826632696}
+  Attention: 73
+  Meditation: 0
+--- !u!114 &348682582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348682577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa20d56dbcce22344b5524736840474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 348682577}
-  connectMenu: {fileID: 1390807931}
+  connectMenu: {fileID: 810712834}
 --- !u!1 &372480505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 348682577}
+  signalIcons:
+  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
 --- !u!4 &483324515
 Transform:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class _StatScript : MonoBehaviour
    // GameObject aura;
     GameObject light50, light60, light80;
     public GameObject aura;
-     SpriteRenderer auraSprite;
    // ParticleSystem particle;
     //Transform transform;
   //  ParticleSystem.ColorOverLifetimeModule colorModule;
@@ -37,7 +36,6 @@ public class _StatScript : MonoBehaviour
     // public Slider AtSlider;
     #endregion
     [Header("Signal Elements")]
-    public Texture2D[] signalIcons;
    // [Range(0, 200)]
     public static int PoorSignal;
     public static float indexSignalIcons = 1;
@@ -78,7 +76,6 @@ public class _StatScript : MonoBehaviour
         controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
         controller.UpdateAttentionEvent += OnUpdateAttention;
         controller.UpdateMeditationEvent += OnUpdateMeditation;
-        controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
 
        // aura = GameObject.Find("Aura");
       
@@ -88,8 +85,6 @@ public class _StatScript : MonoBehaviour
         light60.SetActive(false);
         light80 = GameObject.Find("lightins80");
         light80.SetActive(false);
-        auraSprite = aura.GetComponent<SpriteRenderer>();
-      //  particle = aura.GetComponent<ParticleSystem>();
        // gameUI.SetActive(false);
       //  colorModule = particle.colorOverLifetime;
        // colorModule.color = Color.magenta;
@@ -105,16 +100,9 @@ public class _StatScript : MonoBehaviour
     
     void Update()
     {
-
-        AuraProccesing();
-
         GameLogic();
 
-        StatProccesing();
-
         UIupdate();
-
-        ConnectionMinitor();
 
         tmpAtSliderVal = Mathf.Lerp(tmpAtSliderVal, Attention, Time.deltaTime * 5);
         tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
@@ -122,112 +110,6 @@ public class _StatScript : MonoBehaviour
         medSlImage.fillAmount = tmpMedSliderVal / 100;
      
     }
-    public int statGameTimeSec=0;
-    public float msecs = 0;
-    public int statGameMin=0;
-    public int statMedMinF = 0;
-    public float statMed90TimeMin=0;
-    public float statMed60TimeMin = 0;
-    public float statMed50TimeMin = 0;
-
-    public void StatProccesing()
-    {
-        if (gameUI.activeSelf == true) { 
-            if (Meditation > 0 && Attention > 0)
-        {
-                msecs += Time.deltaTime;
-                if (msecs >= 1.0f)
-                {
-                    msecs -= 1.0f;
-                    statGameTimeSec++;
-                    if (statGameTimeSec >=60)
-                    {
-                        statGameTimeSec = 0;
-                        statGameMin++;
-                    }
-                }
-
-            if (Meditation > Attention && Time.deltaTime != 0)
-            {
-                statMedTime += Time.deltaTime;
-                    if (statMedTime >= 60.0f)
-                    {
-                        statMedTime = 0;
-                           statMedMinF++;
-                    }
-
-                if (Meditation >= 90) { 
-                    statMed80Time += Time.deltaTime;
-                        if (statMed80Time >= 60.0f)
-                        {
-                            statMed80Time = 0;
-                            statMed90TimeMin++;
-                        }
-                    }
-                    if (Meditation >= 60) { 
-                    statMed60Time += Time.deltaTime;
-                        if (statMed60Time >= 60.0f)
-                        {
-                            statMed60Time = 0;
-                            statMed60TimeMin++;
-                        }
-                        
-                    }
-                    /* if (Meditation >= 50) { 
-                     statMed50Time += Time.deltaTime;
-                         if (statMed50Time >= 60.0f)
-                         {
-                             statMed50Time = 0;
-                             statMed50TimeMin++;
-                         }
-                     }*/
-                }
-            }
-
-        if (tmpStat == 1)
-        {
-
-            statGameTime = 0;
-            statMedTime = 0;
-            statMedLevel = 0;
-          //  statMed50Time = 0;
-            statMed60Time = 0;
-            statMed80Time = 0;
-            StopGame();
-            tmpStat = 0;
-        }
-
-        statStr = "Game time - "+ statGameMin + ":"+ statGameTimeSec + "\r\n\r\n";
-        statStr += "Meditation time - "+ statMedMinF + ":" + (int)statMedTime + "\r\n\r\n";
-        statStr += "Meditate(avg) -  " + (int)statMedLevel + "\r\n\r\n";
-       // statStr += "50 meditation - "+ statMed50TimeMin + ":" + (int)statMed50Time + "\r\n\r\n";
-        statStr += "Meditate >60 - "+ statMed60TimeMin+ ":" + (int)statMed60Time + "\r\n\r\n";
-        statStr += "Meditate >90 - " + statMed90TimeMin + ":"+ (int)statMed80Time;
-
-        statText.text = statStr;
-    }
-    }
-
-
-    void AuraProccesing()
-    {
-
-        if (Meditation == Attention)
-
-            x = Mathf.MoveTowards(x, 50, Time.deltaTime * 100);
-
-        else if (Meditation > Attention)
-
-            x = Mathf.MoveTowards(x, 50 - Meditation / 2, Time.deltaTime * 100);
-
-        else if (Attention > Meditation)
-
-            x = Mathf.MoveTowards(x, 50 + Attention / 2, Time.deltaTime * 100);
-
-        auraSprite.color = Color.Lerp(Color.green, Color.red, x / 100);
-        // colorModule.color = Color.Lerp(Color.green, Color.red, x / 100);
-    }
-
     
 
     void GameLogic()
@@ -409,7 +291,7 @@ public class _StatScript : MonoBehaviour
     int localLock = 0;
 
     void LighProcessing(int i)
-    {
+    { 
 
         if (i == 0 && localLock == 0)
         {
@@ -461,83 +343,5 @@ public class _StatScript : MonoBehaviour
         // statistic part
         if(value>0)
         statMedLevel = (statMedLevel + value) / 2;
-    }
-
-
-    
-
-    public float ConnectionMinitorVal = 0;
-    public float ConnectionMinitorTime = 0;
-
-    void ConnectionMinitor()
-    {
-
-        if (gameUI.activeSelf == true)
-        {
-
-            ConnectionMinitorTime += Time.deltaTime;
-
-            if (ConnectionMinitorVal != Attention)
-            {
-                ConnectionMinitorVal = Attention;
-                ConnectionMinitorTime = 0;
-            }
-
-            if (ConnectionMinitorTime > 15)
-            {
-              //  startMenu.SetActive(true);
-             //   backGr.SetActive(true);
-                gameUI.SetActive(false);
-                ConnectionMinitorTime = 0;
-                
-               // connect.interactable = true;
-                UnityThinkGear.Close();
-            }
-        }
-    }
-
-   /* IEnumerator StatusConnection(float tt, float tempAt)
-    {
-
-        if (tt > 15 && tempAt==Attention)
-        {
-
-
-            Debug.Log("Connection Lost");
-            startMenu.SetActive(true);
-            backGr.SetActive(true);
-            gameUI.SetActive(false);
-            ConnectionMinitorTime = 0;
-            UnityThinkGear.Close();
-            //  UnityThinkGear.Close;
-        }
-
-        yield return new WaitForSeconds(5f);
-    }
-    */
-    void FixedUpdate()
-    {
-        if (enableAnimation)
-        {
-            if (indexSignalIcons >= 4.8)
-            {
-                indexSignalIcons = 2;
-            }
-            indexSignalIcons += animationInterval;
-        }
-
-    }
-
-    void OnGUI()
-    {
-        GUILayout.BeginHorizontal();
-        GUILayout.Space(Screen.width - 35);
-        GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-        GUILayout.EndHorizontal();
-    }
-
-    void OnUpdatePoorSignal(int value)
-    {
-        PoorSignal = value;
     }
 }

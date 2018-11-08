@@ -41,6 +41,9 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendBlinkEnable = true;
 
 	public int poorSignalStatus;
+	public int Meditation;
+	public int Attention;
+
 
 	public static ThinkGearController Instance { get; set;}
 
@@ -159,11 +162,17 @@ public class ThinkGearController : MonoBehaviour {
 		}
 	}
 	void receiveAttention(string value){
+
+		Attention = int.Parse (value);
+
 		if(UpdateAttentionEvent != null){
 			UpdateAttentionEvent(int.Parse(value));
 		}
 	}
 	void receiveMeditation(string value){
+
+		Meditation = int.Parse (value);
+
 		if(UpdateMeditationEvent != null){
 			UpdateMeditationEvent(int.Parse(value));
 		}

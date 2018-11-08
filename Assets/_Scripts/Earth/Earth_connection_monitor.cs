@@ -20,6 +20,9 @@ public class Earth_connection_monitor : MonoBehaviour {
 	}
 
 	/*
+	public float ConnectionMinitorVal = 0;
+    public float ConnectionMinitorTime = 0;
+
 	void ConnectionMinitor()
 	{
 
