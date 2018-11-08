@@ -1313,7 +1313,7 @@ RectTransform:
   - {fileID: 810712835}
   - {fileID: 1390807932}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1372,6 +1372,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78050fe86bbb00442932e66aa74a1c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
+  gameUI: {fileID: 348682577}
+  levelText: {fileID: 2077585526}
+  downTimeText: {fileID: 1268198207}
+  attText: {fileID: 1528592705}
+  medText: {fileID: 551143568}
+  attSlImage: {fileID: 1474043666}
+  medSlImage: {fileID: 319664430}
+  Attention: 0
+  Meditation: 0
+  fullTime: 0
+  statGameTime: 0
+  statMedTime: 0
+  statMed60Time: 0
+  statMed80Time: 0
+  statMedLevel: 0
+  statStr: 
+  gameLevel: 0
+  downCounter: 0
+  gameTime: 0
 --- !u!114 &348682580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5372,114 +5392,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785480044}
---- !u!1001 &1842305363
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: startMenu
-      value: 
-      objectReference: {fileID: 2042399131}
-    - target: {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: statisticMenu
-      value: 
-      objectReference: {fileID: 376486253}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: aura
-      value: 
-      objectReference: {fileID: 826632695}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: gameUI
-      value: 
-      objectReference: {fileID: 348682577}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: levelText
-      value: 
-      objectReference: {fileID: 2077585526}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: downTimeText
-      value: 
-      objectReference: {fileID: 1268198207}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: attText
-      value: 
-      objectReference: {fileID: 1528592705}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: medText
-      value: 
-      objectReference: {fileID: 551143568}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: statText
-      value: 
-      objectReference: {fileID: 237389732}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: attSlImage
-      value: 
-      objectReference: {fileID: 1474043666}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: medSlImage
-      value: 
-      objectReference: {fileID: 319664430}
-    - target: {fileID: 114995254659669760, guid: 9ee7d7dfcea144514878d2f0728d4349,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114277929217654140, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 9ee7d7dfcea144514878d2f0728d4349, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1843202100
 GameObject:
   m_ObjectHideFlags: 0
