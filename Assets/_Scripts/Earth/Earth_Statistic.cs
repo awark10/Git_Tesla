@@ -19,6 +19,22 @@ public class Earth_Statistic : MonoBehaviour {
 
 
 /*
+ * 
+ * 
+	void OnUpdateAttention(int value)
+	{ 
+		Attention = value;
+	}
+	void OnUpdateMeditation(int value)
+	{
+		Meditation = value;
+		// statistic part
+		if(value>0)
+			statMedLevel = (statMedLevel + value) / 2;
+	}
+ * 
+ * 
+ * 
 	public int statGameTimeSec=0;
 	public float msecs = 0;
 	public int statGameMin=0;

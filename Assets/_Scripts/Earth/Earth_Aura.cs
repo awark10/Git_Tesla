@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Earth_Aura : MonoBehaviour {
 
@@ -13,19 +14,20 @@ public class Earth_Aura : MonoBehaviour {
 	[Range(0, 100)]
 	public int Meditation = 0;
 
-	// Use this for initialization
-	void Start () {
-
-		//auraSprite = aura.GetComponent<SpriteRenderer>();
-
-	}
-	
 	// Update is called once per frame
 	void Update () {
 
 		Meditation = ThinkGearController.Instance.Meditation;
 		Attention = ThinkGearController.Instance.Attention;
-		
+
+		if (Meditation > 50 && Attention > 50)
+			auraSprite.color = Color.cyan;
+		else if (Meditation > Attention)
+			auraSprite.color = Color.green;
+		else if (Attention > Meditation)
+			auraSprite.color = Color.red;
+
+		/*
 		if (Meditation == Attention)
 
 			x = Mathf.MoveTowards(x, 50, Time.deltaTime * 100);
@@ -39,6 +41,7 @@ public class Earth_Aura : MonoBehaviour {
 			x = Mathf.MoveTowards(x, 50 + Attention / 2, Time.deltaTime * 100);
 
 		auraSprite.color = Color.Lerp(Color.green, Color.red, x / 100);
-		// colorModule.color = Color.Lerp(Color.green, Color.red, x / 100);
+		*/
 	}
+
 }

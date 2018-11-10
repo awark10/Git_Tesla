@@ -10,13 +10,7 @@ public class Earth_connection_monitor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (!GamesMenu.demo){ 
-			if (ThinkGearController.Instance.poorSignalStatus == 0)
-			{
-				connectMenu.SetActive (true);
-				gameUI.SetActive (false);
-			}
-		}
+
 	}
 
 	/*

@@ -30,12 +30,12 @@ public class Earth_Game_Menu : MonoBehaviour {
     {
 
         pauseMenu.SetActive(true);
-		Earth_Game.btnGame = 0;
+		//Earth_Game.btnGame = 0;
     }
     public void ContinueGame()
     {
         pauseMenu.SetActive(false);
-		Earth_Game.btnGame = 1;
+		//Earth_Game.btnGame = 1;
     }
     public void Quit()
     {

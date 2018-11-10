@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GamesMenu : MonoBehaviour {
-    public static bool demo;
+    
+	public static bool demo;
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
 	public Texture2D[] signalIcons;
