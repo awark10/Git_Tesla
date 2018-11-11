@@ -18,8 +18,9 @@ public class Time_UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ShowPauseMenu();
+        { if (statMenu.activeSelf == false)
+                ShowPauseMenu();
+            else HideStatP();
         }
     }
     public void ShowPauseMenu()
@@ -28,7 +29,7 @@ public class Time_UI : MonoBehaviour {
     }
     public void HidePauseMenu()
     {
-        pauseMenu.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void ShowStatP()
