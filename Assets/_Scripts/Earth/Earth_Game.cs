@@ -10,7 +10,6 @@ public class Earth_Game : MonoBehaviour {
 	public Earth_light light;
 	// ParticleSystem particle;
 	//Transform transform;
-	//  ParticleSystem.ColorOverLifetimeModule colorModule;
 	#region
 
 	[Header("UI elements")]
@@ -43,8 +42,6 @@ public class Earth_Game : MonoBehaviour {
 	public int Attention = 0;
 	[Range(0, 100)]
 	public int Meditation = 0;
-
-
 
 	private float x = 50;
 	private float tmpMedSliderVal = 0;
