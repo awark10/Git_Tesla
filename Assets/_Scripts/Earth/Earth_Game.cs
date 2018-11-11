@@ -21,7 +21,7 @@ public class Earth_Game : MonoBehaviour {
 	public GameObject connectMenu;
 
 	public Text levelText;
-	public Text downTimeText;
+	//public Text downTimeText;
 	public Text attText;
 	public Text medText;
 	public Image attSlImage;
@@ -75,7 +75,7 @@ public class Earth_Game : MonoBehaviour {
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 
 		levelText.text = "";
-		downTimeText.text = "";
+		//downTimeText.text = "";
 	}
 
 
@@ -217,10 +217,10 @@ public class Earth_Game : MonoBehaviour {
 		{
 			downCounter -= Time.deltaTime;
 			int td = (int)downCounter;
-			downTimeText.text = "" + td;
+			//downTimeText.text = "" + td;
 
 		} else
-			downTimeText.text = "";
+			//downTimeText.text = "";
 
 
 		tmpAtSliderVal = Mathf.Lerp(tmpAtSliderVal, Attention, Time.deltaTime * 5);
@@ -236,8 +236,8 @@ public class Earth_Game : MonoBehaviour {
 		gameLevel = 0;
 		levelText.text = "";
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
-		downTimeText.color = new Color(255, 255, 255, t);
-		downTimeText.text = "";
+		
+		//downTimeText.text = "";
 	}
 
 

@@ -19,12 +19,13 @@ public class Earth_light : MonoBehaviour {
 	void Update () {
 
 		if (Time.time > lockTime)
-			light.SetActive(false);
+		light.SetActive(false);
+     
 	}
 
 	public void lightShow(){
 
-		print ("light");
+		
 		lockTime = Time.time + 2;
 		light.SetActive(true);
 	}
