@@ -10,6 +10,8 @@ public class ConnectMenu : MonoBehaviour {
 
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
+	//public GameObject connectLoader;
+	//public GameObject statusConnectionImage;
 	public Button connectButton;
 	public Text longTimeConnection;
     public Text buttonConnectionText;
@@ -27,16 +29,20 @@ public class ConnectMenu : MonoBehaviour {
 		timeConnection = 0;
 		indexSignalIcons = 1;
 
+		//connectLoader.SetActive(false);
 		connectButton.interactable = true;
+		//statusConnectionImage.SetActive(true);
 	}
 
 	public void StartBtn()
 	{
 		connectionStart = true;
+		//connectLoader.SetActive(true);
 		connectButton.interactable = false;
         buttonConnectionText.text = "ПОДКЛЮЧЕНИЕ";
 
         longTimeConnection.text = "";
+		//statusConnectionImage.SetActive(false);
 		timeConnection = 0;
         StartCoroutine(ConnectionFunc());
         UnityThinkGear.StartStream();
@@ -62,6 +68,8 @@ public class ConnectMenu : MonoBehaviour {
                 Debug.Log("not ok");
                 longTimeConnection.text = "";// "No connection" + "\r\n" + "Try reconnect";
 				connectButton.interactable = true;
+                //statusConnectionImage.SetActive (true);
+                //connectLoader.SetActive (false);
                 buttonConnectionText.text = "ПОДКЛЮЧИТЬ";
                 connectionStart = false;
 				indexSignalIcons = 1;
