@@ -6,13 +6,15 @@ public class Init : MonoBehaviour {
 
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
-	    
+
+	public GAME game;
+    
 	// Use this for initialization
 	void Start () {
 		
-		if (!GAME.Instance.isDemo)
+		if (!game.isDemo)
 		{ 
-			if (!GAME.Instance.isConnected) 
+			if (game.poorSignalStatus == 0) 
 			{
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);

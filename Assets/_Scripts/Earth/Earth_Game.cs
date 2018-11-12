@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class Earth_Game : MonoBehaviour {
 
-	#region
-	[Header("UI elements")]
+	ThinkGearController controller;
 	public Earth_light light;
+	#region
 
+	[Header("UI elements")]
 	public GameObject gameUI;
 	public GameObject connectMenu;
-	public GameObject pauseMenu;
 
 	public Text levelText;
 	//public Text downTimeText;
@@ -47,33 +47,22 @@ public class Earth_Game : MonoBehaviour {
 	void Update()
 	{
 
-		if (!GAME.Instance.isDemo) 
+		if (!GAME.Instance.isDemo)
 		{
-			if (!GAME.Instance.isConnected)
+			if (GAME.Instance.poorSignalStatus == 0) 
 			{
 				StopGame ();
-				gameUI.SetActive (false);
 				connectMenu.SetActive (true);
-			} 
+				gameUI.SetActive (false);
+			}
 			else 
 			{
 				Attention = GAME.Instance.Attention;
 				Meditation = GAME.Instance.Meditation;
 
-				GameLogic ();
-				UIupdate ();
+				GameLogic();
+				UIupdate();
 			}
-
-			if (Input.GetKeyDown (KeyCode.Escape)) {
-				pauseMenu.SetActive (true);
-				//Time.timeScale = 0;
-			}
-		}
-		else 
-		{
-			Attention = GAME.Instance.Attention;
-			Meditation = GAME.Instance.Meditation;
-			UIupdate ();
 		}
 	}
 
@@ -82,6 +71,7 @@ public class Earth_Game : MonoBehaviour {
 	{
 
 		// Game start
+
 		if (Meditation >= 50 && Attention >= 50) {
 		
 			gameTime += Time.deltaTime;
@@ -213,14 +203,5 @@ public class Earth_Game : MonoBehaviour {
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
 		
 		//downTimeText.text = "";
-	}
-
-	public Texture2D[] signalIcons;
-	void OnGUI()
-	{
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[0]);
-		GUILayout.EndHorizontal();
 	}
 }
