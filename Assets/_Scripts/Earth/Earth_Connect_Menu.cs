@@ -8,13 +8,12 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 	public GameObject gameUI;
 	public GameObject connectMenu;
-	public GameObject gameMenu;
 
 	public Button connectButton;
 	public Text longTimeConnection;
 
 	public Texture2D[] signalIcons;
-	public static float indexSignalIcons = 1;
+	public float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
 
 	public bool connectionStart = false;
@@ -36,7 +35,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		longTimeConnection.text = "";
 		timeConnection = 0;
 		StartCoroutine(ConnectionFunc());
-		UnityThinkGear.StartStream();
+		//UnityThinkGear.StartStream();
 	}
 
 	IEnumerator ConnectionFunc()
@@ -69,6 +68,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 	void OnGUI()
 	{
+		print (1);
 		GUILayout.BeginHorizontal();
 		GUILayout.Space(Screen.width - 35);
 		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
@@ -85,7 +85,6 @@ public class Earth_Connect_Menu : MonoBehaviour {
 			}
 			indexSignalIcons += animationInterval;
 		}
-
 	}
 
 	public void Demo()

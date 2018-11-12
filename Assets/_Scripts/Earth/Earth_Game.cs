@@ -52,8 +52,8 @@ public class Earth_Game : MonoBehaviour {
 			if (!GAME.Instance.isConnected)
 			{
 				StopGame ();
-				connectMenu.SetActive (true);
 				gameUI.SetActive (false);
+				connectMenu.SetActive (true);
 			} 
 			else 
 			{
@@ -66,7 +66,7 @@ public class Earth_Game : MonoBehaviour {
 
 			if (Input.GetKeyDown (KeyCode.Escape)) {
 				pauseMenu.SetActive (true);
-				Time.timeScale = 0;
+				//Time.timeScale = 0;
 			}
 		}
 		else 
@@ -213,5 +213,14 @@ public class Earth_Game : MonoBehaviour {
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
 		
 		//downTimeText.text = "";
+	}
+
+	public Texture2D[] signalIcons;
+	void OnGUI()
+	{
+		GUILayout.BeginHorizontal();
+		GUILayout.Space(Screen.width - 35);
+		GUILayout.Label(signalIcons[0]);
+		GUILayout.EndHorizontal();
 	}
 }

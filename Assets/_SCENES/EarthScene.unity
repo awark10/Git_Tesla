@@ -1385,6 +1385,8 @@ MonoBehaviour:
   gameLevel: 0
   downCounter: 0
   gameTime: 0
+  signalIcons:
+  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
 --- !u!114 &348682580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1449,11 @@ Prefab:
     - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114533575520184106, guid: 292ba04a135f6384d8d2d50bb4199e98,
+        type: 2}
+      propertyPath: isConnected
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
@@ -1759,6 +1766,10 @@ Prefab:
     - target: {fileID: 413830, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 105034, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
@@ -3825,7 +3836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1277379855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4385,7 +4396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1390807932
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4422,7 +4433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUI: {fileID: 348682577}
   connectMenu: {fileID: 1390807931}
-  gameMenu: {fileID: 0}
   connectButton: {fileID: 570169643}
   longTimeConnection: {fileID: 1269282581}
   signalIcons:
@@ -4431,6 +4441,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9f17fb19a586e4d26b549e60cf699be5, type: 3}
   - {fileID: 2800000, guid: 936ab06dcf2334223b141b4283f54156, type: 3}
   - {fileID: 2800000, guid: b2c11302c60af4454b750566f9db7eca, type: 3}
+  indexSignalIcons: 1
   connectionStart: 0
   timeConnection: 0
 --- !u!1 &1461009706
