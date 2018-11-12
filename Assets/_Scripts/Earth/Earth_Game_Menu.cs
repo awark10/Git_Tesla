@@ -3,36 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Earth_Pause_Menu : MonoBehaviour {
+public class Earth_Game_Menu : MonoBehaviour {
+
 
     public GameObject pauseMenu;
-	public GameObject gameUI;
-
-    //public GameObject startMenu;
+    public GameObject startMenu;
     public GameObject statisticMenu;
     // Use this for initialization
     private void Start()
     {
-        //startMenu.SetActive(true);
-        //pauseMenu.SetActive(false);
-        //statisticMenu.SetActive(false);
+        startMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+        statisticMenu.SetActive(false);
     }
 
-	void OnEnable (){
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
 
-		pauseMenu.SetActive(true);
-		gameUI.SetActive(false);
-	}
+    public void PauseGame()
+    {
 
+        pauseMenu.SetActive(true);
+		//Earth_Game.btnGame = 0;
+    }
     public void ContinueGame()
     {
-		Time.timeScale = 1;
         pauseMenu.SetActive(false);
-		gameUI.SetActive(true);
+		//Earth_Game.btnGame = 1;
     }
     public void Quit()
     {
-		Time.timeScale = 1;
+       // MainMenuC.connectionDone = true;
         SceneManager.LoadScene(0);
     }
     public void ShowStat()
@@ -43,7 +50,7 @@ public class Earth_Pause_Menu : MonoBehaviour {
 
     public void HideStartMenu()
     {
-        //startMenu.SetActive(false);
+        startMenu.SetActive(false);
     }
     public void HideStat()
     {
