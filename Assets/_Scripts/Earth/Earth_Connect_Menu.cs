@@ -6,17 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Earth_Connect_Menu : MonoBehaviour {
 
-	ThinkGearController controller;
-
 	public GameObject gameUI;
 	public GameObject connectMenu;
-	public GameObject gameMenu;
 
 	public Button connectButton;
 	public Text longTimeConnection;
 
 	public Texture2D[] signalIcons;
-	public static float indexSignalIcons = 1;
+	public float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
 
 	public bool connectionStart = false;
@@ -38,7 +35,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		longTimeConnection.text = "";
 		timeConnection = 0;
 		StartCoroutine(ConnectionFunc());
-		UnityThinkGear.StartStream();
+		//UnityThinkGear.StartStream();
 	}
 
 	IEnumerator ConnectionFunc()
@@ -46,14 +43,14 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 		while (true) 
 		{
-
-			if (GAME.Instance.poorSignalStatus == 1 || GAME.Instance.poorSignalStatus == 2) {
+			if (GAME.Instance.isConnected) {
 
 				connectMenu.SetActive (false);
 				gameUI.SetActive (true);
 				break;
 
-			} else if (timeConnection > 10) 
+			} 
+			else if (timeConnection > 10) 
 			{
 				longTimeConnection.text = "No connection" + "\r\n" + "Try reconnect";
 				connectButton.interactable = true;
@@ -71,6 +68,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 	void OnGUI()
 	{
+		print (1);
 		GUILayout.BeginHorizontal();
 		GUILayout.Space(Screen.width - 35);
 		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
@@ -87,6 +85,14 @@ public class Earth_Connect_Menu : MonoBehaviour {
 			}
 			indexSignalIcons += animationInterval;
 		}
+	}
 
+	public void Demo()
+	{
+		GAME.Instance.Attention = 34;
+		GAME.Instance.Meditation = 58;
+		GAME.Instance.isDemo = true;
+		connectMenu.SetActive(false);
+		gameUI.SetActive(true);
 	}
 }
