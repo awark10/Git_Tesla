@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.387
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926113378}
-  m_IndirectSpecularColor: {r: 0.040741287, g: 0.04065565, b: 0.04070145, a: 0.387}
+  m_IndirectSpecularColor: {r: 0.044138037, g: 0.037240386, b: 0.040240712, a: 0.387}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1385,8 +1385,6 @@ MonoBehaviour:
   gameLevel: 0
   downCounter: 0
   gameTime: 0
-  signalIcons:
-  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
 --- !u!114 &348682580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,9 +1448,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114533575520184106, guid: 292ba04a135f6384d8d2d50bb4199e98,
+    - target: {fileID: 1767026351875918, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_Name
+      value: GDATA
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924789918317948, guid: 292ba04a135f6384d8d2d50bb4199e98,
         type: 2}
-      propertyPath: isConnected
+      propertyPath: isSignal
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2802,7 +2804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 910500504}
-  startMenu: {fileID: 0}
+  startMenu: {fileID: 2042399131}
   statisticMenu: {fileID: 376486253}
 --- !u!1 &926113377
 GameObject:
@@ -4430,16 +4432,8 @@ MonoBehaviour:
   gameUI: {fileID: 348682577}
   connectMenu: {fileID: 1390807931}
   connectButton: {fileID: 570169643}
+  buttonConnectionText: {fileID: 1998662136}
   longTimeConnection: {fileID: 1269282581}
-  signalIcons:
-  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
-  - {fileID: 2800000, guid: bbb487fcd4f0746a6801bd638d22abb8, type: 3}
-  - {fileID: 2800000, guid: 9f17fb19a586e4d26b549e60cf699be5, type: 3}
-  - {fileID: 2800000, guid: 936ab06dcf2334223b141b4283f54156, type: 3}
-  - {fileID: 2800000, guid: b2c11302c60af4454b750566f9db7eca, type: 3}
-  indexSignalIcons: 1
-  connectionStart: 0
-  timeConnection: 0
 --- !u!1 &1461009706
 GameObject:
   m_ObjectHideFlags: 0

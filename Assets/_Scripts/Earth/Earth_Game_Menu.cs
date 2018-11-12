@@ -12,7 +12,7 @@ public class Earth_Game_Menu : MonoBehaviour {
     // Use this for initialization
     private void Start()
     {
-        startMenu.SetActive(true);
+        //startMenu.SetActive(true);
         pauseMenu.SetActive(false);
         statisticMenu.SetActive(false);
     }

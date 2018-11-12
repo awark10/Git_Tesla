@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GAME : MonoBehaviour {
+public class GDATA : MonoBehaviour {
 
-	public static GAME Instance { get; set;}
+	public static GDATA Instance { get; set;}
 	public ThinkGearController controller;
 
-	public bool isConnected = false;
 	[Range(0, 100)]
 	public int Attention = 0;
 	[Range(0, 100)]
@@ -17,6 +16,7 @@ public class GAME : MonoBehaviour {
 	public int userAge = 29;
 
 	public bool isDemo = false;
+	public bool isSignal = false;
 
 	void Awake (){
 
@@ -49,15 +49,15 @@ public class GAME : MonoBehaviour {
 
 		if (value == 200) //No connection
 		{   
-			isConnected = false;
+			isSignal = false;
 		} 
 		else if (value == 0)  // Stable connection
 		{
-			isConnected = true;
+			isSignal = true;
 		} 
 		else // Weak connection
 		{
-			isConnected = true;
+			isSignal = true;
 		}
 	}
 

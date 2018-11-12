@@ -10,88 +10,45 @@ public class Earth_Connect_Menu : MonoBehaviour {
 	public GameObject connectMenu;
 
 	public Button connectButton;
+	public Text buttonConnectionText;
 	public Text longTimeConnection;
-
-	public Texture2D[] signalIcons;
-	public float indexSignalIcons = 1;
-	private float animationInterval = 0.06f;
-
-	public bool connectionStart = false;
-	public int timeConnection = 0;
 
 	void OnEnable ()
 	{
-		connectionStart = false;
-		timeConnection = 0;
-		indexSignalIcons = 1;
-
-		connectButton.interactable = true;
+		CONNECTOR.Instance.initConnection ();
 	}
 
 	public void StartBtn()
 	{
-		connectionStart = true;
-		connectButton.interactable = false;
-		longTimeConnection.text = "";
-		timeConnection = 0;
-		StartCoroutine(ConnectionFunc());
-		UnityThinkGear.StartStream();
+		CONNECTOR.Instance.openConnection();		
 	}
 
-	IEnumerator ConnectionFunc()
-	{
+	void Update () {
 
-		while (true) 
+		if (GDATA.Instance.isSignal)
 		{
-			if (GAME.Instance.isConnected) {
-
-				connectMenu.SetActive (false);
-				gameUI.SetActive (true);
-				break;
-
-			} 
-			else if (timeConnection > 10) 
-			{
-				longTimeConnection.text = "No connection" + "\r\n" + "Try reconnect";
-				connectButton.interactable = true;
-				connectionStart = false;
-				indexSignalIcons = 1;
-
-				UnityThinkGear.StopStream();
-				break;
-			}
-
-			timeConnection++;
-			yield return new WaitForSeconds (1f);
+			connectMenu.SetActive (false);
+			gameUI.SetActive (true);
 		}
-	}
 
-	void OnGUI()
-	{
-		print (1);
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-		GUILayout.EndHorizontal();
-	}
-
-	void FixedUpdate()
-	{
-		if (connectionStart)
+		if (CONNECTOR.Instance.connectionStart) 
 		{
-			if (indexSignalIcons >= 4.8)
-			{
-				indexSignalIcons = 2;
-			}
-			indexSignalIcons += animationInterval;
+			connectButton.interactable = false;
+			buttonConnectionText.text = "ПОДКЛЮЧЕНИЕ";
+		} 
+		else 
+		{
+			buttonConnectionText.text = "ПОДКЛЮЧИТЬ";
+			connectButton.interactable = true;
+			CONNECTOR.Instance.cleanStatIcon ();
 		}
 	}
 
 	public void Demo()
 	{
-		GAME.Instance.Attention = 34;
-		GAME.Instance.Meditation = 58;
-		GAME.Instance.isDemo = true;
+		GDATA.Instance.Attention = 34;
+		GDATA.Instance.Meditation = 58;
+		GDATA.Instance.isDemo = true;
 		connectMenu.SetActive(false);
 		gameUI.SetActive(true);
 	}

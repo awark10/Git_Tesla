@@ -10,9 +10,9 @@ public class Init : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		if (!GAME.Instance.isDemo)
+		if (!GDATA.Instance.isDemo)
 		{ 
-			if (!GAME.Instance.isConnected) 
+			if (!GDATA.Instance.isSignal) 
 			{
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);

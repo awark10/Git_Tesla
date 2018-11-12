@@ -8,104 +8,44 @@ public class ConnectMenu : MonoBehaviour {
 
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
-	//public GameObject connectLoader;
-	//public GameObject statusConnectionImage;
 	public Button connectButton;
 	public Text longTimeConnection;
     public Text buttonConnectionText;
 
-	public Texture2D[] signalIcons;
-	public static float indexSignalIcons = 1;
-	private float animationInterval = 0.06f;
-
-	public bool connectionStart = false;
-	public int timeConnection = 0;
+	public void StartBtn()
+	{
+		CONNECTOR.Instance.openConnection();		
+	}
 
 	void OnEnable ()
 	{
-		connectionStart = false;
-		timeConnection = 0;
-		indexSignalIcons = 1;
-
-		//connectLoader.SetActive(false);
-		connectButton.interactable = true;
-		//statusConnectionImage.SetActive(true);
+		CONNECTOR.Instance.initConnection ();
 	}
 
-	public void StartBtn()
-	{
-		connectionStart = true;
-		//connectLoader.SetActive(true);
-		connectButton.interactable = false;
-        buttonConnectionText.text = "ПОДКЛЮЧЕНИЕ";
+	void Update () {
 
-        longTimeConnection.text = "";
-		//statusConnectionImage.SetActive(false);
-		timeConnection = 0;
-        StartCoroutine(ConnectionFunc());
-        UnityThinkGear.StartStream();
-		
-	}
-
-	IEnumerator ConnectionFunc()
-	{
-
-		while (true) 
+		if (GDATA.Instance.isSignal)
 		{
-
-			if (GAME.Instance.isConnected) {
-
-				connectMenu.SetActive (false);
-				gamesMenus.SetActive (true);
-
-                Debug.Log("ok");
-				break;
-
-				} else if (timeConnection > 10) 
-			{
-                Debug.Log("not ok");
-                longTimeConnection.text = "";// "No connection" + "\r\n" + "Try reconnect";
-				connectButton.interactable = true;
-                //statusConnectionImage.SetActive (true);
-                //connectLoader.SetActive (false);
-                buttonConnectionText.text = "ПОДКЛЮЧИТЬ";
-                connectionStart = false;
-				indexSignalIcons = 1;
-
-				UnityThinkGear.StopStream();
-				break;
-
-			}
-
-			timeConnection++;
-			yield return new WaitForSeconds (1f);
-		}
-	}
-
-	void OnGUI()
-	{
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-		GUILayout.EndHorizontal();
-	}
-
-	void FixedUpdate()
-	{
-		if (connectionStart)
-		{
-			if (indexSignalIcons >= 4.8)
-			{
-				indexSignalIcons = 2;
-			}
-			indexSignalIcons += animationInterval;
+			connectMenu.SetActive (false);
+			gamesMenus.SetActive (true);
 		}
 
+		if (CONNECTOR.Instance.connectionStart) 
+		{
+			connectButton.interactable = false;
+			buttonConnectionText.text = "ПОДКЛЮЧЕНИЕ";
+		} 
+		else 
+		{
+			buttonConnectionText.text = "ПОДКЛЮЧИТЬ";
+			connectButton.interactable = true;
+			CONNECTOR.Instance.cleanStatIcon ();
+		}
 	}
 
     public void Demo()
     {
-		GAME.Instance.isDemo = true;
+		GDATA.Instance.isDemo = true;
         connectMenu.SetActive(false);
         gamesMenus.SetActive(true); 
     }

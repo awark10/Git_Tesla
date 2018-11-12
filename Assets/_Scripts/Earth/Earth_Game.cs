@@ -47,9 +47,9 @@ public class Earth_Game : MonoBehaviour {
 	void Update()
 	{
 
-		if (!GAME.Instance.isDemo) 
+		if (!GDATA.Instance.isDemo) 
 		{
-			if (!GAME.Instance.isConnected)
+			if (!GDATA.Instance.isSignal)
 			{
 				StopGame ();
 				gameUI.SetActive (false);
@@ -57,8 +57,8 @@ public class Earth_Game : MonoBehaviour {
 			} 
 			else 
 			{
-				Attention = GAME.Instance.Attention;
-				Meditation = GAME.Instance.Meditation;
+				Attention = GDATA.Instance.Attention;
+				Meditation = GDATA.Instance.Meditation;
 
 				GameLogic ();
 				UIupdate ();
@@ -71,8 +71,8 @@ public class Earth_Game : MonoBehaviour {
 		}
 		else 
 		{
-			Attention = GAME.Instance.Attention;
-			Meditation = GAME.Instance.Meditation;
+			Attention = GDATA.Instance.Attention;
+			Meditation = GDATA.Instance.Meditation;
 			UIupdate ();
 		}
 	}
@@ -213,14 +213,5 @@ public class Earth_Game : MonoBehaviour {
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
 		
 		//downTimeText.text = "";
-	}
-
-	public Texture2D[] signalIcons;
-	void OnGUI()
-	{
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[0]);
-		GUILayout.EndHorizontal();
 	}
 }

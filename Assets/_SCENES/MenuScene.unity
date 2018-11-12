@@ -1395,14 +1395,6 @@ MonoBehaviour:
   connectButton: {fileID: 1515367376}
   longTimeConnection: {fileID: 527143168}
   buttonConnectionText: {fileID: 1521584880}
-  signalIcons:
-  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
-  - {fileID: 2800000, guid: bbb487fcd4f0746a6801bd638d22abb8, type: 3}
-  - {fileID: 2800000, guid: 9f17fb19a586e4d26b549e60cf699be5, type: 3}
-  - {fileID: 2800000, guid: 936ab06dcf2334223b141b4283f54156, type: 3}
-  - {fileID: 2800000, guid: b2c11302c60af4454b750566f9db7eca, type: 3}
-  connectionStart: 0
-  timeConnection: 0
 --- !u!1 &915433628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,8 +1542,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectMenu: {fileID: 892234193}
   gamesMenus: {fileID: 962172324}
-  signalIcons:
-  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
 --- !u!1 &1226427217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,10 +2174,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114533575520184106, guid: 292ba04a135f6384d8d2d50bb4199e98,
-        type: 2}
-      propertyPath: isConnected
-      value: 0
+    - target: {fileID: 1767026351875918, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_Name
+      value: GDATA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}

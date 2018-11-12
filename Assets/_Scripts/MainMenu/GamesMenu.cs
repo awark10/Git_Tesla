@@ -8,20 +8,18 @@ public class GamesMenu : MonoBehaviour {
 
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
-	public Texture2D[] signalIcons;
 
 	// Update is called once per frame
 	void Update () {
 
-		if (!GAME.Instance.isDemo){
+		if (!GDATA.Instance.isDemo){
 			
-			if (!GAME.Instance.isConnected)
+			if (!GDATA.Instance.isSignal)
 			{
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);
 			}
         }
-
     }
 
 	public void LoadTimeGame()
@@ -32,13 +30,5 @@ public class GamesMenu : MonoBehaviour {
 	public void LoadEarthGame()
 	{
 		SceneManager.LoadScene("EarthScene");
-	}
-
-	void OnGUI()
-	{
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[0]);
-		GUILayout.EndHorizontal();
 	}
 }
