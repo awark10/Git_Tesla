@@ -39,10 +39,6 @@ public class Earth_Game : MonoBehaviour {
 	// Initialization
 	void Start()
 	{
-		controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
-		controller.UpdateAttentionEvent += OnUpdateAttention;
-		controller.UpdateMeditationEvent += OnUpdateMeditation;
-
 		levelText.text = "";
 		//downTimeText.text = "";
 	}
@@ -51,18 +47,18 @@ public class Earth_Game : MonoBehaviour {
 	void Update()
 	{
 
-		if (!GamesMenu.demo)
-		{ 
-			if (ThinkGearController.Instance.poorSignalStatus == 0) 
+		if (!GAME.Instance.isDemo)
+		{
+			if (GAME.Instance.poorSignalStatus == 0) 
 			{
 				StopGame ();
 				connectMenu.SetActive (true);
 				gameUI.SetActive (false);
-			} 
+			}
 			else 
 			{
-				Attention = ThinkGearController.Instance.Attention;
-				Meditation = ThinkGearController.Instance.Meditation;
+				Attention = GAME.Instance.Attention;
+				Meditation = GAME.Instance.Meditation;
 
 				GameLogic();
 				UIupdate();
@@ -207,16 +203,5 @@ public class Earth_Game : MonoBehaviour {
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
 		
 		//downTimeText.text = "";
-	}
-
-
-	void OnUpdateAttention(int value)
-	{ 
-		Attention = ThinkGearController.Instance.Attention;
-	}
-
-	void OnUpdateMeditation(int value)
-	{
-		Meditation = ThinkGearController.Instance.Meditation;
 	}
 }

@@ -40,28 +40,10 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
 
-	public int poorSignalStatus;
-	public int Meditation;
-	public int Attention;
-
-
-	public static ThinkGearController Instance { get; set;}
-
 	void Awake(){
 
-		if (Instance == null) 
-		{
-			Instance = this;
-			DontDestroyOnLoad (gameObject);
-			UnityThinkGear.Init (true);
-			InvokeRepeating ("CheckUpdateEvent", 0.5f, 1f);
-		}
-		else 
-		{
-			Destroy (gameObject);
-		}
-
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		UnityThinkGear.Init (true);
+		InvokeRepeating ("CheckUpdateEvent", 0.5f, 1f);
     }
 
 	// Use this for initialization
@@ -144,34 +126,17 @@ public class ThinkGearController : MonoBehaviour {
 	
 	void receivePoorSignal(string value){
 
-		if (int.Parse(value) == 200) //No connection
-		{   
-			poorSignalStatus = 0;
-		} 
-		else if (int.Parse(value) == 0)  // Stable connection
-		{
-			poorSignalStatus = 2;
-		} 
-		else // Weak connection
-		{
-			poorSignalStatus = 1;
-		}
-			
 		if(UpdatePoorSignalEvent != null){
 			UpdatePoorSignalEvent(int.Parse(value));
 		}
 	}
 	void receiveAttention(string value){
 
-		Attention = int.Parse (value);
-
 		if(UpdateAttentionEvent != null){
 			UpdateAttentionEvent(int.Parse(value));
 		}
 	}
 	void receiveMeditation(string value){
-
-		Meditation = int.Parse (value);
 
 		if(UpdateMeditationEvent != null){
 			UpdateMeditationEvent(int.Parse(value));
