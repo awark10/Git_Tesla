@@ -49,19 +49,19 @@ public class Earth_Game : MonoBehaviour {
 
 		if (!GDATA.Instance.isDemo) 
 		{
-			if (!GDATA.Instance.isSignal)
-			{
-				StopGame ();
-				gameUI.SetActive (false);
-				connectMenu.SetActive (true);
-			} 
-			else 
+			if (GDATA.Instance.isSignal)
 			{
 				Attention = GDATA.Instance.Attention;
 				Meditation = GDATA.Instance.Meditation;
 
 				GameLogic ();
 				UIupdate ();
+			} 
+			else 
+			{
+				StopGame ();
+				gameUI.SetActive (false);
+				connectMenu.SetActive (true);
 			}
 
 			if (Input.GetKeyDown (KeyCode.Escape)) {
