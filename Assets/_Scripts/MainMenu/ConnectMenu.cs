@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ConnectMenu : MonoBehaviour {
 
-	ThinkGearController controller;
-
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
 	//public GameObject connectLoader;

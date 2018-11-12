@@ -51,7 +51,6 @@ public class Earth_Game : MonoBehaviour {
 			if (!GAME.Instance.isConnected) 
 			{
 				StopGame ();
-				print ("isConnected = false");
 				connectMenu.SetActive (true);
 				gameUI.SetActive (false);
 			}
@@ -71,7 +70,6 @@ public class Earth_Game : MonoBehaviour {
 	{
 
 		// Game start
-
 		if (Meditation >= 50 && Attention >= 50) {
 		
 			gameTime += Time.deltaTime;

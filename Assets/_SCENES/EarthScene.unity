@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 483324515}
   - component: {fileID: 483324514}
   m_Layer: 0
-  m_Name: Init
+  m_Name: InitScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

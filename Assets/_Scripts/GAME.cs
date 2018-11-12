@@ -20,10 +20,13 @@ public class GAME : MonoBehaviour {
 
 	void Awake (){
 
-		if (Instance == null) {
+		if (Instance == null) 
+		{
 			Instance = this;
 			DontDestroyOnLoad (gameObject);
-		} else {
+		} 
+		else 
+		{
 			Destroy (gameObject);
 		}
 
@@ -31,8 +34,6 @@ public class GAME : MonoBehaviour {
 
 	void Start () 
 	{
-
-		//controller = GameObject.Find("ThinkGear").GetComponent<ThinkGearController>();
 		controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
