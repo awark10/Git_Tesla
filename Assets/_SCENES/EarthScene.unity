@@ -957,7 +957,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 810712836}
+      - m_Target: {fileID: 0}
         m_MethodName: HideStartMenu
         m_Mode: 1
         m_Arguments:
@@ -1310,26 +1310,11 @@ RectTransform:
   m_Children:
   - {fileID: 348682578}
   - {fileID: 376486254}
-  - {fileID: 810712835}
+  - {fileID: 2042399132}
+  - {fileID: 910500505}
   - {fileID: 1390807932}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 2
-=======
-  m_RootOrder: 3
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
-  m_RootOrder: 5
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-  m_RootOrder: 5
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-  m_RootOrder: 2
->>>>>>> parent of a7bcfc2... 2223333
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1386,9 +1371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78050fe86bbb00442932e66aa74a1c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 605416406}
+  light: {fileID: 605416408}
   gameUI: {fileID: 348682577}
   connectMenu: {fileID: 1390807931}
+  pauseMenu: {fileID: 910500504}
   levelText: {fileID: 2077585526}
   attText: {fileID: 1528592705}
   medText: {fileID: 551143568}
@@ -1399,6 +1385,8 @@ MonoBehaviour:
   gameLevel: 0
   downCounter: 0
   gameTime: 0
+  signalIcons:
+  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
 --- !u!114 &348682580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,6 +1411,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUI: {fileID: 348682577}
   connectMenu: {fileID: 1390807931}
+--- !u!1001 &364307940
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114533575520184106, guid: 292ba04a135f6384d8d2d50bb4199e98,
+        type: 2}
+      propertyPath: isConnected
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &372480505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,38 +1767,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     - target: {fileID: 105034, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 413830, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.77817
-      objectReference: {fileID: 0}
-    - target: {fileID: 413830, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.77817005
-      objectReference: {fileID: 0}
-    - target: {fileID: 413830, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.77817005
-      objectReference: {fileID: 0}
-    - target: {fileID: 114159697717506102, guid: 58bc3c564721a5046916b82ffd760350,
-        type: 2}
-      propertyPath: planetRotSpeed
-      value: 2
-      objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
->>>>>>> 249a0852a9a77c36fa9f40ec5acd5cce8683b4d5
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
->>>>>>> parent of 3b69467... Revert "Revert "Merge branch 'master' of https://github.com/awark10/Git_Tesla""
-=======
->>>>>>> parent of a7bcfc2... 2223333
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
   m_IsPrefabParent: 0
@@ -1818,7 +1825,7 @@ GameObject:
   - component: {fileID: 483324515}
   - component: {fileID: 483324514}
   m_Layer: 0
-  m_Name: Init
+  m_Name: InitScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1849,23 +1856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 3
-=======
-  m_RootOrder: 4
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
-  m_RootOrder: 6
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-  m_RootOrder: 6
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-  m_RootOrder: 3
->>>>>>> parent of a7bcfc2... 2223333
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512433339
 GameObject:
@@ -2245,77 +2236,10 @@ Prefab:
       propertyPath: m_Name
       value: Lightins
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114844031095436134, guid: 906ee332cf510324094bb2246ed241ef, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 906ee332cf510324094bb2246ed241ef, type: 2}
   m_IsPrefabParent: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of a7bcfc2... 2223333
---- !u!4 &605416404
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 605416403}
-  m_GameObject: {fileID: 1826414944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 925114775}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &605416405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1509806115384634, guid: 906ee332cf510324094bb2246ed241ef,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3b69467... Revert "Revert "Merge branch 'master' of https://github.com/awark10/Git_Tesla""
---- !u!114 &605416406 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114082854927007954, guid: 906ee332cf510324094bb2246ed241ef,
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
->>>>>>> parent of a7bcfc2... 2223333
-    type: 2}
-  m_PrefabInternal: {fileID: 605416403}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 605416407}
-  - component: {fileID: 605416406}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &605416406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 605416405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f008131022a80fc47b6b901e736abb54, type: 3}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of a7bcfc2... 2223333
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 605416405}
---- !u!4 &605416407
-<<<<<<< HEAD
-=======
---- !u!4 &605416407 stripped
-<<<<<<< HEAD
-=======
 --- !u!114 &605416408 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114188710271191314, guid: 906ee332cf510324094bb2246ed241ef,
@@ -2323,28 +2247,10 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 605416403}
   m_Script: {fileID: 11500000, guid: f008131022a80fc47b6b901e736abb54, type: 3}
 --- !u!4 &605416411 stripped
->>>>>>> 249a0852a9a77c36fa9f40ec5acd5cce8683b4d5
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
->>>>>>> parent of 3b69467... Revert "Revert "Merge branch 'master' of https://github.com/awark10/Git_Tesla""
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 4601492664805144, guid: 906ee332cf510324094bb2246ed241ef,
+    type: 2}
   m_PrefabInternal: {fileID: 605416403}
-=======
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 605416403}
->>>>>>> parent of a7bcfc2... 2223333
-  m_GameObject: {fileID: 605416405}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 925114775}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &671605459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,7 +2463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 810712836}
+      - m_Target: {fileID: 0}
         m_MethodName: HideStat
         m_Mode: 1
         m_Arguments:
@@ -2671,56 +2577,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 769983097}
---- !u!1 &810712834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 810712835}
-  - component: {fileID: 810712836}
-  m_Layer: 5
-  m_Name: GameMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &810712835
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 810712834}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2042399132}
-  - {fileID: 910500505}
-  m_Father: {fileID: 333800051}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &810712836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 810712834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f9152d7e51f934c9a9aa0a942800af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 910500504}
-  startMenu: {fileID: 2042399131}
-  statisticMenu: {fileID: 376486253}
 --- !u!1 &826632695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,7 +2678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   auraSprite: {fileID: 826632696}
-  game: {fileID: 1940454502}
   Attention: 24
   Meditation: 65
 --- !u!1 &867407055
@@ -2908,8 +2763,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 910500505}
+  - component: {fileID: 910500506}
   m_Layer: 5
-  m_Name: Pause_Menu_Earth
+  m_Name: Pause_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2930,53 +2786,14 @@ RectTransform:
   - {fileID: 1843202101}
   - {fileID: 938198575}
   - {fileID: 1154754790}
-  m_Father: {fileID: 810712835}
-  m_RootOrder: 1
+  m_Father: {fileID: 333800051}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.000006198883}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of a7bcfc2... 2223333
---- !u!1 &925114774
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 605416403}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 925114775}
-  m_Layer: 0
-  m_Name: Missing Prefab
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &925114775
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 605416403}
-  m_GameObject: {fileID: 925114774}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 605416407}
-  - {fileID: 605416404}
-  m_Father: {fileID: 1969497512}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 --- !u!114 &910500506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2991,12 +2808,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 910500504}
   gameUI: {fileID: 348682577}
   statisticMenu: {fileID: 376486253}
->>>>>>> 249a0852a9a77c36fa9f40ec5acd5cce8683b4d5
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
->>>>>>> parent of 3b69467... Revert "Revert "Merge branch 'master' of https://github.com/awark10/Git_Tesla""
-=======
->>>>>>> parent of a7bcfc2... 2223333
 --- !u!1 &926113377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,7 +3026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 810712836}
+      - m_Target: {fileID: 910500506}
         m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
@@ -3656,7 +3467,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 810712836}
+      - m_Target: {fileID: 910500506}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -4087,28 +3898,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      - m_Target: {fileID: 1390807931}
-        m_MethodName: 
-=======
-<<<<<<< HEAD
-      - m_Target: {fileID: 1624193646}
-        m_MethodName: HideConnect
-=======
       - m_Target: {fileID: 1390807933}
         m_MethodName: Demo
->>>>>>> 249a0852a9a77c36fa9f40ec5acd5cce8683b4d5
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
-      - m_Target: {fileID: 1624193646}
-        m_MethodName: HideConnect
->>>>>>> parent of 3b69467... Revert "Revert "Merge branch 'master' of https://github.com/awark10/Git_Tesla""
-=======
-      - m_Target: {fileID: 1390807931}
-        m_MethodName: 
->>>>>>> parent of a7bcfc2... 2223333
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4371,154 +4162,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1323945096}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
---- !u!1001 &1327598398
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.49243817
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.50744915
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.50744915
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.49243817
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800002, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: randomSeed
-      value: -2066061300
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: randomSeed
-      value: -690288084
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 3.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: simulationSpeed
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.6692846
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.6692879
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.6692879
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_MaxParticleSize
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_RenderAlignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_NormalDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_UseCustomVertexStreams
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: m_MotionVectors
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 6.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: lengthInSec
-      value: 2.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d42d2a594cf3a44d79c3fdd83c8ce796, type: 2}
-  m_IsPrefabParent: 0
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
->>>>>>> parent of a7bcfc2... 2223333
 --- !u!1 &1328187724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +4413,7 @@ RectTransform:
   - {fileID: 1269282580}
   - {fileID: 1277379855}
   m_Father: {fileID: 333800051}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4790,7 +4433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUI: {fileID: 348682577}
   connectMenu: {fileID: 1390807931}
-  gameMenu: {fileID: 810712834}
   connectButton: {fileID: 570169643}
   longTimeConnection: {fileID: 1269282581}
   signalIcons:
@@ -4799,6 +4441,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9f17fb19a586e4d26b549e60cf699be5, type: 3}
   - {fileID: 2800000, guid: 936ab06dcf2334223b141b4283f54156, type: 3}
   - {fileID: 2800000, guid: b2c11302c60af4454b750566f9db7eca, type: 3}
+  indexSignalIcons: 1
   connectionStart: 0
   timeConnection: 0
 --- !u!1 &1461009706
@@ -5579,21 +5222,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785480044}
---- !u!1 &1826414944
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 605416403}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 605416404}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1843202100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5672,7 +5300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 810712836}
+      - m_Target: {fileID: 910500506}
         m_MethodName: ShowStat
         m_Mode: 1
         m_Arguments:
@@ -5912,74 +5540,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1937966302}
---- !u!1001 &1940454501
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994169515828000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 4
-=======
-      value: 5
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
-      value: 7
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-      value: 7
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-      value: 4
->>>>>>> parent of a7bcfc2... 2223333
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728389008404852, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
-  m_IsPrefabParent: 0
---- !u!114 &1940454502 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114489372935083258, guid: 292ba04a135f6384d8d2d50bb4199e98,
-    type: 2}
-  m_PrefabInternal: {fileID: 1940454501}
-  m_Script: {fileID: 11500000, guid: e3817a4e12817a24d8872097b14f340f, type: 3}
 --- !u!1 &1963481922
 GameObject:
   m_ObjectHideFlags: 0
@@ -6041,45 +5601,13 @@ Transform:
   m_LocalPosition: {x: 457.31613, y: 296.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 925114775}
-=======
-<<<<<<< HEAD
-  - {fileID: 605416407}
-=======
   - {fileID: 605416411}
->>>>>>> 249a0852a9a77c36fa9f40ec5acd5cce8683b4d5
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
-  - {fileID: 605416407}
->>>>>>> parent of 3b69467... Revert "Revert "Merge branch 'master' of https://github.com/awark10/Git_Tesla""
-=======
-  - {fileID: 925114775}
->>>>>>> parent of a7bcfc2... 2223333
   - {fileID: 926113379}
   - {fileID: 947209595}
   - {fileID: 480306507}
   - {fileID: 826632697}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_RootOrder: 1
-=======
-  m_RootOrder: 2
->>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
-=======
-  m_RootOrder: 4
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-  m_RootOrder: 4
->>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
-=======
-  m_RootOrder: 1
->>>>>>> parent of a7bcfc2... 2223333
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1972892940
 GameObject:
@@ -6294,7 +5822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2042399132
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6311,8 +5839,8 @@ RectTransform:
   - {fileID: 1617421554}
   - {fileID: 1328187725}
   - {fileID: 262570552}
-  m_Father: {fileID: 810712835}
-  m_RootOrder: 0
+  m_Father: {fileID: 333800051}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
