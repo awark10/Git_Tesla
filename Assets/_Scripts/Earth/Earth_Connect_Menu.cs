@@ -87,4 +87,13 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		}
 
 	}
+
+	public void Demo()
+	{
+		GAME.Instance.Attention = 34;
+		GAME.Instance.Meditation = 58;
+		GAME.Instance.isDemo = true;
+		connectMenu.SetActive(false);
+		gameUI.SetActive(true);
+	}
 }

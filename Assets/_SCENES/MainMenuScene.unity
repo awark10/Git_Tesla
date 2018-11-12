@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 139016115}
   - component: {fileID: 139016116}
   m_Layer: 0
-  m_Name: Init
+  m_Name: InitScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &139016116
 MonoBehaviour:
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectMenu: {fileID: 892234193}
   gamesMenus: {fileID: 962172324}
-  game: {fileID: 1893609376}
 --- !u!1 &143647799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1037558016760190, guid: 7d926fa6e5666284790fa10768e91463, type: 2}
       propertyPath: m_Name
-      value: Init
+      value: InitScene
       objectReference: {fileID: 0}
     - target: {fileID: 114270565815943776, guid: 7d926fa6e5666284790fa10768e91463,
         type: 2}
@@ -2183,7 +2182,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4421804082853088, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 292ba04a135f6384d8d2d50bb4199e98, type: 2}
@@ -2256,12 +2255,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798380646}
---- !u!114 &1893609376 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114533575520184106, guid: 292ba04a135f6384d8d2d50bb4199e98,
-    type: 2}
-  m_PrefabInternal: {fileID: 1784244712}
-  m_Script: {fileID: 11500000, guid: e3817a4e12817a24d8872097b14f340f, type: 3}
 --- !u!1 &1895366125
 GameObject:
   m_ObjectHideFlags: 0

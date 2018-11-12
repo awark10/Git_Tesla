@@ -107,6 +107,6 @@ public class ConnectMenu : MonoBehaviour {
     {
 		GAME.Instance.isDemo = true;
         connectMenu.SetActive(false);
-        gamesMenus.SetActive(true);       
+        gamesMenus.SetActive(true); 
     }
 }
