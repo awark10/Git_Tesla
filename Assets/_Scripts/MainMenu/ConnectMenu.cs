@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ConnectMenu : MonoBehaviour {
 
+	ThinkGearController controller;
+	public GAME game;
+
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
 	//public GameObject connectLoader;
@@ -53,7 +56,7 @@ public class ConnectMenu : MonoBehaviour {
 		while (true) 
 		{
 
-			if (GAME.Instance.isConnected) {
+			if (game.poorSignalStatus == 1 ||game.poorSignalStatus == 2) {
 
 				connectMenu.SetActive (false);
 				gamesMenus.SetActive (true);
@@ -105,8 +108,8 @@ public class ConnectMenu : MonoBehaviour {
 
     public void Demo()
     {
-		GAME.Instance.isDemo = true;
+		game.isDemo = true;
         connectMenu.SetActive(false);
-        gamesMenus.SetActive(true); 
+        gamesMenus.SetActive(true);       
     }
 }
