@@ -47,7 +47,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		while (true) 
 		{
 
-			if (ThinkGearController.Instance.poorSignalStatus == 1 || ThinkGearController.Instance.poorSignalStatus == 2) {
+			if (GAME.Instance.poorSignalStatus == 1 || GAME.Instance.poorSignalStatus == 2) {
 
 				connectMenu.SetActive (false);
 				gameUI.SetActive (true);
