@@ -9,7 +9,11 @@ public class GamesMenu : MonoBehaviour {
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
 
-	// Update is called once per frame
+	void OnEnable () {
+
+		gamesMenus.SetActive (true);
+	}
+
 	void Update () {
 
 		if (!GDATA.Instance.isDemo){

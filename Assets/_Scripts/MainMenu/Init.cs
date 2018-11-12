@@ -9,7 +9,10 @@ public class Init : MonoBehaviour {
 	    
 	// Use this for initialization
 	void Start () {
-		
+
+		gamesMenus.SetActive (true);
+
+		/*
 		if (!GDATA.Instance.isDemo)
 		{ 
 			if (!GDATA.Instance.isSignal) 
@@ -28,5 +31,6 @@ public class Init : MonoBehaviour {
             connectMenu.SetActive(false);
             gamesMenus.SetActive(true);
         }
+		*/
     }
 }
