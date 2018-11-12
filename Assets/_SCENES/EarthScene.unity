@@ -1684,10 +1684,14 @@ RectTransform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 2
 =======
   m_RootOrder: 3
 >>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
+=======
+  m_RootOrder: 5
+>>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
 =======
   m_RootOrder: 5
 >>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
@@ -2257,10 +2261,14 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 3
 =======
   m_RootOrder: 4
 >>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
+=======
+  m_RootOrder: 6
+>>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
 =======
   m_RootOrder: 6
 >>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
@@ -6257,10 +6265,14 @@ Prefab:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 4
 =======
       value: 5
 >>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
+=======
+      value: 7
+>>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
 =======
       value: 7
 >>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
@@ -6357,10 +6369,14 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 1
 =======
   m_RootOrder: 2
 >>>>>>> 3b694675b286d8c7c43c3b6bc35eb1dacc375c38
+=======
+  m_RootOrder: 4
+>>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
 =======
   m_RootOrder: 4
 >>>>>>> parent of d0f5b42... Update Assets/_SCENES/EarthScene.unity
