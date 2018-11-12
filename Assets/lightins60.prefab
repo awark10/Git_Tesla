@@ -23,8 +23,6 @@ GameObject:
   - component: {fileID: 199060471764222734}
   - component: {fileID: 114188710271191314}
   - component: {fileID: 114844031095436134}
-  - component: {fileID: 114793684238102546}
-  - component: {fileID: 114082854927007954}
   m_Layer: 0
   m_Name: lightins60
   m_TagString: Untagged
@@ -40,36 +38,12 @@ Transform:
   m_GameObject: {fileID: 1509806115384634}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -457.31613, y: -296.15, z: -0.03}
-  m_LocalScale: {x: 0.7760457, y: 0.7760469, z: 0.7760469}
+  m_LocalScale: {x: 0.9, y: 0.9000014, z: 0.9000014}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &114082854927007954
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509806115384634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f008131022a80fc47b6b901e736abb54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 1509806115384634}
 --- !u!114 &114188710271191314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509806115384634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f008131022a80fc47b6b901e736abb54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 1509806115384634}
---- !u!114 &114793684238102546
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -150,7 +124,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -589871423
+  randomSeed: 556936677
   InitialModule:
     serializedVersion: 3
     enabled: 1
