@@ -11,14 +11,5 @@ public class Earth_Init : MonoBehaviour {
 	void Start () {
 
 		gameUI.SetActive (true);
-
-	}
-
-	void OnGUI()
-	{
-		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[0]);
-		GUILayout.EndHorizontal();
 	}
 }
