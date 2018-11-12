@@ -11,7 +11,6 @@ public class Earth_Init : MonoBehaviour {
 	void Start () {
 
 		gameUI.SetActive (true);
-
 	}
 
 	void OnGUI()

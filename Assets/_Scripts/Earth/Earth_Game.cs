@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class Earth_Game : MonoBehaviour {
 
-	ThinkGearController controller;
-	public Earth_light light;
 	#region
-
 	[Header("UI elements")]
+	public Earth_light light;
+
 	public GameObject gameUI;
 	public GameObject connectMenu;
 
@@ -49,9 +48,10 @@ public class Earth_Game : MonoBehaviour {
 
 		if (!GAME.Instance.isDemo)
 		{
-			if (GAME.Instance.poorSignalStatus == 0) 
+			if (!GAME.Instance.isConnected) 
 			{
 				StopGame ();
+				print ("isConnected = false");
 				connectMenu.SetActive (true);
 				gameUI.SetActive (false);
 			}

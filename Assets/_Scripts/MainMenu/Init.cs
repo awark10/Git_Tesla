@@ -14,7 +14,7 @@ public class Init : MonoBehaviour {
 		
 		if (!game.isDemo)
 		{ 
-			if (game.poorSignalStatus == 0) 
+			if (!game.isConnected) 
 			{
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);

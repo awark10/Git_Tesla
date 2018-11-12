@@ -7,7 +7,7 @@ public class GAME : MonoBehaviour {
 	public static GAME Instance { get; set;}
 	public ThinkGearController controller;
 
-	public int poorSignalStatus = 0;
+	public bool isConnected = false;
 	[Range(0, 100)]
 	public int Attention = 0;
 	[Range(0, 100)]
@@ -19,7 +19,7 @@ public class GAME : MonoBehaviour {
 	public bool isDemo = false;
 
 	void Awake (){
-	
+
 		if (Instance == null) {
 			Instance = this;
 			DontDestroyOnLoad (gameObject);
@@ -48,15 +48,15 @@ public class GAME : MonoBehaviour {
 
 		if (value == 200) //No connection
 		{   
-			poorSignalStatus = 0;
+			isConnected = false;
 		} 
 		else if (value == 0)  // Stable connection
 		{
-			poorSignalStatus = 2;
+			isConnected = true;
 		} 
 		else // Weak connection
 		{
-			poorSignalStatus = 1;
+			isConnected = true;
 		}
 	}
 
