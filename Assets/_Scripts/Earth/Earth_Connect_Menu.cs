@@ -35,7 +35,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		longTimeConnection.text = "";
 		timeConnection = 0;
 		StartCoroutine(ConnectionFunc());
-		//UnityThinkGear.StartStream();
+		UnityThinkGear.StartStream();
 	}
 
 	IEnumerator ConnectionFunc()
