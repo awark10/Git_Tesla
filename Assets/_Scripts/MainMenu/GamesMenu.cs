@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GamesMenu : MonoBehaviour {
 
-	public GAME game;
-
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
 	public Texture2D[] signalIcons;
@@ -15,9 +13,9 @@ public class GamesMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (!game.isDemo){
+		if (!GAME.Instance.isDemo){
 			
-			if (game.poorSignalStatus == 0)
+			if (!GAME.Instance.isConnected)
 			{
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);

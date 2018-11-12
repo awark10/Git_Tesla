@@ -8,8 +8,6 @@ public class Earth_Aura : MonoBehaviour {
 	public SpriteRenderer auraSprite;
 	private float x;
 
-	public GAME game;
-
 	[Header("Received Values")]
 	[Range(0, 100)]
 	public int Attention = 0;
@@ -19,8 +17,8 @@ public class Earth_Aura : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Meditation = game.Meditation;
-		Attention  = game.Attention;
+		Meditation = GAME.Instance.Meditation;
+		Attention  = GAME.Instance.Attention;
 
 		if (Meditation > 50 && Attention > 50)
 			auraSprite.color = Color.cyan;
