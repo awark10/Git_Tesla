@@ -29,6 +29,14 @@ public class TimeGame : MonoBehaviour {
 	void Start () {
 		
 	}
+
+	void OnEnable(){
+
+		clock.hour=System.DateTime.Now.Hour;
+		clock.minutes=System.DateTime.Now.Minute;
+		clock.seconds=System.DateTime.Now.Second;
+		clock.rotateSecondAngle = System.DateTime.Now.Second;
+	}
 	
 	void Update()
 	{
@@ -38,7 +46,7 @@ public class TimeGame : MonoBehaviour {
 			if (GDATA.Instance.isSignal)
 			{
 				Attention = GDATA.Instance.Attention;
-				Meditation = GDATA.Instance.Meditation;
+				Meditation = 0;
 
 				GameLogic ();
 				UIupdate ();
@@ -50,7 +58,7 @@ public class TimeGame : MonoBehaviour {
 			}
 
 			if (Input.GetKeyDown (KeyCode.Escape)) {
-				//pauseMenu.SetActive (true);
+				pauseMenu.SetActive (true);
 			}
 		}
 		else 
@@ -63,9 +71,16 @@ public class TimeGame : MonoBehaviour {
 
 	void GameLogic(){
 
-		//if()
-
-		clock.clockSpeed = 0.5f;
+		if(Attention > 65)
+			clock.clockSpeed = 0.5f;
+		else if (Attention > 75)
+			clock.clockSpeed = 0.3f;
+		else if (Attention > 85)
+			clock.clockSpeed = 0.25f;
+		else if (Attention > 90)
+			clock.clockSpeed = 0.1f;
+		else
+			clock.clockSpeed = 1f;
 	}
 
 	void UIupdate(){
@@ -77,5 +92,7 @@ public class TimeGame : MonoBehaviour {
 		tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
 		attSlImage.fillAmount = tmpAtSliderVal / 100;
 		medSlImage.fillAmount = tmpMedSliderVal / 100;
+
+		clock.UpdateLogic ();
 	}
 }

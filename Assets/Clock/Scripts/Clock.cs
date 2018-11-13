@@ -25,17 +25,9 @@ public class Clock : MonoBehaviour {
         //  clockSpeed = 120.0f;
         //-- set real time
         GetComponent<AudioSource>().clip = clip;
-        if (realTime)
-	{
-		hour=System.DateTime.Now.Hour;
-		minutes=System.DateTime.Now.Minute;
-		seconds=System.DateTime.Now.Second;
-            rotateSecondAngle = System.DateTime.Now.Second;
-
-        }
 }
 
-void Update() 
+public void UpdateLogic() 
 {
     //-- calculate time
     msecs += Time.deltaTime * clockSpeed;
