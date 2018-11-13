@@ -20,14 +20,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4421804082853088}
   - component: {fileID: 114924789918317948}
-  - component: {fileID: 114241521504928304}
   - component: {fileID: 114312598854432244}
+  - component: {fileID: 114241521504928304}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4421804082853088
 Transform:
