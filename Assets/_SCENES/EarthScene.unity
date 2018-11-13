@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.387
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926113378}
-  m_IndirectSpecularColor: {r: 0.044138037, g: 0.037240386, b: 0.040240712, a: 0.387}
+  m_IndirectSpecularColor: {r: 0.040741287, g: 0.04065565, b: 0.04070145, a: 0.387}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2166,6 +2166,11 @@ Prefab:
     - target: {fileID: 1509806115384634, guid: 906ee332cf510324094bb2246ed241ef, type: 2}
       propertyPath: m_Name
       value: Lightins
+      objectReference: {fileID: 0}
+    - target: {fileID: 198926011168054988, guid: 906ee332cf510324094bb2246ed241ef,
+        type: 2}
+      propertyPath: InitialModule.size3D
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114844031095436134, guid: 906ee332cf510324094bb2246ed241ef, type: 2}
