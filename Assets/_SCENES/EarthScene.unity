@@ -1106,12 +1106,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 348682577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b57aa9d71a63844b5129dae1f6871e, type: 3}
+  m_Script: {fileID: 11500000, guid: ccce4c3c2267a204e9a3a2e7d4ce154f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statisticMenu: {fileID: 1224604032}
-  medQualTextVal: {fileID: 0}
-  medQualText: {fileID: 0}
   statGameTimeSec: 0
   msecs: 0
   statGameMin: 0
@@ -1123,8 +1120,6 @@ MonoBehaviour:
   statMed90TimeMin: 0
   statMed60TimeMin: 0
   statMed50TimeMin: 0
-  Meditation: 0
-  Attention: 0
 --- !u!1 &369806892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,7 +3086,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 225527558
+  randomSeed: -1360639812
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6212,6 +6207,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1224604033}
+  - component: {fileID: 1224604034}
   m_Layer: 5
   m_Name: StatisticMenu
   m_TagString: Untagged
@@ -6245,6 +6241,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1224604034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1224604032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4773f050641e7fd498830718926cd487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  medQualTextVal: {fileID: 0}
+  medQualText: {fileID: 0}
 --- !u!1 &1269282579
 GameObject:
   m_ObjectHideFlags: 0
