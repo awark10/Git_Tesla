@@ -14,12 +14,7 @@ public class Earth_Statistic_P2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		medQualText.text = "Meditation quality";
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		medQualText.text = "Meditation quality";	
+		medQualTextVal.text = "67%";
 	}
 }
