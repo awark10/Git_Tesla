@@ -83,7 +83,7 @@ public class TimeGame : MonoBehaviour {
 			clock.clockSpeed = 1f;
 	}
 
-	void UIupdate(){
+	void UIupdate() {
 
 		attText.text = "" + Attention+"%";
 		medText.text = "" + Meditation+"%";
