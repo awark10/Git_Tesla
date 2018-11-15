@@ -2138,7 +2138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 910500504}
   startMenu: {fileID: 2042399131}
-  statisticMenu: {fileID: 0}
+  statisticMenu: {fileID: 1224604032}
 --- !u!1 &914858443
 GameObject:
   m_ObjectHideFlags: 0
@@ -6214,7 +6214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1224604033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6252,7 +6252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4773f050641e7fd498830718926cd487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  earth_Statistic_P1: {fileID: 348682580}
+  statistic: {fileID: 0}
   medQualTextVal: {fileID: 1200035509}
   medQualText: {fileID: 1091573985}
 --- !u!1 &1269282579
