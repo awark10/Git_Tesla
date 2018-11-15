@@ -1,15 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-
-public class Earth_Statistic_P1 : MonoBehaviour {
-
-	public GameObject statisticMenu;
-
-	public Text medQualTextVal;
-	public Text medQualText;
+public class Earth_Statistic : MonoBehaviour {
 
 	public int statGameTimeSec=0;
 	public float msecs = 0;
@@ -33,22 +26,13 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (!statisticMenu.activeSelf) 
+		Attention = GDATA.Instance.Attention;
+		Meditation = GDATA.Instance.Meditation;
+
+		if (Meditation > 0 && Attention > 0) 
 		{
-			if (Meditation > 0 && Attention > 0) 
-			{
-				Attention = GDATA.Instance.Attention;
-				Meditation = GDATA.Instance.Meditation;
-				StatProccesing ();
-			}
-		} 
-		else
-		{
-			medQualText.text = "Meditation Quality";
+		
 		}
-
-
-
 	}
 
 	public void StatProccesing()
