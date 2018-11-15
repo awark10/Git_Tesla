@@ -1109,17 +1109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccce4c3c2267a204e9a3a2e7d4ce154f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statGameTimeSec: 0
-  msecs: 0
-  statGameMin: 0
-  statMedMinF: 0
-  statMedTime: 0
-  statMed60Time: 0
-  statMed80Time: 0
-  statMed50Time: 0
-  statMed90TimeMin: 0
-  statMed60TimeMin: 0
-  statMed50TimeMin: 0
   attQual: 0
   medQual: 0
   attAvg: 0
@@ -1130,6 +1119,7 @@ MonoBehaviour:
   attSeconds: 0
   gameMinutes: 0
   gameSeconds: 0
+  msecs: 0
 --- !u!1 &369806892
 GameObject:
   m_ObjectHideFlags: 0
@@ -6224,7 +6214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1224604033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8113,12 +8103,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2034731003}
-  Attention: 0
-  Meditation: 0
+  Attention: 82
+  Meditation: 89
   userName: Petro
   userAge: 29
   isDemo: 0
-  isSignal: 0
+  isSignal: 1
 --- !u!114 &2034731002
 MonoBehaviour:
   m_ObjectHideFlags: 0
