@@ -24,16 +24,16 @@ public class Earth_Statistic_P2 : MonoBehaviour {
 	void Start () {
 
 		medQualText.text = "Meditation quality";	
-		medQualTextVal.text = "10%";
+		medQualTextVal.text = (int)statistic.medQual + " %";
 
 		attQualText.text = "Attention quality";	
-		attQualTextVal.text = "20%";
+		attQualTextVal.text = (int)statistic.attQual + " %";
 
 		medAvgText.text = "Avg. meditation time";	
-		medAvgTextVal.text = "30 min";
+		medAvgTextVal.text = statistic.medMinutes + ":" + statistic.medSeconds + " min";
 
 		attAvgText.text = "Avg. attention time";	
-		attAvgTextVal.text = "40 min";
+		attAvgTextVal.text = statistic.attMinutes + ":" + statistic.attSeconds + " min";
 	}
 }
 

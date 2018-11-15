@@ -5,26 +5,15 @@ using UnityEngine;
 
 public class Earth_Statistic_P1 : MonoBehaviour {
 
-	public int statGameTimeSec=0;
-	public float msecs = 0;
-	public int statGameMin=0;
-	public int statMedMinF = 0;
-	public float statMedTime=0;
-	public float statMed60Time = 0;
-	public float statMed80Time = 0;
-	public float statMed50Time = 0;
-	public float statMed90TimeMin=0;
-	public float statMed60TimeMin = 0;
-	public float statMed50TimeMin = 0;
+	int Meditation, Attention;
 
-	public int attQual, medQual;
+	public float attQual, medQual;
 	public int attAvg,  medAvg;
 
-	int medMinutes, medSeconds;
-	int attMinutes, attSeconds;
-	int gameMinutes, gameSeconds;
-
-	int Meditation, Attention;
+	public int medMinutes, medSeconds;
+	public int attMinutes, attSeconds;
+	public int gameMinutes, gameSeconds;
+	public float msecs = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -34,15 +23,26 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{		
-		if (Meditation > 0 && Attention > 0) 
+		if (GDATA.Instance.Attention > 0 && GDATA.Instance.Meditation > 0) 
 		{
 			Attention = GDATA.Instance.Attention;
 			Meditation = GDATA.Instance.Meditation;
-			StatProccesing ();
+			AvgTime();
+			Quality();
 		}		
 	}
 
-	public void StatProccesing()
+	void Quality()
+	{
+		float totalTime = gameMinutes * 60 + gameSeconds;
+		float medTime   = medMinutes * 60 + medSeconds;
+		float attTime   = attMinutes * 60 + attSeconds;
+
+		attQual = (attTime / totalTime) * 100;
+		medQual = (medTime / totalTime) * 100;
+	}
+
+	void AvgTime()
 	{
 		msecs += Time.deltaTime;
 
@@ -51,71 +51,32 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 			msecs = 0;
 			gameSeconds++;
 
-			if (gameSeconds >=60)
+			if (gameSeconds > 59)
 			{
 				gameSeconds = 0;
 				gameMinutes++;
 			}
 
-
 			if (Meditation > 50) {
-			
+
+				medSeconds++;
+
+				if (medSeconds > 59) {
+					medMinutes++;
+					medSeconds = 0;
+				}
 			}
 
 			if (Attention > 50) {
 			
-			}
+				attSeconds++;
 
-		}
-
-		if (Meditation > Attention && Time.deltaTime != 0)
-		{
-			statMedTime += Time.deltaTime;
-			if (statMedTime >= 60)
-			{
-				statMedTime = 0;
-				statMedMinF++;
-			}
-
-			if (Meditation >= 90) { 
-				statMed80Time += Time.deltaTime;
-				if (statMed80Time >= 60)
-				{
-					statMed80Time = 0;
-					statMed90TimeMin++;
+				if (attSeconds > 59) {
+					attMinutes++;
+					attSeconds = 0;
 				}
 			}
-			if (Meditation >= 60) { 
-				statMed60Time += Time.deltaTime;
-				if (statMed60Time >= 60)
-				{
-					statMed60Time = 0;
-					statMed60TimeMin++;
-				}
-
-			}
-			/* if (Meditation >= 50) { 
-                     statMed50Time += Time.deltaTime;
-                         if (statMed50Time >= 60.0f)
-                         {
-                             statMed50Time = 0;
-                             statMed50TimeMin++;
-                         }
-                     }*/
-		}
+		}			
 	}
 
-
-
-	void OnUpdateAttention(int value)
-	{ 
-		Attention = value;
-	}
-	void OnUpdateMeditation(int value)
-	{
-		Meditation = value;
-		// statistic part
-		//if(value>0)
-			//statMedLevel = (statMedLevel + value) / 2;
-	}
 }

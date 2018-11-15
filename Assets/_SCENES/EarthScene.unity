@@ -1120,6 +1120,16 @@ MonoBehaviour:
   statMed90TimeMin: 0
   statMed60TimeMin: 0
   statMed50TimeMin: 0
+  attQual: 0
+  medQual: 0
+  attAvg: 0
+  medAvg: 0
+  medMinutes: 0
+  medSeconds: 0
+  attMinutes: 0
+  attSeconds: 0
+  gameMinutes: 0
+  gameSeconds: 0
 --- !u!1 &369806892
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,7 +6262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4773f050641e7fd498830718926cd487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statistic: {fileID: 0}
+  statistic: {fileID: 348682580}
   medQualTextVal: {fileID: 1200035509}
   medQualText: {fileID: 1091573985}
   attQualTextVal: {fileID: 1123770386}
