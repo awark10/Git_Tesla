@@ -10,6 +10,12 @@ public class Earth_Statistic_P2 : MonoBehaviour {
 
 	public Text medQualTextVal;
 	public Text medQualText;
+	public Text attQualTextVal;
+	public Text attQualText;
+	public Text medAvgTextVal;
+	public Text medAvgText;
+	public Text attAvgTextVal;
+	public Text attAvgText;
 
 	// Use this for initialization
 	void Start () {
@@ -18,3 +24,5 @@ public class Earth_Statistic_P2 : MonoBehaviour {
 		medQualTextVal.text = "67%";
 	}
 }
+
+
