@@ -17,6 +17,13 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	public float statMed60TimeMin = 0;
 	public float statMed50TimeMin = 0;
 
+	public int attQual, medQual;
+	public int attAvg,  medAvg;
+
+	int medMinutes, medSeconds;
+	int attMinutes, attSeconds;
+	int gameMinutes, gameSeconds;
+
 	int Meditation, Attention;
 
 	// Use this for initialization
@@ -26,30 +33,39 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () 
-	{
-		
+	{		
 		if (Meditation > 0 && Attention > 0) 
 		{
 			Attention = GDATA.Instance.Attention;
 			Meditation = GDATA.Instance.Meditation;
 			StatProccesing ();
 		}		
-
 	}
 
 	public void StatProccesing()
 	{
 		msecs += Time.deltaTime;
+
 		if (msecs >= 1.0f)
 		{
-			msecs -= 0;
-			statGameTimeSec++;
+			msecs = 0;
+			gameSeconds++;
 
-			if (statGameTimeSec >=60)
+			if (gameSeconds >=60)
 			{
-				statGameTimeSec = 0;
-				statGameMin++;
+				gameSeconds = 0;
+				gameMinutes++;
 			}
+
+
+			if (Meditation > 50) {
+			
+			}
+
+			if (Attention > 50) {
+			
+			}
+
 		}
 
 		if (Meditation > Attention && Time.deltaTime != 0)
