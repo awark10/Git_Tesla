@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 152932978}
   - component: {fileID: 152932977}
   m_Layer: 5
-  m_Name: Text_1_2
+  m_Name: Text_4_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1131,7 @@ GameObject:
   - component: {fileID: 369806895}
   - component: {fileID: 369806894}
   m_Layer: 5
-  m_Name: Text_1_1
+  m_Name: Text_4_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 655360122}
   - component: {fileID: 655360121}
   m_Layer: 5
-  m_Name: Text_1_2
+  m_Name: Text_3_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2715,7 +2715,7 @@ GameObject:
   - component: {fileID: 1123770387}
   - component: {fileID: 1123770386}
   m_Layer: 5
-  m_Name: Text_1_1
+  m_Name: Text_3_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6214,7 +6214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1224604033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6255,6 +6255,12 @@ MonoBehaviour:
   statistic: {fileID: 0}
   medQualTextVal: {fileID: 1200035509}
   medQualText: {fileID: 1091573985}
+  attQualTextVal: {fileID: 1123770386}
+  attQualText: {fileID: 655360121}
+  medAvgTextVal: {fileID: 1599826717}
+  medAvgText: {fileID: 2028982219}
+  attAvgTextVal: {fileID: 369806894}
+  attAvgText: {fileID: 152932977}
 --- !u!1 &1269282579
 GameObject:
   m_ObjectHideFlags: 0
