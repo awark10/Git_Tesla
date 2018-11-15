@@ -272,10 +272,10 @@ public class ThinkGearController : MonoBehaviour {
 
 
 	void OnApplicationQuit(){
-		UnityThinkGear.StopStream();
-		UnityThinkGear.Close();
+		//UnityThinkGear.StopStream();
+		//UnityThinkGear.Close();
 
-        Screen.sleepTimeout = SleepTimeout.SystemSetting;
+        //Screen.sleepTimeout = SleepTimeout.SystemSetting;
     }
 		
 }

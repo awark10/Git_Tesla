@@ -70,4 +70,10 @@ public class GDATA : MonoBehaviour {
 	{
 		Meditation = value;
 	}
+
+	void OnApplicationQuit()
+	{
+
+		Screen.sleepTimeout = SleepTimeout.SystemSetting;
+	}
 }

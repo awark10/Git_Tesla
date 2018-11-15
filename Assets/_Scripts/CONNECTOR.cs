@@ -89,4 +89,10 @@ public class CONNECTOR : MonoBehaviour {
 		}
 
 	}
+
+	void OnApplicationQuit()
+	{
+		UnityThinkGear.StopStream();
+		UnityThinkGear.Close();
+	}
 }
