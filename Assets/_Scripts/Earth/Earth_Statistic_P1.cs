@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< HEAD:Assets/_Scripts/Earth/Earth_Statistic_P1.cs
 
 public class Earth_Statistic_P1 : MonoBehaviour {
-=======
-public class Earth_Statistic : MonoBehaviour {
->>>>>>> f9b74343d91f2bad29c76882237a1b8ff4fdc702:Assets/_Scripts/Earth/Earth_Statistic.cs
 
 	public int statGameTimeSec=0;
 	public float msecs = 0;
@@ -29,7 +25,6 @@ public class Earth_Statistic : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-<<<<<<< HEAD:Assets/_Scripts/Earth/Earth_Statistic_P1.cs
 	void Update () 
 	{
 		
@@ -40,17 +35,6 @@ public class Earth_Statistic : MonoBehaviour {
 			StatProccesing ();
 		}		
 
-=======
-	void Update () {
-
-		Attention = GDATA.Instance.Attention;
-		Meditation = GDATA.Instance.Meditation;
-
-		if (Meditation > 0 && Attention > 0) 
-		{
-		
-		}
->>>>>>> f9b74343d91f2bad29c76882237a1b8ff4fdc702:Assets/_Scripts/Earth/Earth_Statistic.cs
 	}
 
 	public void StatProccesing()

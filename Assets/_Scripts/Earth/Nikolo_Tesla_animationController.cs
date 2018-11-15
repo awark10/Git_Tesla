@@ -21,5 +21,8 @@ public class Nikolo_Tesla_animationController : MonoBehaviour {
     {
         animator.SetInteger("nikoloState", 0);
     }
-    
+    // Update is called once per frame
+    void Update () {
+		
+	}
 }

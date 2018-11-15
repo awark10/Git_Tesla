@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.387
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926113378}
-  m_IndirectSpecularColor: {r: 0.040741287, g: 0.04065565, b: 0.04070145, a: 0.387}
+  m_IndirectSpecularColor: {r: 0.044138037, g: 0.037240386, b: 0.040240712, a: 0.387}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348682577}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccce4c3c2267a204e9a3a2e7d4ce154f, type: 3}
   m_Name: 
@@ -3086,11 +3086,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-<<<<<<< HEAD
   randomSeed: -1360639812
-=======
-  randomSeed: -1244971846
->>>>>>> f9b74343d91f2bad29c76882237a1b8ff4fdc702
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6218,7 +6214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1224604033
 RectTransform:
   m_ObjectHideFlags: 0
