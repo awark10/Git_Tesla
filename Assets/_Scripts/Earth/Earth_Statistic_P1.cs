@@ -15,6 +15,8 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	public int gameMinutes, gameSeconds;
 	public float msecs = 0;
 
+	public int ballsVal;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -76,7 +78,22 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 					attSeconds = 0;
 				}
 			}
+
+			balls ();
 		}			
+	}
+
+
+	void balls(){
+
+		if (Meditation > 50 && Attention > 50)
+			ballsVal += 1;
+		if (Meditation > 60 && Attention > 60)
+			ballsVal += 2;
+		if (Meditation > 70 && Attention > 70)
+			ballsVal += 3;
+		if (Meditation > 80 && Attention > 80)
+			ballsVal += 5;
 	}
 
 }

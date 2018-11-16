@@ -20,8 +20,12 @@ public class Earth_Statistic_P2 : MonoBehaviour {
 	public Text attAvgTextVal;
 	public Text attAvgText;
 
+	public Text ballsTextVal;
+
 	// Use this for initialization
 	void Start () {
+
+		ballsTextVal.text = statistic.ballsVal.ToString();
 
 		medQualText.text = "Meditation quality";	
 		medQualTextVal.text = (int)statistic.medQual + " %";

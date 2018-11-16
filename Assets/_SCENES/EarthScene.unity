@@ -1120,6 +1120,7 @@ MonoBehaviour:
   gameMinutes: 0
   gameSeconds: 0
   msecs: 0
+  ballsVal: 0
 --- !u!1 &369806892
 GameObject:
   m_ObjectHideFlags: 0
@@ -6261,6 +6262,7 @@ MonoBehaviour:
   medAvgText: {fileID: 2028982219}
   attAvgTextVal: {fileID: 369806894}
   attAvgText: {fileID: 152932977}
+  ballsTextVal: {fileID: 497516745}
 --- !u!1 &1269282579
 GameObject:
   m_ObjectHideFlags: 0
