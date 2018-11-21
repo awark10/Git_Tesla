@@ -21,7 +21,7 @@ public class Earth_Aura : MonoBehaviour {
 		Attention  = GDATA.Instance.Attention;
 
 		if (Meditation > 50 && Attention > 50)
-			auraSprite.color = Color.cyan;
+			auraSprite.color = Color.magenta;
 		else if (Meditation > Attention)
 			auraSprite.color = Color.green;
 		else if (Attention > Meditation)

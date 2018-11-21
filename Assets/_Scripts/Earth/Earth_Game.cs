@@ -8,8 +8,8 @@ public class Earth_Game : MonoBehaviour {
 	#region
 	[Header("UI elements")]
 	public Earth_light light;
-
-	public GameObject gameUI;
+    public Nikolo_Tesla_animationController tesla;
+    public GameObject gameUI;
 	public GameObject connectMenu;
 	public GameObject pauseMenu;
 
@@ -95,9 +95,12 @@ public class Earth_Game : MonoBehaviour {
 			}
 			else if (gameLevel == 1 && gameTime < 7)
 			{
-				if (Meditation < 50 || Attention < 50) 
+				if (Meditation < 50 || Attention < 50) { 
 					StopGame();
-			}
+                   // Nikolo_Tesla_animationController.moving = true;
+                }
+
+            }
 			else if (gameLevel == 1 && gameTime >= 7)
 			{
 				if (Meditation >= 60 && Attention >= 60) 
@@ -106,7 +109,8 @@ public class Earth_Game : MonoBehaviour {
 				{
 					light.lightShow();
 					StopGame();
-				}
+                    tesla.Moving();
+                }
 			}
 
 			// Level 2
@@ -118,8 +122,11 @@ public class Earth_Game : MonoBehaviour {
 			}
 			else if (gameLevel == 2 && gameTime < 14)
 			{
-				if (Meditation < 60 || Attention < 60) 
-					StopGame();
+                if (Meditation < 60 || Attention < 60)
+                {
+                    StopGame();
+                    tesla.Moving();
+                }
 			}
 			else if (gameLevel == 2 && gameTime > 14)
 			{
@@ -143,9 +150,12 @@ public class Earth_Game : MonoBehaviour {
 			}
 			else if (gameLevel == 3 && gameTime < 21)
 			{
-				if (Meditation < 70 || Attention < 70) 
-					StopGame();
-			}
+				if (Meditation < 70 || Attention < 70)
+                {
+                    StopGame();
+                    tesla.Moving();
+                }
+            }
 			else if (gameLevel == 3 && gameTime >= 21)
 			{
 				if (Meditation >= 80 && Attention >= 80) 
@@ -211,7 +221,8 @@ public class Earth_Game : MonoBehaviour {
 		gameLevel = 0;
 		levelText.text = "";
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
-		
-		//downTimeText.text = "";
-	}
+        
+
+        //downTimeText.text = "";
+    }
 }

@@ -25,20 +25,24 @@ public class Earth_Statistic_P2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		ballsTextVal.text = statistic.ballsVal.ToString();
-
-		medQualText.text = "Meditation quality";	
-		medQualTextVal.text = (int)statistic.medQual + " %";
-
-		attQualText.text = "Attention quality";	
-		attQualTextVal.text = (int)statistic.attQual + " %";
-
-		medAvgText.text = "Avg. meditation time";	
-		medAvgTextVal.text = statistic.medMinutes + ":" + statistic.medSeconds + " min";
-
-		attAvgText.text = "Avg. attention time";	
-		attAvgTextVal.text = statistic.attMinutes + ":" + statistic.attSeconds + " min";
+		
 	}
+    private void OnEnable()
+    {
+        ballsTextVal.text = statistic.ballsVal.ToString();
+
+        medQualText.text = "Meditation quality";
+        medQualTextVal.text = (int)statistic.medQual + " %";
+
+        attQualText.text = "Attention quality";
+        attQualTextVal.text = (int)statistic.attQual + " %";
+
+        medAvgText.text = "Avg. meditation time";
+        medAvgTextVal.text = statistic.medMinutes + ":" + statistic.medSeconds + " min";
+
+        attAvgText.text = "Avg. attention time";
+        attAvgTextVal.text = statistic.attMinutes + ":" + statistic.attSeconds + " min";
+    }
 }
 
 

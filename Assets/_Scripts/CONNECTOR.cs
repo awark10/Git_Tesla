@@ -71,12 +71,22 @@ public class CONNECTOR : MonoBehaviour {
 
 	void OnGUI()
 	{
+        GUILayout.BeginArea(new Rect(Screen.width - 50, 10, Screen.width-15 , Screen.height-10 ));
 		GUILayout.BeginHorizontal();
-		GUILayout.Space(Screen.width - 35);
-		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-		GUILayout.EndHorizontal();
+        //GUILayout.Label("Demo");
+      //  GUILayout.Height(Screen.height - 255);
+        //GUILayout.Space(Screen.width - 55);
+        
+        GUILayout.Label(signalIcons[(int)indexSignalIcons]);
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
 	}
-
+/*
+    rectX = Screen.width / 10;
+		rectY = Screen.height / 3;
+		rectWidth = Screen.width* 8 / 10;
+		rectHeight = Screen.height / 4;
+        */
 	void FixedUpdate()
 	{
 		if (connectionStart)
