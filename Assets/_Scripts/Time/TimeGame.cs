@@ -69,6 +69,11 @@ public class TimeGame : MonoBehaviour {
 		}
 	}
 
+    public void ShowPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+    }
+
 	void GameLogic(){
 
 		if(Attention > 65)

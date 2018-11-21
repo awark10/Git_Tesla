@@ -46,5 +46,6 @@ public class TimePause : MonoBehaviour {
 	public void HideStat()
 	{
 		statisticMenu.SetActive(false);
-	}
+        gameUI.SetActive(true);
+    }
 }
