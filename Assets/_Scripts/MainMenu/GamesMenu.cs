@@ -16,10 +16,13 @@ public class GamesMenu : MonoBehaviour {
 
 	void Update () {
 
-		if (!GDATA.Instance.isDemo){
-			
-			if (!GDATA.Instance.isSignal)
-			{
+        //if (!GDATA.Instance.isDemo){
+        if (!CONNECTOR.Instance.isDemo)
+        {
+
+            // if (!GDATA.Instance.isSignal)
+            if (!CONNECTOR.Instance.isSignal)
+            {
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);
 			}

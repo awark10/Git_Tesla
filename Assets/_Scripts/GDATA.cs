@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GDATA : MonoBehaviour {
 
 	public static GDATA Instance { get; set;}
-	public ThinkGearController controller;
 
 	[Range(0, 100)]
 	public int Attention = 0;
@@ -17,8 +17,10 @@ public class GDATA : MonoBehaviour {
 
 	public bool isDemo = false;
 	public bool isSignal = false;
-
-	void Awake (){
+    public Text debugTextField;
+    public float poorSignal=0;
+    ThinkGearController gearController;
+    void Awake (){
 
 		if (Instance == null) 
 		{
@@ -29,25 +31,38 @@ public class GDATA : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+        gearController = GetComponent<ThinkGearController>();
 
-	}
+    }
 
 	void Start () 
 	{
-		controller.UpdateAttentionEvent += OnUpdateAttention;
-		controller.UpdateMeditationEvent += OnUpdateMeditation;
-		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+        /* ThinkGearController.Instance = GetComponent<ThinkGearController>();
 
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
-	}
+         ThinkGearController.Instance.UpdateAttentionEvent += OnUpdateAttention;
+         ThinkGearController.Instance.UpdateMeditationEvent += OnUpdateMeditation;
+         ThinkGearController.Instance.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+         */
+        gearController.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+        gearController.UpdateAttentionEvent += OnUpdateAttention;
+        gearController.UpdateMeditationEvent += OnUpdateMeditation;
+       
+
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        debugTextField.text += " Start GData ";
+
+    }
 
 	void Update (){
-	}
+        if (poorSignal >0 )
+        debugTextField.text += " VaLUE =" + poorSignal;
+    }
 
 	void OnUpdatePoorSignal(int value)
 	{
 
-		if (value == 200) //No connection
+        poorSignal = value;
+        if (value == 200) //No connection
 		{   
 			isSignal = false;
 		} 
@@ -59,7 +74,8 @@ public class GDATA : MonoBehaviour {
 		{
 			isSignal = true;
 		}
-	}
+        
+    }
 
 	void OnUpdateAttention(int value)
 	{ 

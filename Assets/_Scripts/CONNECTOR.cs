@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CONNECTOR : MonoBehaviour {
 
@@ -8,12 +9,14 @@ public class CONNECTOR : MonoBehaviour {
 
 	public bool connectionStart = false;
 	public int timeConnection = 0;
-
-	public Texture2D[] signalIcons;
+    
+    public Texture2D[] signalIcons;
 	public static float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
+    public Text debugTextField;
 
-	void Awake (){
+    
+    void Awake (){
 
 		if (Instance == null) 
 		{
@@ -24,25 +27,96 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-	}
 
-	public void initConnection()
+       
+    }
+
+    //---------------------------------------
+    //---------------------------------------------
+    public bool isDemo = false;
+    public bool isSignal = false;
+    private int Raw = 0;
+    ThinkGearController gearController;
+    public float poorSignal = 0;
+    [Range(0, 100)]
+    public int Attention = 0;
+    [Range(0, 100)]
+    public int Meditation = 0;
+
+    public void Start()
+    {
+        UnityThinkGear.Init(true);
+        gearController = GameObject.Find("GDATA").GetComponent<ThinkGearController>();
+        gearController.UpdateRawdataEvent += OnUpdateRaw;
+        gearController.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+        gearController.UpdateAttentionEvent += OnUpdateAttention;
+        gearController.UpdateMeditationEvent += OnUpdateMeditation;
+        debugTextField.text += " UnityThinkGear.Init ";
+
+    }
+
+    public void Update()
+    {
+        if (poorSignal > 0)
+            debugTextField.text += " VaLUE =" + poorSignal;
+    }
+
+    void OnUpdateRaw(int value)
+    {
+        Raw = value;
+    }
+
+    void OnUpdatePoorSignal(int value)
+    {
+        poorSignal = value;
+        if (value == 200) //No connection
+        {
+            isSignal = false;
+        }
+        else if (value == 0)  // Stable connection
+        {
+            isSignal = true;
+            connectionStart = false;
+        }
+        else // Weak connection
+        {
+            isSignal = true;
+        }
+
+    }
+
+    void OnUpdateAttention(int value)
+    {
+        Attention = value;
+    }
+
+    void OnUpdateMeditation(int value)
+    {
+        Meditation = value;
+    }
+    //--------------------------------
+    //------------------------------------
+
+    public void initConnection()
 	{	
-		UnityThinkGear.StopStream();
+		//UnityThinkGear.StopStream();
 	}
 
 	public void cleanStatIcon(){
 		indexSignalIcons = 1;
 	}
 
-	public void openConnection(){
+	public void OpenConnection(){
 
 		timeConnection = 0;
 		connectionStart = true;
+        UnityThinkGear.StartStream();
+        StartCoroutine(ConnectionFunc());
+		
+        debugTextField.text += "UnityThinkGear.StartStream";
+        
 
-		StartCoroutine(ConnectionFunc());
-		UnityThinkGear.StartStream();
-	}
+    }
 
 	IEnumerator ConnectionFunc()
 	{
@@ -51,16 +125,17 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			timeConnection++;
 
-			if (GDATA.Instance.isSignal) {
-
-				indexSignalIcons = 0;
+            //if (GDATA.Instance.isSignal) {
+            if (isSignal)
+            {
+                indexSignalIcons = 0;
 				connectionStart = false;
 				break;
 
-			} else if (timeConnection > 10) 
+			} else if (timeConnection > 15) 
 			{
 				connectionStart = false;
-				UnityThinkGear.StopStream();
+				//UnityThinkGear.StopStream();
 				break;
 			}
 				

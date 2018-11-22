@@ -3,7 +3,7 @@ using System.Collections;
 using System.Runtime.InteropServices;
 
 public class UnityThinkGear{
-
+    
 #if UNITY_IPHONE
 	[DllImport ("__Internal")]
 	private static extern void TGAM_Init(bool rawEnabled);
@@ -49,11 +49,11 @@ public class UnityThinkGear{
 	[DllImport ("__Internal")]
 	private static extern void TGAM_SetSendBlinkEnable(bool enabled);
 #elif UNITY_ANDROID
-	/*
-    
+	
+    /*
     Following are connection status that declared in UnityThinkGear2User.Jar
     when you getConnectStatex(),the return value will be one of following string
-    	* 
+   
 	public static final String STATE_IDLE = "idle";
 	public static final String STATE_CONNECTING = "connecting";
 	public static final String STATE_CONNECTED = "connected";

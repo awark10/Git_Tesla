@@ -20,7 +20,7 @@ public class TimeConnect : MonoBehaviour {
 
 	public void StartBtn()
 	{
-		CONNECTOR.Instance.openConnection();		
+		CONNECTOR.Instance.OpenConnection();		
 	}
 
 	void Update () {

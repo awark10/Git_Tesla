@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ThinkGearController : MonoBehaviour {
-	
-	public delegate void UpdateIntValueDelegate(int value);
+
+  //  public static ThinkGearController Instance { get; set; }
+    public Text debugTextField;
+
+    public delegate void UpdateIntValueDelegate(int value);
 	public delegate void UpdateFloatValueDelegate(float value);
 	public delegate void UpdateStringValueDelegate(string value);
 
@@ -40,10 +44,22 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
 
-	void Awake(){
+    void Awake()
+    {
+       
+       /* if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
 
-		UnityThinkGear.Init (true);
-		InvokeRepeating ("CheckUpdateEvent", 0.5f, 1f);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }*/
+      //  UnityThinkGear.Init(true);
+        InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
+        debugTextField.text += "Think AWAkE";
     }
 
 	// Use this for initialization
@@ -56,8 +72,8 @@ public class ThinkGearController : MonoBehaviour {
 	}
 	
 	void CheckUpdateEvent(){
-		
-		if(!sendRawEnable && (UpdateRawdataEvent != null)){
+       
+        if (!sendRawEnable && (UpdateRawdataEvent != null)){
 			sendRawEnable = true;
 			UnityThinkGear.SetSendRawEnable(true);
 		}
@@ -125,8 +141,8 @@ public class ThinkGearController : MonoBehaviour {
 	
 	
 	void receivePoorSignal(string value){
-
-		if(UpdatePoorSignalEvent != null){
+        
+        if (UpdatePoorSignalEvent != null){
 			UpdatePoorSignalEvent(int.Parse(value));
 		}
 	}
@@ -265,7 +281,8 @@ public class ThinkGearController : MonoBehaviour {
     void receiveConnectState1(string value){
 		if(UpdateConnectStateEvent != null){
 			UpdateConnectStateEvent(value);
-		}
+          //  debugTextField.text += " sig: " + value;
+        }
 	}
 #endif	
 	//====================

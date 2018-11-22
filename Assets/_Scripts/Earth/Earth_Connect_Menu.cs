@@ -20,7 +20,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 	public void StartBtn()
 	{
-		CONNECTOR.Instance.openConnection();		
+		CONNECTOR.Instance.OpenConnection();		
 	}
 
 	void Update () {
