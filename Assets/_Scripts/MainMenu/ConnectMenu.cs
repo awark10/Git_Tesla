@@ -12,10 +12,7 @@ public class ConnectMenu : MonoBehaviour {
 	public Text longTimeConnection;
     public Text buttonConnectionText;
 
-    public void Start()
-    {
-       // CONNECTOR.Instance = GetComponent<CONNECTOR>();
-    }
+   
 
     public void StartBtn()
 	{
@@ -24,19 +21,19 @@ public class ConnectMenu : MonoBehaviour {
 
 	void OnEnable ()
 	{
-		CONNECTOR.Instance.initConnection ();
+		//CONNECTOR.Instance.initConnection ();
 	}
 
 	void Update () {
 
-        //if (GDATA.Instance.isSignal)
-        if (CONNECTOR.Instance.isSignal)
+       
+        if (GDATA.Instance.isSignal)
         {
 			connectMenu.SetActive (false);
 			gamesMenus.SetActive (true);
 		}
 
-		if (CONNECTOR.Instance.connectionStart) 
+		else if (CONNECTOR.Instance.connectionStart) 
 		{
 			connectButton.interactable = false;
 			buttonConnectionText.text = "ПОДКЛЮЧЕНИЕ";
@@ -51,8 +48,7 @@ public class ConnectMenu : MonoBehaviour {
 
     public void Demo()
     {
-        //GDATA.Instance.isDemo = true;
-        CONNECTOR.Instance.isDemo = true;
+       GDATA.Instance.isDemo = true;
         connectMenu.SetActive(false);
         gamesMenus.SetActive(true); 
     }

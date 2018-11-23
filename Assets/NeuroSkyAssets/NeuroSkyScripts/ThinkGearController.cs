@@ -57,7 +57,7 @@ public class ThinkGearController : MonoBehaviour {
         {
             Destroy(gameObject);
         }*/
-      //  UnityThinkGear.Init(true);
+        UnityThinkGear.Init(true);
         InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
         debugTextField.text += "Think AWAkE";
     }
@@ -121,11 +121,7 @@ public class ThinkGearController : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
 	
-		
-	}
 	
 	void receiveRawdata(string value){
 		if(UpdateRawdataEvent != null){

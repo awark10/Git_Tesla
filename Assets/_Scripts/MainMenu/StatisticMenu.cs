@@ -30,7 +30,7 @@ public class StatisticMenu : MonoBehaviour {
     }
     public void MovingClose()
     {
-        animator.SetInteger("statstate", 3);
+        animator.SetInteger("statstate", 0);
        
         hideObj1.SetActive(true);
         hideObj2.SetActive(true);

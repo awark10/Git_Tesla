@@ -30,72 +30,8 @@ public class CONNECTOR : MonoBehaviour {
 
        
     }
-
-    //---------------------------------------
-    //---------------------------------------------
-    public bool isDemo = false;
-    public bool isSignal = false;
-    private int Raw = 0;
-    ThinkGearController gearController;
-    public float poorSignal = 0;
-    [Range(0, 100)]
-    public int Attention = 0;
-    [Range(0, 100)]
-    public int Meditation = 0;
-
-    public void Start()
-    {
-        UnityThinkGear.Init(true);
-        gearController = GameObject.Find("GDATA").GetComponent<ThinkGearController>();
-        gearController.UpdateRawdataEvent += OnUpdateRaw;
-        gearController.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-        gearController.UpdateAttentionEvent += OnUpdateAttention;
-        gearController.UpdateMeditationEvent += OnUpdateMeditation;
-        debugTextField.text += " UnityThinkGear.Init ";
-
-    }
-
-    public void Update()
-    {
-        if (poorSignal > 0)
-            debugTextField.text += " VaLUE =" + poorSignal;
-    }
-
-    void OnUpdateRaw(int value)
-    {
-        Raw = value;
-    }
-
-    void OnUpdatePoorSignal(int value)
-    {
-        poorSignal = value;
-        if (value == 200) //No connection
-        {
-            isSignal = false;
-        }
-        else if (value == 0)  // Stable connection
-        {
-            isSignal = true;
-            connectionStart = false;
-        }
-        else // Weak connection
-        {
-            isSignal = true;
-        }
-
-    }
-
-    void OnUpdateAttention(int value)
-    {
-        Attention = value;
-    }
-
-    void OnUpdateMeditation(int value)
-    {
-        Meditation = value;
-    }
-    //--------------------------------
-    //------------------------------------
+    
+  
 
     public void initConnection()
 	{	
@@ -125,9 +61,8 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			timeConnection++;
 
-            //if (GDATA.Instance.isSignal) {
-            if (isSignal)
-            {
+            if (GDATA.Instance.isSignal) {
+           
                 indexSignalIcons = 0;
 				connectionStart = false;
 				break;
@@ -156,12 +91,7 @@ public class CONNECTOR : MonoBehaviour {
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
 	}
-/*
-    rectX = Screen.width / 10;
-		rectY = Screen.height / 3;
-		rectWidth = Screen.width* 8 / 10;
-		rectHeight = Screen.height / 4;
-        */
+
 	void FixedUpdate()
 	{
 		if (connectionStart)

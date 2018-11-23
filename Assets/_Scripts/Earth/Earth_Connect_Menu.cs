@@ -15,7 +15,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 
 	void OnEnable ()
 	{
-		CONNECTOR.Instance.initConnection ();
+	//	CONNECTOR.Instance.initConnection ();
 	}
 
 	public void StartBtn()
@@ -31,7 +31,7 @@ public class Earth_Connect_Menu : MonoBehaviour {
 			gameUI.SetActive (true);
 		}
 
-		if (CONNECTOR.Instance.connectionStart) 
+        if (CONNECTOR.Instance.connectionStart) 
 		{
 			connectButton.interactable = false;
 			buttonConnectionText.text = "ПОДКЛЮЧЕНИЕ";
@@ -40,11 +40,11 @@ public class Earth_Connect_Menu : MonoBehaviour {
 		{
 			buttonConnectionText.text = "ПОДКЛЮЧИТЬ";
 			connectButton.interactable = true;
-			CONNECTOR.Instance.cleanStatIcon ();
+			//CONNECTOR.Instance.cleanStatIcon ();
 		}
-	}
+    }
 
-	public void Demo()
+    public void Demo()
 	{
 		GDATA.Instance.Attention = 34;
 		GDATA.Instance.Meditation = 58;
