@@ -11,6 +11,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_SCENES/EarthScene.unity
     guid: 52362add6c31c49559743af7bc64b59f
-  - enabled: 0
+  - enabled: 1
     path: Assets/_SCENES/ClockScene.unity
     guid: 5dce4da46cb064f49b320cf6c24f9368

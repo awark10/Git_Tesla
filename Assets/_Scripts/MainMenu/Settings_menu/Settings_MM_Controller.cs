@@ -7,13 +7,13 @@ public class Settings_MM_Controller : MonoBehaviour {
     public GameObject settingsMenu;
     public GameObject gamesMenu;
     public GameObject connectMenu;
-    //public GameObject aboutMenu;
+    public GameObject aboutMenu;
     public GameObject closeSettingsBTN;
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
         animator.SetInteger("setState", 0);
-      //  aboutMenu.SetActive(false);
+        aboutMenu.SetActive(false);
     }
 
     public void IdleStay()
@@ -47,6 +47,15 @@ public class Settings_MM_Controller : MonoBehaviour {
         closeSettingsBTN.SetActive(false);
         gamesMenu.SetActive(false);
         connectMenu.SetActive(true);
+    }
+    
+    public void ShowAbout()
+    {
+        aboutMenu.SetActive(true);
+    }
+    public void HideAbout()
+    {
+        aboutMenu.SetActive(false);
     }
 
     public void AppQuit()
