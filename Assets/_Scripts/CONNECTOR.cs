@@ -30,8 +30,11 @@ public class CONNECTOR : MonoBehaviour {
 
        
     }
-    
-  
+
+    public void Start()
+    {
+        
+    }
 
     public void initConnection()
 	{	
@@ -49,7 +52,7 @@ public class CONNECTOR : MonoBehaviour {
         UnityThinkGear.StartStream();
         StartCoroutine(ConnectionFunc());
 		
-        debugTextField.text += "UnityThinkGear.StartStream";
+        debugTextField.text += "\r\n"+ "UnityThinkGear.StartStream";
         
 
     }

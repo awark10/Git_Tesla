@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ThinkGearController : MonoBehaviour {
 
-  //  public static ThinkGearController Instance { get; set; }
+   public static ThinkGearController Instance { get; set; }
     public Text debugTextField;
 
     public delegate void UpdateIntValueDelegate(int value);
@@ -46,8 +46,8 @@ public class ThinkGearController : MonoBehaviour {
 
     void Awake()
     {
-       
-       /* if (Instance == null)
+      
+     if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -56,10 +56,10 @@ public class ThinkGearController : MonoBehaviour {
         else
         {
             Destroy(gameObject);
-        }*/
+        }
         UnityThinkGear.Init(true);
         InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
-        debugTextField.text += "Think AWAkE";
+        debugTextField.text += "\r\n" + " UnityThinkGear.Init ";
     }
 
 	// Use this for initialization
@@ -120,10 +120,15 @@ public class ThinkGearController : MonoBehaviour {
 			UnityThinkGear.SetSendBlinkEnable(false);
 		}
 	}
-	
-	
-	
-	void receiveRawdata(string value){
+
+    void Update()
+    {
+
+
+    }
+
+
+    void receiveRawdata(string value){
 		if(UpdateRawdataEvent != null){
 			UpdateRawdataEvent(int.Parse(value));
 		}
@@ -141,7 +146,8 @@ public class ThinkGearController : MonoBehaviour {
         if (UpdatePoorSignalEvent != null){
 			UpdatePoorSignalEvent(int.Parse(value));
 		}
-	}
+        //else debugTextField.text += " Think No Signal ";
+    }
 	void receiveAttention(string value){
 
 		if(UpdateAttentionEvent != null){

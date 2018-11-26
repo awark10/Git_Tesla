@@ -52,8 +52,8 @@ public class Sound_controller : MonoBehaviour {
         if (enabled)
         {
             AudioListener.volume = 1f;
-            image.sprite = disableSprite;
-            imageBack.color = Color.grey;
+            image.sprite = enableSprite;
+            imageBack.color = Color.green;
             sound = 1;
             PlayerPrefs.SetInt("savesound", sound);
             PlayerPrefs.Save();
@@ -61,8 +61,9 @@ public class Sound_controller : MonoBehaviour {
         else
         {
             AudioListener.volume = 0f;
-            image.sprite = enableSprite;
-            imageBack.color = Color.green;
+            image.sprite = disableSprite;
+            imageBack.color = Color.grey;
+            
             sound = 0;
             PlayerPrefs.SetInt("savesound", sound);
             PlayerPrefs.Save();

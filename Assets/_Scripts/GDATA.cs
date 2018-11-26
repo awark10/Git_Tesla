@@ -19,7 +19,7 @@ public class GDATA : MonoBehaviour {
 	public bool isSignal = false;
     public Text debugTextField;
     public float poorSignal=0;
-    ThinkGearController gearController;
+   // ThinkGearController gearController;
     void Awake (){
 
 		if (Instance == null) 
@@ -31,25 +31,28 @@ public class GDATA : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-        gearController = GetComponent<ThinkGearController>();
+      //  gearController = GetComponent<ThinkGearController>();
 
     }
 
 	void Start () 
 	{
-        /* ThinkGearController.Instance = GetComponent<ThinkGearController>();
+        // ThinkGearController.Instance = GetComponent<ThinkGearController>();
 
          ThinkGearController.Instance.UpdateAttentionEvent += OnUpdateAttention;
          ThinkGearController.Instance.UpdateMeditationEvent += OnUpdateMeditation;
          ThinkGearController.Instance.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-         */
+        /*
         gearController.UpdatePoorSignalEvent += OnUpdatePoorSignal;
         gearController.UpdateAttentionEvent += OnUpdateAttention;
         gearController.UpdateMeditationEvent += OnUpdateMeditation;
-       
+       */
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        debugTextField.text += " Start GData ";
+        if (ThinkGearController.Instance == null)
+            debugTextField.text += "\r\n" + " ThinkGearController.Instance = null ";
+        else
+        debugTextField.text += "\r\n" + " ThinkGearController.Instance OK ";
 
     }
 
