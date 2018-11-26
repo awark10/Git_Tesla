@@ -9,33 +9,36 @@ public class Earth_Game_Menu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject startMenu;
     public GameObject statisticMenu;
+    public GameObject gameUI;
     // Use this for initialization
     private void Start()
     {
         //startMenu.SetActive(true);
-        pauseMenu.SetActive(false);
+       // pauseMenu.SetActive(false);
         statisticMenu.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
-    }
+     void Update()
+     {
+         if (Input.GetKeyDown(KeyCode.Escape))
+         {
+            ContinueGame();
+         }
+     }
 
-    public void PauseGame()
-    {
+     public void PauseGame()
+     {
 
-        pauseMenu.SetActive(true);
-		//Earth_Game.btnGame = 0;
-    }
+         pauseMenu.SetActive(true);
+         gameUI.SetActive(false);
+         //Earth_Game.btnGame = 0;
+     }
     public void ContinueGame()
     {
         pauseMenu.SetActive(false);
-		//Earth_Game.btnGame = 1;
+        gameUI.SetActive(true);
+        //Earth_Game.btnGame = 1;
     }
     public void Quit()
     {

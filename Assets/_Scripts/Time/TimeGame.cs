@@ -26,9 +26,9 @@ public class TimeGame : MonoBehaviour {
 	private float tmpAtSliderVal = 0;
 
 	// Use this for initialization
-	void Start () {
+	/*void Start () {
 		
-	}
+	}*/
 
 	void OnEnable(){
 
@@ -57,9 +57,7 @@ public class TimeGame : MonoBehaviour {
 				connectMenu.SetActive (true);
 			}
 
-			if (Input.GetKeyDown (KeyCode.Escape)) {
-				pauseMenu.SetActive (true);
-			}
+			
 		}
 		else 
 		{
@@ -67,11 +65,16 @@ public class TimeGame : MonoBehaviour {
 			Meditation = GDATA.Instance.Meditation;
 			UIupdate ();
 		}
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ShowPauseMenu();
+        }
+    }
 
     public void ShowPauseMenu()
     {
         pauseMenu.SetActive(true);
+        gameUI.SetActive(false);
     }
 
 	void GameLogic(){

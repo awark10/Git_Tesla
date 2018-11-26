@@ -9,6 +9,7 @@ public class Settings_MM_Controller : MonoBehaviour {
     public GameObject connectMenu;
     public GameObject aboutMenu;
     public GameObject closeSettingsBTN;
+    public GameObject profileUpButton;
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
@@ -20,6 +21,7 @@ public class Settings_MM_Controller : MonoBehaviour {
     {
         animator.SetInteger("setState", 0);
         closeSettingsBTN.SetActive(false);
+        profileUpButton.SetActive(true);
         //aboutMenu.SetActive(false);
     }
 
@@ -29,16 +31,19 @@ public class Settings_MM_Controller : MonoBehaviour {
     {
         animator.SetInteger("setState", 2);
         closeSettingsBTN.SetActive(true);
+        profileUpButton.SetActive(false);
     }
     public void MovingOpen()
     {
         animator.SetInteger("setState", 2);
         closeSettingsBTN.SetActive(true);
+        profileUpButton.SetActive(false);
     }
     public void MovingClose()
     {
         animator.SetInteger("setState", 0);
         closeSettingsBTN.SetActive(false);
+        profileUpButton.SetActive(true);
     }
 
     public void Connection()

@@ -18,13 +18,20 @@ public class TimePause : MonoBehaviour {
 		//statisticMenu.SetActive(false);
 	}
 
-	void OnEnable (){
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ContinueGame();
+        }
+    }
+    /*void OnEnable (){
 
 		pauseMenu.SetActive(true);
 		gameUI.SetActive(false);
 	}
-
-	public void ContinueGame()
+*/
+    public void ContinueGame()
 	{
 		pauseMenu.SetActive(false);
 		gameUI.SetActive(true);

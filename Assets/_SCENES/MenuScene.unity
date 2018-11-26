@@ -188,30 +188,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2029304203}
   m_Script: {fileID: 11500000, guid: 79f151f5eb2d27b41bda6cb97cd0fe3f, type: 3}
---- !u!1 &85642724 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1804285922921554, guid: 3692a28c6b18ddb4abbe59ecc0445a5e,
-    type: 2}
-  m_PrefabInternal: {fileID: 2029304203}
---- !u!114 &85642725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85642724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a994dbc44bbed4abe13863b891eb5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attention: 0
-  Meditation: 0
-  userName: Petro
-  userAge: 29
-  isDemo: 0
-  isSignal: 0
-  debugTextField: {fileID: 452626387}
-  poorSignal: 0
 --- !u!1 &139016114
 GameObject:
   m_ObjectHideFlags: 0
@@ -8183,6 +8159,7 @@ MonoBehaviour:
   connectMenu: {fileID: 892234193}
   aboutMenu: {fileID: 1501696915}
   closeSettingsBTN: {fileID: 568356293}
+  profileUpButton: {fileID: 1195177998}
 --- !u!95 &1786542752
 Animator:
   serializedVersion: 3
@@ -8724,7 +8701,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e9486240e7a5ec54ba1ca3dd5b6ced34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ecb5bf52bb708c43bcb1489fae7e752, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9193,7 +9170,12 @@ Prefab:
       propertyPath: debugTextField
       value: 
       objectReference: {fileID: 452626387}
-    - target: {fileID: 114774245985484004, guid: 3692a28c6b18ddb4abbe59ecc0445a5e,
+    - target: {fileID: 114854876169882524, guid: 3692a28c6b18ddb4abbe59ecc0445a5e,
+        type: 2}
+      propertyPath: debugTextField
+      value: 
+      objectReference: {fileID: 452626387}
+    - target: {fileID: 114173910456546194, guid: 3692a28c6b18ddb4abbe59ecc0445a5e,
         type: 2}
       propertyPath: debugTextField
       value: 

@@ -19,8 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4884585696266414}
-  - component: {fileID: 114774245985484004}
   - component: {fileID: 114017401015664240}
+  - component: {fileID: 114854876169882524}
+  - component: {fileID: 114173910456546194}
   m_Layer: 0
   m_Name: GDATA
   m_TagString: Untagged
@@ -61,12 +62,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 936ab06dcf2334223b141b4283f54156, type: 3}
   - {fileID: 2800000, guid: b2c11302c60af4454b750566f9db7eca, type: 3}
   debugTextField: {fileID: 0}
-  isDemo: 0
-  isSignal: 0
-  poorSignal: 0
-  Attention: 0
-  Meditation: 0
---- !u!114 &114774245985484004
+--- !u!114 &114173910456546194
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,3 +74,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugTextField: {fileID: 0}
+--- !u!114 &114854876169882524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804285922921554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a994dbc44bbed4abe13863b891eb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attention: 0
+  Meditation: 0
+  userName: Petro
+  userAge: 29
+  isDemo: 0
+  isSignal: 0
+  debugTextField: {fileID: 0}
+  poorSignal: 0

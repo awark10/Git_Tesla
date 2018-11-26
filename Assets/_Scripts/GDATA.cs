@@ -35,13 +35,17 @@ public class GDATA : MonoBehaviour {
 
     }
 
-	void Start () 
+    ThinkGearController controller;
+
+    void Start () 
 	{
         // ThinkGearController.Instance = GetComponent<ThinkGearController>();
 
-         ThinkGearController.Instance.UpdateAttentionEvent += OnUpdateAttention;
-         ThinkGearController.Instance.UpdateMeditationEvent += OnUpdateMeditation;
-         ThinkGearController.Instance.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+        //controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
+
+        ThinkGearController.Instance.GetComponent<ThinkGearController>().UpdateAttentionEvent += OnUpdateAttention;
+        ThinkGearController.Instance.GetComponent<ThinkGearController>().UpdateMeditationEvent += OnUpdateMeditation;
+        ThinkGearController.Instance.GetComponent<ThinkGearController>().UpdatePoorSignalEvent += OnUpdatePoorSignal;
         /*
         gearController.UpdatePoorSignalEvent += OnUpdatePoorSignal;
         gearController.UpdateAttentionEvent += OnUpdateAttention;

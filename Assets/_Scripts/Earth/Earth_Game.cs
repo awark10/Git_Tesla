@@ -63,22 +63,36 @@ public class Earth_Game : MonoBehaviour {
 				gameUI.SetActive (false);
 				connectMenu.SetActive (true);
 			}
-
-			if (Input.GetKeyDown (KeyCode.Escape)) {
+            
+            /*if (Input.GetKeyDown (KeyCode.Escape)) {
 				pauseMenu.SetActive (true);
 				//Time.timeScale = 0;
-			}
-		}
+			}*/
+        }
 		else 
 		{
 			Attention = GDATA.Instance.Attention;
 			Meditation = GDATA.Instance.Meditation;
 			UIupdate ();
 		}
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
 
+    private void OnGUI()
+    {
+        
+    }
 
-	void GameLogic()
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        gameUI.SetActive(false);
+    }
+
+    void GameLogic()
 	{
 
 		// Game start
