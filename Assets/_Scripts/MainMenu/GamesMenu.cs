@@ -37,4 +37,9 @@ public class GamesMenu : MonoBehaviour {
 	{
 		SceneManager.LoadScene("EarthScene");
 	}
+
+    public void LoadColorsGame()
+    {
+        SceneManager.LoadScene("ColorsScene");
+    }
 }
