@@ -84,7 +84,7 @@ public class CONNECTOR : MonoBehaviour {
 
 	void OnGUI()
 	{
-        GUILayout.BeginArea(new Rect(Screen.width - 50, 10, Screen.width-15 , Screen.height-10 ));
+        GUILayout.BeginArea(new Rect(Screen.width - 50, 25, Screen.width-25 , Screen.height-25 ));
 		GUILayout.BeginHorizontal();
         //GUILayout.Label("Demo");
       //  GUILayout.Height(Screen.height - 255);

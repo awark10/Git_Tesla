@@ -11,13 +11,16 @@ public class ConnectMenu : MonoBehaviour {
 	public Button connectButton;
 	public Text longTimeConnection;
     public Text buttonConnectionText;
+    //public GameObject profileHeaderMenu;
 
-   
+
 
     public void StartBtn()
 	{
-		CONNECTOR.Instance.OpenConnection();		
-	}
+		CONNECTOR.Instance.OpenConnection();
+       // profileHeaderMenu.SetActive(true);
+
+    }
 
 	void OnEnable ()
 	{

@@ -8,8 +8,13 @@ public class GamesMenu : MonoBehaviour {
 
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
+    public AudioClip clickSound;
 
-	void OnEnable () {
+    public void Start()
+    {
+        GetComponent<AudioSource>().clip = clickSound;
+    }
+    void OnEnable () {
 
 		gamesMenus.SetActive (true);
 	}
@@ -31,15 +36,18 @@ public class GamesMenu : MonoBehaviour {
 	public void LoadTimeGame()
 	{
 		SceneManager.LoadScene("ClockScene");
-	}
+        GetComponent<AudioSource>().Play();
+    }
 
 	public void LoadEarthGame()
 	{
 		SceneManager.LoadScene("EarthScene");
-	}
+        GetComponent<AudioSource>().Play();
+    }
 
     public void LoadColorsGame()
     {
         SceneManager.LoadScene("ColorsScene");
+        GetComponent<AudioSource>().Play();
     }
 }
