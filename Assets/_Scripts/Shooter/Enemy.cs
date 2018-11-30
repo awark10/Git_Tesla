@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour {
     }
     public void Destraction()
     {
-        //Instantiate(destructionVFX, transform.position, Quaternion.identity);
+        Instantiate(destructionVFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
