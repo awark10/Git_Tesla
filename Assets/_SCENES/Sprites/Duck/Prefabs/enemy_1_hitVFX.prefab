@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallObject: {fileID: 1762797192033130, guid: 083498d9c4a68cc488d6d4651993d38e, type: 2}
   timer: 0
-  holdtime: 1.5
+  holdtime: 1
 --- !u!212 &212280940354849968
 SpriteRenderer:
   m_ObjectHideFlags: 1
