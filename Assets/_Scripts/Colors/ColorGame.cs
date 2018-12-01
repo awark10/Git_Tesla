@@ -69,16 +69,7 @@ public class ColorGame : MonoBehaviour {
 
 	void GameLogic(){
 
-		if(Attention > 65)
-			clock.clockSpeed = 0.5f;
-		else if (Attention > 75)
-			clock.clockSpeed = 0.3f;
-		else if (Attention > 85)
-			clock.clockSpeed = 0.25f;
-		else if (Attention > 90)
-			clock.clockSpeed = 0.1f;
-		else
-			clock.clockSpeed = 1f;
+
 	}
 
 	void UIupdate() {
