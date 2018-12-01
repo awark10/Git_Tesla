@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClockGame: MonoBehaviour {
-
-	public Clock clock;
+public class ColorGame : MonoBehaviour {
 
 	public GameObject gameUI;
 	public GameObject connectMenu;
@@ -30,14 +28,6 @@ public class ClockGame: MonoBehaviour {
 		
 	}*/
 
-	void OnEnable(){
-
-		clock.hour=System.DateTime.Now.Hour;
-		clock.minutes=System.DateTime.Now.Minute;
-		clock.seconds=System.DateTime.Now.Second;
-		clock.rotateSecondAngle = System.DateTime.Now.Second;
-	}
-	
 	void Update()
 	{
 
@@ -46,7 +36,7 @@ public class ClockGame: MonoBehaviour {
 			if (GDATA.Instance.isSignal)
 			{
 				Attention = GDATA.Instance.Attention;
-				Meditation = 0;
+				Meditation = GDATA.Instance.Meditation;
 
 				GameLogic ();
 				UIupdate ();
@@ -57,7 +47,7 @@ public class ClockGame: MonoBehaviour {
 				connectMenu.SetActive (true);
 			}
 
-			
+
 		}
 		else 
 		{
@@ -65,17 +55,17 @@ public class ClockGame: MonoBehaviour {
 			Meditation = GDATA.Instance.Meditation;
 			UIupdate ();
 		}
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ShowPauseMenu();
-        }
-    }
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			ShowPauseMenu();
+		}
+	}
 
-    public void ShowPauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        gameUI.SetActive(false);
-    }
+	public void ShowPauseMenu()
+	{
+		pauseMenu.SetActive(true);
+		gameUI.SetActive(false);
+	}
 
 	void GameLogic(){
 
@@ -100,7 +90,6 @@ public class ClockGame: MonoBehaviour {
 		tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
 		attSlImage.fillAmount = tmpAtSliderVal / 100;
 		medSlImage.fillAmount = tmpMedSliderVal / 100;
-
-		clock.UpdateLogic ();
 	}
 }
+

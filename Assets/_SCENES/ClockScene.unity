@@ -3041,7 +3041,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1311796349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444997633e580544aa0c80ba0d0db5a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d11337348ec95f449b2ac6e2cd5976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clock: {fileID: 401183807}
@@ -4258,7 +4258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1311796352}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowPauseMenu
         m_Mode: 1
         m_Arguments:
