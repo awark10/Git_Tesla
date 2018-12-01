@@ -15,9 +15,8 @@ public class CONNECTOR : MonoBehaviour {
 	private float animationInterval = 0.06f;
     public Text debugTextField;
 
-    
-    void Awake (){
-
+    void Awake ()
+	{
 		if (Instance == null) 
 		{
 			Instance = this;
@@ -27,8 +26,6 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-
-       
     }
 
     public void Start()
@@ -45,16 +42,16 @@ public class CONNECTOR : MonoBehaviour {
 		indexSignalIcons = 1;
 	}
 
-	public void OpenConnection(){
+	public void OpenConnection()
+	{
 
 		timeConnection = 0;
 		connectionStart = true;
-        UnityThinkGear.StartStream();
         StartCoroutine(ConnectionFunc());
 		
         debugTextField.text += "\r\n"+ "UnityThinkGear.StartStream";
-        
 
+		UnityThinkGear.StartStream();
     }
 
 	IEnumerator ConnectionFunc()
