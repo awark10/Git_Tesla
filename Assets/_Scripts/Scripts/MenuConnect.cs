@@ -11,7 +11,6 @@ public class MenuConnect : MonoBehaviour {
 
 	public Button connectButton;
 	public Text buttonConnectionText;
-	public Text longTimeConnection;
 
 	void OnEnable ()
 	{
