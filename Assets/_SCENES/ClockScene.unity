@@ -546,9 +546,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1097610859}
   - {fileID: 1311796350}
   - {fileID: 644473991}
+  - {fileID: 1097610859}
   - {fileID: 1952973344}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1097610860}
+      - m_Target: {fileID: 0}
         m_MethodName: HideStat
         m_Mode: 1
         m_Arguments:
@@ -1830,7 +1830,7 @@ RectTransform:
   - {fileID: 1885421609}
   - {fileID: 95561607}
   m_Father: {fileID: 208353418}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2607,7 +2607,7 @@ RectTransform:
   - {fileID: 1896225500}
   - {fileID: 463064568}
   m_Father: {fileID: 208353418}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2622,7 +2622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1097610858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf66b155c5d16e34f817cc2f33d0317c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a1fcab522080fc46975c06be0f2db7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1097610858}
@@ -3056,7 +3056,7 @@ RectTransform:
   - {fileID: 825448146}
   - {fileID: 1622779645}
   m_Father: {fileID: 208353418}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4462,7 +4462,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1952973343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e8ba4bd835c7f45a15c8d967f17e4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ea85e417a4213b4ab9162e2c08427f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 1311796349}

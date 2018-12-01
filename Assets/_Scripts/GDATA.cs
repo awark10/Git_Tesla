@@ -53,16 +53,17 @@ public class GDATA : MonoBehaviour {
        */
 
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        if (ThinkGearController.Instance == null)
-            debugTextField.text += "\r\n" + " ThinkGearController.Instance = null ";
-        else
-        debugTextField.text += "\r\n" + " ThinkGearController.Instance OK ";
+      
+		//if (ThinkGearController.Instance == null)
+         //   debugTextField.text += "\r\n" + " ThinkGearController.Instance = null ";
+        //else
+       // debugTextField.text += "\r\n" + " ThinkGearController.Instance OK ";
 
     }
 
 	void Update (){
-        if (poorSignal >0 )
-        debugTextField.text += " VaLUE =" + poorSignal;
+        //if (poorSignal >0 )
+        //debugTextField.text += " VaLUE =" + poorSignal;
     }
 
 	void OnUpdatePoorSignal(int value)

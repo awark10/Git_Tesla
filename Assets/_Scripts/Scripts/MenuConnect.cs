@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TimeConnect : MonoBehaviour {
+public class MenuConnect : MonoBehaviour {
 
 	public GameObject gameUI;
 	public GameObject connectMenu;

@@ -1316,6 +1316,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.84560686
       objectReference: {fileID: 0}
+    - target: {fileID: 105034, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58bc3c564721a5046916b82ffd760350, type: 2}
   m_IsPrefabParent: 0
@@ -2306,13 +2310,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 910500504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f9152d7e51f934c9a9aa0a942800af, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a1fcab522080fc46975c06be0f2db7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 910500504}
-  startMenu: {fileID: 2042399131}
-  statisticMenu: {fileID: 1224604032}
   gameUI: {fileID: 348682577}
+  statisticMenu: {fileID: 1224604032}
 --- !u!1 &914858443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,7 +2394,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 910500506}
+      - m_Target: {fileID: 0}
         m_MethodName: HideStat
         m_Mode: 1
         m_Arguments:
@@ -3361,7 +3364,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1360639812
+  randomSeed: 1204444195
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7258,14 +7261,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390807931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f3035321566c3f4398c6cd3991d1834, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ea85e417a4213b4ab9162e2c08427f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 348682577}
   connectMenu: {fileID: 1390807931}
   connectButton: {fileID: 570169643}
   buttonConnectionText: {fileID: 1998662136}
-  longTimeConnection: {fileID: 1269282581}
+  longTimeConnection: {fileID: 0}
 --- !u!1 &1461009706
 GameObject:
   m_ObjectHideFlags: 0
@@ -8293,7 +8296,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &2034731001
 MonoBehaviour:
