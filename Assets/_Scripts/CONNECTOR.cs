@@ -52,9 +52,10 @@ public class CONNECTOR : MonoBehaviour {
 		connectionStart = true;
         StartCoroutine(ConnectionFunc());
 		
-        debugTextField.text += "\r\n"+ "UnityThinkGear.StartStream";
+        
 
 		UnityThinkGear.StartStream();
+        debugTextField.text += "\r\n" + "UnityThinkGear.StartStream";
     }
 
 	IEnumerator ConnectionFunc()

@@ -10,7 +10,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: 7dot8
+  companyName: dot
   productName: mindvibe
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -139,7 +139,7 @@ PlayerSettings:
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   applicationIdentifier:
-    Android: com.7dot8.mindvibe
+    Android: com.dot.mindvibe
     Standalone: unity.NeuroSky.ThinkGearUnityPlugin
     Tizen: com.yourcompany.yourappname
     iOS: com.yourcompany.yourappname
