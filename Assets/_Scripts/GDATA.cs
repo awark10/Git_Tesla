@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GDATA : MonoBehaviour {
 
 	public static GDATA Instance { get; set;}
+	private ThinkGearController controller;
 
 	[Range(0, 100)]
 	public int Attention = 0;
@@ -19,8 +20,9 @@ public class GDATA : MonoBehaviour {
 	public bool isSignal = false;
     public Text debugTextField;
     public float poorSignal=0;
-   // ThinkGearController gearController;
-    void Awake (){
+
+   
+	void Awake (){
 
 		if (Instance == null) 
 		{
@@ -31,34 +33,25 @@ public class GDATA : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-      //  gearController = GetComponent<ThinkGearController>();
+
+		print ("GDATA - Awake");
 
     }
 
-    ThinkGearController controller;
 
     void Start () 
 	{
-        // ThinkGearController.Instance = GetComponent<ThinkGearController>();
+		controller = GameObject.Find("GDATA").GetComponent<ThinkGearController>();
 
-        //controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
+		if(controller!=null)
+			print ("TGK - OK");
 
-        ThinkGearController.Instance.GetComponent<ThinkGearController>().UpdateAttentionEvent += OnUpdateAttention;
-        ThinkGearController.Instance.GetComponent<ThinkGearController>().UpdateMeditationEvent += OnUpdateMeditation;
-        ThinkGearController.Instance.GetComponent<ThinkGearController>().UpdatePoorSignalEvent += OnUpdatePoorSignal;
-        /*
-        gearController.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-        gearController.UpdateAttentionEvent += OnUpdateAttention;
-        gearController.UpdateMeditationEvent += OnUpdateMeditation;
-       */
+		controller.UpdateAttentionEvent += OnUpdateAttention;
+		controller.UpdateMeditationEvent += OnUpdateMeditation;
+		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
 
+		// Never Turn OFF Screen
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-      
-		//if (ThinkGearController.Instance == null)
-         //   debugTextField.text += "\r\n" + " ThinkGearController.Instance = null ";
-        //else
-       // debugTextField.text += "\r\n" + " ThinkGearController.Instance OK ";
-
     }
 
 	void Update (){

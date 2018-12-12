@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_SCENES/MenuScene.unity
     guid: 587854e51b4359145bd09d69754eacc1
-  - enabled: 1
+  - enabled: 0
     path: Assets/_SCENES/EarthScene.unity
     guid: 52362add6c31c49559743af7bc64b59f
-  - enabled: 1
+  - enabled: 0
     path: Assets/_SCENES/ClockScene.unity
     guid: 5dce4da46cb064f49b320cf6c24f9368
-  - enabled: 1
-    path: Assets/_SCENES/ColorsScene.unity
+  - enabled: 0
+    path: Assets/_SCENES/ColorScene.unity
     guid: ec61fdf87cefdbf42be5b22ba795a860

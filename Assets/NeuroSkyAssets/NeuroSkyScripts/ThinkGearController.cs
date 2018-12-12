@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class ThinkGearController : MonoBehaviour {
 
@@ -57,18 +58,28 @@ public class ThinkGearController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        UnityThinkGear.Init(true);
-        InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
-        debugTextField.text += "\r\n" + " UnityThinkGear.Init ";
+        
+		print ("TGC - Awake");
     }
 
 	// Use this for initialization
 	void Start () {
 	
-		sendRawEnable = UnityThinkGear.GetSendRawEnable();
-		sendEEGEnable = UnityThinkGear.GetSendEEGEnable();
-		sendESenseEnable = UnityThinkGear.GetSendESenseEnable();
-		sendBlinkEnable = UnityThinkGear.GetSendBlinkEnable();
+		try 
+		{
+			
+			UnityThinkGear.Init(true);
+
+			sendRawEnable = UnityThinkGear.GetSendRawEnable();
+			sendEEGEnable = UnityThinkGear.GetSendEEGEnable();
+			sendESenseEnable = UnityThinkGear.GetSendESenseEnable();
+			sendBlinkEnable = UnityThinkGear.GetSendBlinkEnable();
+
+		} catch (Exception e) { print ("ERROR - UnityThinkGear Init"); }
+
+
+
+		InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
 	}
 	
 	void CheckUpdateEvent(){

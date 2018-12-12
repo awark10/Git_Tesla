@@ -26,6 +26,9 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
+		print ("CONNECTOR - Awake");
+
     }
 
     public void Start()

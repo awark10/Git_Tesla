@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: 3dCraft.cn
-  productName: NeuroTesla
+  companyName: 7dot8
+  productName: mindvibe
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.022166941, g: 0.029465811, b: 0.03676468, a: 1}
@@ -139,7 +139,7 @@ PlayerSettings:
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   applicationIdentifier:
-    Android: com.threeDCraftDotCn.neurotesla
+    Android: com.7dot8.mindvibe
     Standalone: unity.NeuroSky.ThinkGearUnityPlugin
     Tizen: com.yourcompany.yourappname
     iOS: com.yourcompany.yourappname
