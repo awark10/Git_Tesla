@@ -53,5 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectionStart: 0
   timeConnection: 0
-  signalIcons: []
+  signalIcons:
+  - {fileID: 2800000, guid: 9573ec82f603047259b3652856641be6, type: 3}
+  - {fileID: 2800000, guid: bbb487fcd4f0746a6801bd638d22abb8, type: 3}
+  - {fileID: 2800000, guid: 9f17fb19a586e4d26b549e60cf699be5, type: 3}
+  - {fileID: 2800000, guid: 936ab06dcf2334223b141b4283f54156, type: 3}
+  - {fileID: 2800000, guid: b2c11302c60af4454b750566f9db7eca, type: 3}
   debugTextField: {fileID: 0}

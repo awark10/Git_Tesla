@@ -43,7 +43,6 @@ public class Earth_Game : MonoBehaviour {
 		//downTimeText.text = "";
 	}
 
-
 	void Update()
 	{
 
