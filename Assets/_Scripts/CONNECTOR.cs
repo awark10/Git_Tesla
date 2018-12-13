@@ -28,7 +28,6 @@ public class CONNECTOR : MonoBehaviour {
 		}
 
 		print ("CONNECTOR - Awake");
-
     }
 
     public void Start()
@@ -50,9 +49,7 @@ public class CONNECTOR : MonoBehaviour {
 
 		timeConnection = 0;
 		connectionStart = true;
-        StartCoroutine(ConnectionFunc());
-		
-        
+        StartCoroutine(ConnectionFunc());	  
 
 		UnityThinkGear.StartStream();
         debugTextField.text += "\r\n" + "UnityThinkGear.StartStream";

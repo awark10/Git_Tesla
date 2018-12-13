@@ -65,12 +65,12 @@ public class ThinkGearController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-			UnityThinkGear.Init(true);
+		UnityThinkGear.Init(true);
 
-			sendRawEnable = UnityThinkGear.GetSendRawEnable();
-			sendEEGEnable = UnityThinkGear.GetSendEEGEnable();
-			sendESenseEnable = UnityThinkGear.GetSendESenseEnable();
-			sendBlinkEnable = UnityThinkGear.GetSendBlinkEnable();
+		sendRawEnable = UnityThinkGear.GetSendRawEnable();
+		sendEEGEnable = UnityThinkGear.GetSendEEGEnable();
+		sendESenseEnable = UnityThinkGear.GetSendESenseEnable();
+		sendBlinkEnable = UnityThinkGear.GetSendBlinkEnable();
 
 		InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
 	}
@@ -124,13 +124,6 @@ public class ThinkGearController : MonoBehaviour {
 			UnityThinkGear.SetSendBlinkEnable(false);
 		}
 	}
-
-    void Update()
-    {
-
-
-    }
-
 
     void receiveRawdata(string value){
 		if(UpdateRawdataEvent != null){

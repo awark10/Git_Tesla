@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GDATA : MonoBehaviour {
 
 	public static GDATA Instance { get; set;}
-	ThinkGearController controller;
+	private ThinkGearController controller;
 
 	[Range(0, 100)]
 	public int Attention = 0;
@@ -36,7 +36,6 @@ public class GDATA : MonoBehaviour {
 		}
 
 		print ("GDATA - Awake");
-
     }
 
 
@@ -48,10 +47,9 @@ public class GDATA : MonoBehaviour {
         controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-        controller.UpdateConnectStateEvent += OnUpdateConnectState;
+        
 		// Never Turn OFF Screen
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
-       
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;    
     }
 
 	void Update (){
@@ -76,10 +74,6 @@ public class GDATA : MonoBehaviour {
 		}
         
     }
-    void OnUpdateConnectState(string value)
-    {
-        poorSignalText.text +=value;
-    }
 
     void OnUpdateAttention(int value)
 	{ 
@@ -94,9 +88,9 @@ public class GDATA : MonoBehaviour {
     {
        Raw = value;
     }
+
     void OnApplicationQuit()
 	{
-
 		Screen.sleepTimeout = SleepTimeout.SystemSetting;
 	}
 }
