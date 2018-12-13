@@ -6,8 +6,7 @@ using System;
 public class ThinkGearController : MonoBehaviour {
 
    public static ThinkGearController Instance { get; set; }
-  //  public Text debugTextField;
-
+  
     public delegate void UpdateIntValueDelegate(int value);
 	public delegate void UpdateFloatValueDelegate(float value);
 	public delegate void UpdateStringValueDelegate(string value);
@@ -76,7 +75,7 @@ public class ThinkGearController : MonoBehaviour {
 	}
 	
 	void CheckUpdateEvent(){
-       // debugTextField.text += "CheckUpdateEvent ";
+      
         if (!sendRawEnable && (UpdateRawdataEvent != null)){
 			sendRawEnable = true;
 			UnityThinkGear.SetSendRawEnable(true);
@@ -143,7 +142,7 @@ public class ThinkGearController : MonoBehaviour {
         if (UpdatePoorSignalEvent != null){
 			UpdatePoorSignalEvent(int.Parse(value));
 		}
-        //debugTextField.text += " Think Signal ";
+        
     }
 	void receiveAttention(string value){
 
@@ -280,18 +279,10 @@ public class ThinkGearController : MonoBehaviour {
     void receiveConnectState1(string value){
 		if(UpdateConnectStateEvent != null){
 			UpdateConnectStateEvent(value);
-          //  debugTextField.text += " sig: " + value;
         }
 	}
 #endif	
 	//====================
 
-
-	void OnApplicationQuit(){
-		//UnityThinkGear.StopStream();
-		//UnityThinkGear.Close();
-
-        //Screen.sleepTimeout = SleepTimeout.SystemSetting;
-    }
 		
 }

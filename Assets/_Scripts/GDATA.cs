@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GDATA : MonoBehaviour {
 
 	public static GDATA Instance { get; set;}
-	private ThinkGearController controller;
+	ThinkGearController controller;
 
 	[Range(0, 100)]
 	public int Attention = 0;
@@ -18,8 +18,6 @@ public class GDATA : MonoBehaviour {
 
 	public bool isDemo = false;
 	public bool isSignal = false;
-    public Text debugTextField;
-    public Text poorSignalText;
     public float poorSignal=0;
 
    

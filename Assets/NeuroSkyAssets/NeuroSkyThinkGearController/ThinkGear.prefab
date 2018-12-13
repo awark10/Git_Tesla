@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 11400002}
   - component: {fileID: 114487181986156090}
   m_Layer: 0
-  m_Name: THINKGEAR
+  m_Name: ThinkGear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

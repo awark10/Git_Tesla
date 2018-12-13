@@ -13,7 +13,7 @@ public class CONNECTOR : MonoBehaviour {
     public Texture2D[] signalIcons;
 	public static float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
-    public Text debugTextField;
+  //  public Text debugTextField;
 
     void Awake ()
 	{
@@ -52,7 +52,7 @@ public class CONNECTOR : MonoBehaviour {
         StartCoroutine(ConnectionFunc());	  
 
 		UnityThinkGear.StartStream();
-        debugTextField.text += "\r\n" + "UnityThinkGear.StartStream";
+        //debugTextField.text += "\r\n" + "UnityThinkGear.StartStream";
     }
 
 	IEnumerator ConnectionFunc()
@@ -84,10 +84,6 @@ public class CONNECTOR : MonoBehaviour {
 	{
         GUILayout.BeginArea(new Rect(Screen.width - 50, 25, Screen.width-25 , Screen.height-25 ));
 		GUILayout.BeginHorizontal();
-        //GUILayout.Label("Demo");
-      //  GUILayout.Height(Screen.height - 255);
-        //GUILayout.Space(Screen.width - 55);
-        
         GUILayout.Label(signalIcons[(int)indexSignalIcons]);
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
