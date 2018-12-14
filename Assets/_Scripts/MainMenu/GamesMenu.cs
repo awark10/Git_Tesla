@@ -50,4 +50,10 @@ public class GamesMenu : MonoBehaviour {
         SceneManager.LoadScene("ColorsScene");
         GetComponent<AudioSource>().Play();
     }
+
+    public void LoadDuckGame()
+    {
+        SceneManager.LoadScene("DuckKill");
+        GetComponent<AudioSource>().Play();
+    }
 }

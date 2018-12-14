@@ -43,7 +43,7 @@ public class MenuPause : MonoBehaviour {
 	public void ShowStat()
 	{
 		statisticMenu.SetActive(true);
-		pauseMenu.SetActive(false);
+		//pauseMenu.SetActive(false);
 	}
 
 	public void HideStartMenu()
@@ -53,6 +53,7 @@ public class MenuPause : MonoBehaviour {
 	public void HideStat()
 	{
 		statisticMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         gameUI.SetActive(true);
     }
 }

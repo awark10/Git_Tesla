@@ -234,8 +234,5 @@ public class Earth_Game : MonoBehaviour {
 		gameLevel = 0;
 		levelText.text = "";
 		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
-        
-
-        //downTimeText.text = "";
     }
 }

@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionVFX: {fileID: 1519715261905460, guid: e9358f0fe6f6ef442829ecbf3c5fb6ab,
     type: 2}
+  score: 500
 --- !u!212 &212232001455178160
 SpriteRenderer:
   m_ObjectHideFlags: 1

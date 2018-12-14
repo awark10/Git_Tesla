@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public GameObject destructionVFX;
+    public int score;
     // Use this for initialization
     void Start () {
 		
@@ -18,8 +19,7 @@ public class Enemy : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-        {
-            //  collision.GetComponent<Tower>().GetDamage(damage * damageCoeficient);
+        {   
             Destraction();
         }
     }

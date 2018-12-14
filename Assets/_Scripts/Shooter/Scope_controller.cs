@@ -13,12 +13,10 @@ public class Scope_controller : MonoBehaviour {
         public float minX, maxX, minY, maxY;
     }
 
-    [Range(-2.5f, 2.6f)]
-    public float positionX;
-
-    [Range(-2.7f, 4.5f)]
-    public float positionY;
-
+   
+  public float positionX;
+   public float positionY;
+   // public float 
     Camera mainCamera;
     public Borders borders;
     // Use this for initialization
@@ -27,34 +25,15 @@ public class Scope_controller : MonoBehaviour {
         ResizeBorders();
     }
 	
-    public void MovingScope()
+    public void MovingScope(float med, float att)
     {
-        if (Input.GetMouseButton(0)) //if mouse button was pressed       
-        {
-            Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition); //calculating mouse position in the worldspace
+        positionX = (att * mainCamera.pixelWidth) / 100;
+        positionY = (med * mainCamera.pixelHeight) / 100;
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3 (positionX, positionY, 0));//new Vector3(positionX, positionY, 0);//calculating mouse position in the worldspace
             mousePosition.z = transform.position.z;
-            transform.position = Vector3.MoveTowards(transform.position, mousePosition, 15 * Time.deltaTime);
-        }
-
-
-#if UNITY_IOS || UNITY_ANDROID //if current platform is mobile, 
-
-        if (Input.touchCount == 1) // if there is a touch
-        {
-            Touch touch = Input.touches[0];
-            Vector3 touchPosition = mainCamera.ScreenToWorldPoint(touch.position);  //calculating touch position in the world space
-            touchPosition.z = transform.position.z;
-            transform.position = Vector3.MoveTowards(transform.position, touchPosition, 15 * Time.deltaTime);
-        }
-#endif
-        transform.position = new Vector3    //if 'Player' crossed the movement borders, returning him back 
-            (
-            Mathf.Clamp(transform.position.x, borders.minX, borders.maxX),
-            Mathf.Clamp(transform.position.y, borders.minY, borders.maxY),
-            0
-            );
-        positionX = transform.position.x;
-        positionY = transform.position.y;
+            Debug.Log(mousePosition);
+            transform.position = Vector3.MoveTowards(transform.position, mousePosition, 5 * Time.deltaTime);
+      
     }
 
     void ResizeBorders()
@@ -66,6 +45,6 @@ public class Scope_controller : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-        MovingScope();
+       // MovingScope();
     }
 }
