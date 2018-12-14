@@ -73,7 +73,7 @@ public class ThinkGearController : MonoBehaviour {
 
 		//InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
 	}
-	
+/*
 	void CheckUpdateEvent(){
       
         if (!sendRawEnable && (UpdateRawdataEvent != null)){
@@ -123,7 +123,7 @@ public class ThinkGearController : MonoBehaviour {
 			UnityThinkGear.SetSendBlinkEnable(false);
 		}
 	}
-
+*/
     void receiveRawdata(string value){
 		if(UpdateRawdataEvent != null){
 			UpdateRawdataEvent(int.Parse(value));
@@ -135,8 +135,7 @@ public class ThinkGearController : MonoBehaviour {
 			UpdateBlinkEvent(int.Parse(value));
 		}
 	}
-	
-	
+		
 	void receivePoorSignal(string value){
         
         if (UpdatePoorSignalEvent != null){
