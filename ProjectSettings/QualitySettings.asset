@@ -109,7 +109,9 @@ QualitySettings:
     particleRaycastBudget: 256
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - Android
   - serializedVersion: 2
     name: Beautiful
     pixelLightCount: 3
@@ -137,6 +139,7 @@ QualitySettings:
     asyncUploadBufferSize: 4
     excludedTargetPlatforms:
     - Android
+    - Standalone
   - serializedVersion: 2
     name: Fantastic
     pixelLightCount: 4
@@ -164,6 +167,7 @@ QualitySettings:
     asyncUploadBufferSize: 4
     excludedTargetPlatforms:
     - Android
+    - Standalone
   m_PerPlatformDefaultQuality:
     Android: 1
     BlackBerry: 2

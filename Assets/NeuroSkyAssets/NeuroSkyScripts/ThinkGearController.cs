@@ -71,7 +71,7 @@ public class ThinkGearController : MonoBehaviour {
 		sendESenseEnable = UnityThinkGear.GetSendESenseEnable();
 		sendBlinkEnable = UnityThinkGear.GetSendBlinkEnable();
 
-		InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
+		//InvokeRepeating("CheckUpdateEvent", 0.5f, 1f);
 	}
 	
 	void CheckUpdateEvent(){

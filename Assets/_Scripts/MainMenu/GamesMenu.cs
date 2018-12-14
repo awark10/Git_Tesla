@@ -22,7 +22,6 @@ public class GamesMenu : MonoBehaviour {
 	void Update () {
 
         if (!GDATA.Instance.isDemo){
-       
 
              if (!GDATA.Instance.isSignal)
             
@@ -30,6 +29,11 @@ public class GamesMenu : MonoBehaviour {
 				connectMenu.SetActive (true);
 				gamesMenus.SetActive (false);
 			}
+        }
+        else
+        {
+            connectMenu.SetActive(false);
+            gamesMenus.SetActive(true);
         }
     }
 

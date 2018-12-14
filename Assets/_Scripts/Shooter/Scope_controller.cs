@@ -31,7 +31,7 @@ public class Scope_controller : MonoBehaviour {
         positionY = (med * mainCamera.pixelHeight) / 100;
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3 (positionX, positionY, 0));//new Vector3(positionX, positionY, 0);//calculating mouse position in the worldspace
             mousePosition.z = transform.position.z;
-            Debug.Log(mousePosition);
+         //   Debug.Log(mousePosition);
             transform.position = Vector3.MoveTowards(transform.position, mousePosition, 5 * Time.deltaTime);
       
     }

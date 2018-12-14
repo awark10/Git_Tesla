@@ -58,7 +58,7 @@ public class Duck_game : MonoBehaviour {
             else
             {
                 StopGame();
-                gameUI.SetActive(false);
+               // gameUI.SetActive(false);
                 connectMenu.SetActive(true);
             }
 
@@ -90,6 +90,11 @@ public class Duck_game : MonoBehaviour {
         scope.MovingScope(Meditation, Attention);
     }
 
+    public void AddScore(int newscore)
+    {
+        scoreCount += newscore;
+    }
+
     void UIupdate()
     {
 
@@ -100,17 +105,6 @@ public class Duck_game : MonoBehaviour {
         tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
         attSlImage.fillAmount = tmpAtSliderVal / 100;
         medSlImage.fillAmount = tmpMedSliderVal / 100;
-
-        /*
-		if (gameLevel != 0 && gameLevel != 4)
-		{
-			downCounter -= Time.deltaTime;
-			int td = (int)downCounter;
-			downTimeText.text = "" + td;
-
-		} else
-			downTimeText.text = "";
-		*/
     }
 
     void StopGame()
