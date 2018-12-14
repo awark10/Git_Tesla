@@ -123,8 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c269359982149b4c80a7a9ee290c9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duck_Game: {fileID: 0}
   destructionVFX: {fileID: 1214460074288858, guid: 805b83c745fa9da4cad9520d612ae33f,
     type: 2}
+  scoreVFX: {fileID: 1551414884983938, guid: f483e98fc92984148b5d6227ce660129, type: 2}
   score: 1000
 --- !u!212 &212725909931457814
 SpriteRenderer:

@@ -7,7 +7,7 @@ public class GDATA : MonoBehaviour {
 
 	public static GDATA Instance { get; set;}
 	ThinkGearController controller;
-
+    public Text debugText;
 	[Range(0, 100)]
 	public int Attention = 0;
 	[Range(0, 100)]
@@ -44,7 +44,7 @@ public class GDATA : MonoBehaviour {
         controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-        
+        controller.UpdateConnectStateEvent += OnUP;
 		// Never Turn OFF Screen
         Screen.sleepTimeout = SleepTimeout.NeverSleep;    
     }
@@ -52,8 +52,12 @@ public class GDATA : MonoBehaviour {
 	void Update (){
       
     }
+    void OnUP(string newvall)
+    {
+        debugText.text += " "+newvall;
+    }
 
-	void OnUpdatePoorSignal(int value)
+    void OnUpdatePoorSignal(int value)
 	{
        
         poorSignal = value;

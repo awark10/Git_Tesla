@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
 
     public Duck_game duck_Game;
     public GameObject destructionVFX;
+    public GameObject scoreVFX;
     public int score;
     // Use this for initialization
     void Start () {
@@ -32,7 +33,9 @@ public class Enemy : MonoBehaviour {
     public void Destraction()
     {
         Instantiate(destructionVFX, transform.position, Quaternion.identity);
+        Instantiate(scoreVFX, transform.position, Quaternion.identity);
         duck_Game.AddScore(score);
+       // duck_Game.tmpDuckLilled++;
         Destroy(gameObject);
     }
 }

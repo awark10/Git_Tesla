@@ -275,7 +275,7 @@ public class ThinkGearController : MonoBehaviour {
 	   receive "low battery" :mindwave headset's battery dose not have power.
 	   receive "bluetooth error" : Android device is not support BT.
     */
-    void receiveConnectState1(string value){
+    void receiveConnectState(string value){
 		if(UpdateConnectStateEvent != null){
 			UpdateConnectStateEvent(value);
         }

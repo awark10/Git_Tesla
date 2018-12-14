@@ -18,6 +18,9 @@ public class Duck_game : MonoBehaviour {
     public int scoreCount;
     public int duckCount;
 
+   // public int tmpDuckLilled;
+
+
     public Text attText;
     public Text medText;
     public Image attSlImage;

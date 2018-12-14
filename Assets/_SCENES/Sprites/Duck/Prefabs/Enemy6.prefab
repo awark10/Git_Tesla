@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.65
+  scaleSpeed: 0.65
 --- !u!114 &114449239147589572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,8 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c269359982149b4c80a7a9ee290c9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duck_Game: {fileID: 0}
   destructionVFX: {fileID: 1519715261905460, guid: e9358f0fe6f6ef442829ecbf3c5fb6ab,
     type: 2}
+  scoreVFX: {fileID: 1656292719301180, guid: 9fefe6b4e6fe6f7419668bc8fc745543, type: 2}
   score: 500
 --- !u!212 &212232001455178160
 SpriteRenderer:
