@@ -41,7 +41,6 @@ public class GDATA : MonoBehaviour {
 	{
 		controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
 
-        controller.UpdateRawdataEvent += OnUpdateRaw;
         controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
@@ -82,10 +81,6 @@ public class GDATA : MonoBehaviour {
 	{
 		Meditation = value;
 	}
-    void OnUpdateRaw(int value)
-    {
-       Raw = value;
-    }
 
     void OnApplicationQuit()
 	{
