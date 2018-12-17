@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Nikolo_Tesla_animationController : MonoBehaviour {
 
@@ -11,8 +9,6 @@ public class Nikolo_Tesla_animationController : MonoBehaviour {
        animator.SetInteger("nikoloState", 0);
        
     }
-	
-   
     public void Moving()
     {
          animator.SetInteger("nikoloState", 1);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Settings_MM_Controller : MonoBehaviour {
     public Animator animator;
@@ -26,7 +24,11 @@ public class Settings_MM_Controller : MonoBehaviour {
         profileUpButton.SetActive(true);
         //aboutMenu.SetActive(false);
     }
-
+    public void ShowStatStay()
+    {
+        animator.SetInteger("setState", 0);
+        closeSettingsBTN.SetActive(false);
+    }
 
 
     public void OpenedStay()
@@ -54,20 +56,22 @@ public class Settings_MM_Controller : MonoBehaviour {
     {
         animator.SetInteger("setState", 0);
         closeSettingsBTN.SetActive(false);
-        gamesMenu.SetActive(false);
-        connectMenu.SetActive(true);
+      //  gamesMenu.SetActive(false);
+      //  connectMenu.SetActive(true);
         GetComponent<AudioSource>().Play();
         profileUpButton.SetActive(true);
     }
     
     public void ShowAbout()
     {
+        animator.SetInteger("setState", 0);
         aboutMenu.SetActive(true);
         GetComponent<AudioSource>().Play();
     }
     public void HideAbout()
     {
         aboutMenu.SetActive(false);
+        animator.SetInteger("setState", 2);
         GetComponent<AudioSource>().Play();
     }
 

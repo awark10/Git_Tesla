@@ -813,10 +813,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 525201114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249d6eeeb04c0924abccbecadaebef1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a1fcab522080fc46975c06be0f2db7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 525201114}
+  gameUI: {fileID: 787654972}
   statisticMenu: {fileID: 57188040}
 --- !u!1 &528476284
 GameObject:
@@ -1708,13 +1709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70c24fc44f84f34784559fcd3c78072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameUI: {fileID: 0}
+  gameUI: {fileID: 787654972}
   connectMenu: {fileID: 1261022991}
   pauseMenu: {fileID: 525201114}
-  attText: {fileID: 0}
-  medText: {fileID: 0}
-  attSlImage: {fileID: 0}
-  medSlImage: {fileID: 0}
+  attText: {fileID: 1558117818}
+  medText: {fileID: 554266706}
+  attSlImage: {fileID: 918513704}
+  medSlImage: {fileID: 403060276}
   Attention: 0
   Meditation: 0
 --- !u!224 &787654974
@@ -3581,7 +3582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 787654973}
         m_MethodName: ShowPauseMenu
         m_Mode: 1
         m_Arguments:

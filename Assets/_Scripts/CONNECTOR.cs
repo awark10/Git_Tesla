@@ -35,14 +35,7 @@ public class CONNECTOR : MonoBehaviour {
         
     }
 
-    public void initConnection()
-	{	
-		//UnityThinkGear.StopStream();
-	}
-
-	public void cleanStatIcon(){
-		indexSignalIcons = 1;
-	}
+  
 
 	public void OpenConnection()
 	{
@@ -62,16 +55,17 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			timeConnection++;
 
-            if (GDATA.Instance.isSignal) {
+            if (GDATA.Instance.isSignal)
+            {
            
-                indexSignalIcons = 0;
+                //indexSignalIcons = 0;
 				connectionStart = false;
 				break;
 
 			} else if (timeConnection > 15) 
 			{
 				connectionStart = false;
-				//UnityThinkGear.StopStream();
+				UnityThinkGear.StopStream();
 				break;
 			}
 				
@@ -99,10 +93,13 @@ public class CONNECTOR : MonoBehaviour {
 			}
 			indexSignalIcons += animationInterval;
 		}
+        else if (GDATA.Instance.isSignal == true)
+            indexSignalIcons = 0;
+        else if (GDATA.Instance.isSignal == false)
+            indexSignalIcons = 1;
+    }
 
-	}
-
-	void OnApplicationQuit()
+    void OnApplicationQuit()
 	{
 		UnityThinkGear.StopStream();
 		UnityThinkGear.Close();

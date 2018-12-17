@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GamesMenu : MonoBehaviour {
@@ -14,11 +11,7 @@ public class GamesMenu : MonoBehaviour {
     {
         GetComponent<AudioSource>().clip = clickSound;
     }
-    void OnEnable () {
-
-		gamesMenus.SetActive (true);
-	}
-
+   
 	void Update () {
 
         if (!GDATA.Instance.isDemo){
@@ -51,7 +44,7 @@ public class GamesMenu : MonoBehaviour {
 
     public void LoadColorsGame()
     {
-        SceneManager.LoadScene("ColorsScene");
+        SceneManager.LoadScene("ColorScene");
         GetComponent<AudioSource>().Play();
     }
 

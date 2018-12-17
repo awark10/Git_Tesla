@@ -49,8 +49,11 @@ public class GDATA : MonoBehaviour {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;    
     }
 
-	void Update (){
-      
+	void Update ()
+    {
+    
+        
+
     }
     void OnUP(string newvall)
     {
@@ -58,9 +61,9 @@ public class GDATA : MonoBehaviour {
     }
 
     void OnUpdatePoorSignal(int value)
-	{
-       
+	{      
         poorSignal = value;
+
         if (value == 200) //No connection
 		{   
 			isSignal = false;
@@ -75,10 +78,19 @@ public class GDATA : MonoBehaviour {
 		}
         
     }
-
+    void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(35, 125, Screen.width - 25, Screen.height - 25));
+        GUILayout.BeginVertical();
+       // GUILayout.Label("Raw:" + Raw);
+       // GUILayout.Label("Signal:" + poorSignal);
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
+    }
     void OnUpdateAttention(int value)
 	{ 
 		Attention = value;
+        Raw++;
 	}
 
 	void OnUpdateMeditation(int value)

@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &413830
 Transform:
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 105034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -457.31613, y: -296.15, z: 0}
-  m_LocalScale: {x: 0.89401066, y: 0.8940106, z: 0.8940106}
+  m_LocalScale: {x: 0.84560996, y: 0.84560996, z: 0.84560996}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,13 +54,13 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
+  m_IgnoreNormalsForChartDetection: 1
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
+  m_MinimumChartSize: 2
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobileShader: 1
-  atmosphere: 0
+  atmosphere: 1
   updateChangeInRealTime: 0
   PlanetMaterial: {fileID: 2100000, guid: 703b2ef54ba1ee242a3a2edc38004682, type: 2}
   ringMaterial: {fileID: 0}
@@ -148,5 +148,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf8278036800eb49994b0eeec1a264d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetRotSpeed: 1
+  planetRotSpeed: 3
   planet: {fileID: 413830}

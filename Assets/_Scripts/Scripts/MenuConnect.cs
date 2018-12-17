@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MenuConnect : MonoBehaviour {
 
@@ -12,17 +9,12 @@ public class MenuConnect : MonoBehaviour {
 	public Button connectButton;
 	public Text buttonConnectionText;
 
-	void OnEnable ()
-	{
-		CONNECTOR.Instance.initConnection ();
-	}
-
 	public void StartBtn()
 	{
-		CONNECTOR.Instance.OpenConnection();		
-	}
+		CONNECTOR.Instance.OpenConnection();
+    }
 
-	void Update () {
+    void Update () {
 
 		if (GDATA.Instance.isSignal)
 		{
@@ -39,9 +31,9 @@ public class MenuConnect : MonoBehaviour {
 		{
 			buttonConnectionText.text = "ПОДКЛЮЧИТЬ";
 			connectButton.interactable = true;
-			CONNECTOR.Instance.cleanStatIcon ();
-		}
-	}
+           
+        }
+    }
 
 	public void Demo()
 	{
