@@ -17,8 +17,8 @@ public class Earth_Aura : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Meditation = GDATA.Instance.Meditation;
-		Attention  = GDATA.Instance.Attention;
+		Meditation = CONNECTOR.Instance.Meditation;
+		Attention  = CONNECTOR.Instance.Attention;
 
 		if (Meditation > 50 && Attention > 50)
 			auraSprite.color = Color.magenta;

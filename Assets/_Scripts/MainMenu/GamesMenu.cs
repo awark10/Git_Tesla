@@ -11,24 +11,6 @@ public class GamesMenu : MonoBehaviour {
     {
         GetComponent<AudioSource>().clip = clickSound;
     }
-   
-	void Update () {
-
-        if (!GDATA.Instance.isDemo){
-
-             if (!GDATA.Instance.isSignal)
-            
-            {
-				connectMenu.SetActive (true);
-				gamesMenus.SetActive (false);
-			}
-        }
-        else
-        {
-            connectMenu.SetActive(false);
-            gamesMenus.SetActive(true);
-        }
-    }
 
 	public void LoadTimeGame()
 	{

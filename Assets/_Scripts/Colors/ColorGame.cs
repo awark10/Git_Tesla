@@ -30,31 +30,19 @@ public class ColorGame : MonoBehaviour {
 
 	void Update()
 	{
-
-		if (!GDATA.Instance.isDemo) 
+		if (!CONNECTOR.Instance.isDemo) 
 		{
-			if (GDATA.Instance.isSignal)
-			{
-				Attention = GDATA.Instance.Attention;
-				Meditation = GDATA.Instance.Meditation;
-
-				GameLogic ();
-				UIupdate ();
-			} 
-			else 
-			{
-				gameUI.SetActive (false);
-				connectMenu.SetActive (true);
-			}
-
-
+			Attention = CONNECTOR.Instance.Attention;
+			Meditation = CONNECTOR.Instance.Meditation;
 		}
 		else 
 		{
-			Attention = GDATA.Instance.Attention;
-			Meditation = GDATA.Instance.Meditation;
-			UIupdate ();
+			Attention = 46;
+			Meditation = 75;
 		}
+
+		UIupdate ();
+
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			ShowPauseMenu();

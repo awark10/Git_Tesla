@@ -45,44 +45,28 @@ public class Duck_game : MonoBehaviour {
        
     }
 
-    void Update()
-    {
+	void Update()
+	{
+		if (!CONNECTOR.Instance.isDemo) 
+		{
+			Attention = CONNECTOR.Instance.Attention;
+			Meditation = CONNECTOR.Instance.Meditation;
+		}
+		else 
+		{
+			Attention = 46;
+			Meditation = 75;
+		}
 
-        if (!GDATA.Instance.isDemo)
-        {
-            if (GDATA.Instance.isSignal)
-            {
-                Attention = GDATA.Instance.Attention;
-                Meditation = GDATA.Instance.Meditation;
+		UIupdate ();
 
-                GameLogic();
-                UIupdate();
-            }
-            else
-            {
-                StopGame();
-               // gameUI.SetActive(false);
-                connectMenu.SetActive(true);
-            }
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			ShowPauseMenu();
+		}
+	}
 
-            /*if (Input.GetKeyDown (KeyCode.Escape)) {
-				pauseMenu.SetActive (true);
-				//Time.timeScale = 0;
-			}*/
-        }
-        else
-        {
-            Attention = GDATA.Instance.Attention;
-            Meditation = GDATA.Instance.Meditation;
-            UIupdate();
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
-    }
-
-    public void PauseGame()
+	public void ShowPauseMenu()
     {
         pauseMenu.SetActive(true);
         gameUI.SetActive(false);

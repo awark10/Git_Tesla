@@ -25,10 +25,10 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{		
-		if (GDATA.Instance.Attention > 0 && GDATA.Instance.Meditation > 0) 
+		if (CONNECTOR.Instance.Attention > 0 && CONNECTOR.Instance.Meditation > 0) 
 		{
-			Attention = GDATA.Instance.Attention;
-			Meditation = GDATA.Instance.Meditation;
+			Attention = CONNECTOR.Instance.Attention;
+			Meditation = CONNECTOR.Instance.Meditation;
 			AvgTime();
 			Quality();
 		}		

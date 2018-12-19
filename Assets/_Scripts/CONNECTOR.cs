@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CONNECTOR : MonoBehaviour {
 
 	public static CONNECTOR Instance { get; set;}
+	ThinkGearController controller;
 
 	public bool connectionStart = false;
 	public int timeConnection = 0;
@@ -13,7 +14,15 @@ public class CONNECTOR : MonoBehaviour {
     public Texture2D[] signalIcons;
 	public static float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
-  //  public Text debugTextField;
+
+	public bool isDemo = false;
+	public bool isSignal = false;
+	public float poorSignal=0;
+
+	[Range(0, 100)]
+	public int Attention = 0;
+	[Range(0, 100)]
+	public int Meditation = 0;
 
     void Awake ()
 	{
@@ -30,23 +39,57 @@ public class CONNECTOR : MonoBehaviour {
 		print ("CONNECTOR - Awake");
     }
 
-    public void Start()
-    {
-        
-    }
+	void Start () 
+	{
+		controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
 
-  
+		controller.UpdateAttentionEvent += OnUpdateAttention;
+		controller.UpdateMeditationEvent += OnUpdateMeditation;
+		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+		// Never Turn OFF Screen
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;    
+	}
 
 	public void OpenConnection()
 	{
+		if (!connectionStart)
+		{
+			timeConnection = 0;
+			connectionStart = true;
+			StartCoroutine(ConnectionFunc());	  
 
-		timeConnection = 0;
-		connectionStart = true;
-        StartCoroutine(ConnectionFunc());	  
-
-		UnityThinkGear.StartStream();
-        //debugTextField.text += "\r\n" + "UnityThinkGear.StartStream";
+			UnityThinkGear.StartStream();
+		}
     }
+
+	void OnUpdatePoorSignal(int value)
+	{      
+		poorSignal = value;
+
+		if (value == 200) //No connection
+		{   
+			isSignal = false;
+		} 
+		else if (value == 0)  // Stable connection
+		{
+			isSignal = true;
+		} 
+		else // Weak connection
+		{
+			isSignal = true;
+		}
+
+	}
+
+	void OnUpdateAttention(int value)
+	{ 
+		Attention = value;
+	}
+
+	void OnUpdateMeditation(int value)
+	{
+		Meditation = value;
+	}
 
 	IEnumerator ConnectionFunc()
 	{
@@ -55,10 +98,8 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			timeConnection++;
 
-            if (GDATA.Instance.isSignal)
+            if (isSignal)
             {
-           
-                //indexSignalIcons = 0;
 				connectionStart = false;
 				break;
 
@@ -73,16 +114,6 @@ public class CONNECTOR : MonoBehaviour {
 		}
 	}
 
-
-	void OnGUI()
-	{
-        GUILayout.BeginArea(new Rect(Screen.width - 50, 25, Screen.width-25 , Screen.height-25 ));
-		GUILayout.BeginHorizontal();
-        GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-        GUILayout.EndHorizontal();
-        GUILayout.EndArea();
-	}
-
 	void FixedUpdate()
 	{
 		if (connectionStart)
@@ -93,14 +124,25 @@ public class CONNECTOR : MonoBehaviour {
 			}
 			indexSignalIcons += animationInterval;
 		}
-        else if (GDATA.Instance.isSignal == true)
+        else if (isSignal == true)
             indexSignalIcons = 0;
-        else if (GDATA.Instance.isSignal == false)
+        else if (isSignal == false)
             indexSignalIcons = 1;
     }
 
+	void OnGUI()
+	{
+		GUILayout.BeginArea(new Rect(Screen.width - 50, 25, Screen.width-25 , Screen.height-25 ));
+		GUILayout.BeginHorizontal();
+		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
+		GUILayout.EndHorizontal();
+		GUILayout.EndArea();
+	}
+
     void OnApplicationQuit()
 	{
+		Screen.sleepTimeout = SleepTimeout.SystemSetting;
+
 		UnityThinkGear.StopStream();
 		UnityThinkGear.Close();
 	}
