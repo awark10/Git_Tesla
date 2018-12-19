@@ -51,6 +51,7 @@ public class ClockGame: MonoBehaviour {
 			Meditation = 0;
 		}
 
+		GameLogic ();
 		UIupdate ();
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -65,18 +66,29 @@ public class ClockGame: MonoBehaviour {
         gameUI.SetActive(false);
     }
 
+
+	public float lock90;
 	void GameLogic(){
 
-		if(Attention > 65)
-			clock.clockSpeed = 0.5f;
-		else if (Attention > 75)
-			clock.clockSpeed = 0.3f;
+	 	if (Attention > 90) 
+		{
+			lock90+=Time.deltaTime;
+			if (lock90 > 7) 
+				clock.clockSpeed = -1f;
+			else 
+				clock.clockSpeed = 0.2f;
+		}
 		else if (Attention > 85)
-			clock.clockSpeed = 0.25f;
-		else if (Attention > 90)
-			clock.clockSpeed = 0.1f;
+			clock.clockSpeed = 0.4f;
+		else if (Attention > 75)
+			clock.clockSpeed = 0.6f;
+		else if (Attention > 65)
+			clock.clockSpeed = 0.8f;
 		else
 			clock.clockSpeed = 1f;
+
+		if(Attention<90)
+			lock90 = 0;
 	}
 
 	void UIupdate() {

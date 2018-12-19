@@ -93,7 +93,6 @@ public class CONNECTOR : MonoBehaviour {
 
 	IEnumerator ConnectionFunc()
 	{
-
 		while (true) 
 		{
 			timeConnection++;
