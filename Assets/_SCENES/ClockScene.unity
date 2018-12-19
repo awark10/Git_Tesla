@@ -3433,7 +3433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1381565448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,10 +4684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea85e417a4213b4ab9162e2c08427f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameUI: {fileID: 1311796349}
-  connectMenu: {fileID: 1952973343}
-  connectButton: {fileID: 1889978077}
-  buttonConnectionText: {fileID: 344236136}
 --- !u!1001 &1979173353
 Prefab:
   m_ObjectHideFlags: 0
