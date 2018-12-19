@@ -4,9 +4,8 @@ public class Settings_MM_Controller : MonoBehaviour {
     public Animator animator;
     public GameObject settingsMenu;
     public GameObject gamesMenu;
-   // public GameObject connectMenu;
     public GameObject aboutMenu;
-    public GameObject closeSettingsBTN;
+  //  public GameObject closeSettingsBTN;
    // public GameObject profileUpButton;
     public AudioClip clickSound;
     // Use this for initialization
@@ -20,34 +19,34 @@ public class Settings_MM_Controller : MonoBehaviour {
     public void IdleStay()
     {
         animator.SetInteger("setState", 0);
-        closeSettingsBTN.SetActive(false);
+       // closeSettingsBTN.SetActive(false);
        
         //aboutMenu.SetActive(false);
     }
     public void ShowStatStay()
     {
         animator.SetInteger("setState", 0);
-        closeSettingsBTN.SetActive(false);
+       // closeSettingsBTN.SetActive(false);
     }
 
 
     public void OpenedStay()
     {
         animator.SetInteger("setState", 2);
-        closeSettingsBTN.SetActive(true);
+       // closeSettingsBTN.SetActive(true);
         
     }
     public void MovingOpen()
     {
         animator.SetInteger("setState", 2);
-        closeSettingsBTN.SetActive(true);
+       // closeSettingsBTN.SetActive(true);
        
         GetComponent<AudioSource>().Play();
     }
     public void MovingClose()
     {
         animator.SetInteger("setState", 0);
-        closeSettingsBTN.SetActive(false);
+       // closeSettingsBTN.SetActive(false);
        
         GetComponent<AudioSource>().Play();
     }
@@ -55,7 +54,7 @@ public class Settings_MM_Controller : MonoBehaviour {
     public void Connection()
     {
         animator.SetInteger("setState", 0);
-        closeSettingsBTN.SetActive(false);
+       // closeSettingsBTN.SetActive(false);
         GetComponent<AudioSource>().Play();
         
     }
