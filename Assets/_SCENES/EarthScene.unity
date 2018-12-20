@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.387
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926113378}
-  m_IndirectSpecularColor: {r: 0.0034749275, g: 0.0034761878, b: 0.0034341302, a: 0.387}
+  m_IndirectSpecularColor: {r: 0.0034689573, g: 0.0034702003, b: 0.003434366, a: 0.387}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 28
   m_WholeNumbers: 0
   m_Value: 0.398
   m_OnValueChanged:
@@ -1399,8 +1399,11 @@ MonoBehaviour:
   Attention: 0
   Meditation: 0
   gameLevel: 0
-  downCounter: 0
   gameTime: 0
+  meditationIcon: {fileID: 21300000, guid: 913a2adbcc4f3e9458bd8ab90e2cf41f, type: 3}
+  attentionIcon: {fileID: 21300000, guid: c943549117a73704c88e09c89c7178fe, type: 3}
+  iconPad: {fileID: 300804403}
+  sliderTask: {fileID: 192970906}
 --- !u!114 &348682580
 MonoBehaviour:
   m_ObjectHideFlags: 0

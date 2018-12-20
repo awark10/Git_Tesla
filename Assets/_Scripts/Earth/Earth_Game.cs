@@ -29,19 +29,19 @@ public class Earth_Game : MonoBehaviour {
 
 	[Header("Game Level Elements")]
 	public int gameLevel = 0;
-	public float downCounter = 0;
 	public float gameTime = 0;
 
-	[Header("RES")]
+	[Header("TASK BAR RES")]
 	public Sprite meditationIcon; 
 	public Sprite attentionIcon;
-	public Image iconPad;
+	public Image  iconPad;
+	public Slider sliderTask;
 
 
 	// Initialization
 	void Start()
 	{
-		levelText.text = "";
+		levelText.text = "> 50 during 15 sec";
 		//downTimeText.text = "";
 	}
 
@@ -73,12 +73,14 @@ public class Earth_Game : MonoBehaviour {
 		
 			gameTime += Time.deltaTime;
 
+			sliderTask.value = (float)gameTime;
+
 			// Level 1
 			if (gameLevel == 0 && Meditation >= 50 && Attention >= 50)
 			{
 				gameLevel = 1;
-				levelText.text = "Level 1";
-				downCounter = 7;
+				iconPad.sprite = attentionIcon;
+				levelText.text = "> 50 during 15 sec";
 			}
 			else if (gameLevel == 1 && gameTime < 7)
 			{
@@ -104,8 +106,8 @@ public class Earth_Game : MonoBehaviour {
 			if (gameLevel == 1 && Meditation >= 60 && Attention >= 60 && gameTime >= 7)
 			{
 				gameLevel = 2;
-				levelText.text = "Level 2";
-				downCounter = 7;
+				iconPad.sprite = meditationIcon;
+				levelText.text = "> 50 during 15 sec";		
 			}
 			else if (gameLevel == 2 && gameTime < 14)
 			{
@@ -133,7 +135,6 @@ public class Earth_Game : MonoBehaviour {
 				gameLevel = 3;
 				levelText.text = "Level 3";
 
-				downCounter = 7;
 			}
 			else if (gameLevel == 3 && gameTime < 21)
 			{
@@ -189,24 +190,11 @@ public class Earth_Game : MonoBehaviour {
 		tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
 		attSlImage.fillAmount = tmpAtSliderVal / 100;
 		medSlImage.fillAmount = tmpMedSliderVal / 100;
-
-		/*
-		if (gameLevel != 0 && gameLevel != 4)
-		{
-			downCounter -= Time.deltaTime;
-			int td = (int)downCounter;
-			downTimeText.text = "" + td;
-
-		} else
-			downTimeText.text = "";
-		*/
 	}
 
 	void StopGame()
 	{
 		gameTime = 0;
 		gameLevel = 0;
-		levelText.text = "";
-		float t = Mathf.Lerp(255f, 0f, Time.deltaTime);
     }
 }
