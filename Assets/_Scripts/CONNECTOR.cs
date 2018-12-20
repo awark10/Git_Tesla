@@ -8,20 +8,19 @@ public class CONNECTOR : MonoBehaviour {
 	public static CONNECTOR Instance { get; set;}
 	ThinkGearController controller;
 
-	public bool connectionStart = false;
-	public int timeConnection = 0;
-    
-    public Texture2D[] signalIcons;
-	public static float indexSignalIcons = 1;
-	private float animationInterval = 0.06f;
-
 	public bool isSignal = false;
-	public float poorSignal=0;
-
+	private float poorSignal=0;
 	[Range(0, 100)]
 	public int Attention = 0;
 	[Range(0, 100)]
 	public int Meditation = 0;
+
+	bool connectionStart = false;
+	int timeConnection = 0;
+    
+    public Texture2D[] signalIcons;
+	public static float indexSignalIcons = 1;
+	private float animationInterval = 0.06f;
 
     void Awake ()
 	{
