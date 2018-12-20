@@ -40,12 +40,13 @@ public class CONNECTOR : MonoBehaviour {
 	void Start () 
 	{
 		controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
-
 		controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+
 		// Never Turn OFF Screen
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;  
+
 		//Pre init variables
 		Attention = 49;
 		Meditation = 51;
@@ -62,35 +63,6 @@ public class CONNECTOR : MonoBehaviour {
 			UnityThinkGear.StartStream();
 		}
     }
-
-	void OnUpdatePoorSignal(int value)
-	{      
-		poorSignal = value;
-
-		if (value == 200) //No connection
-		{   
-			isSignal = false;
-		} 
-		else if (value == 0)  // Stable connection
-		{
-			isSignal = true;
-		} 
-		else // Weak connection
-		{
-			isSignal = true;
-		}
-
-	}
-
-	void OnUpdateAttention(int value)
-	{ 
-		Attention = value;
-	}
-
-	void OnUpdateMeditation(int value)
-	{
-		Meditation = value;
-	}
 
 	IEnumerator ConnectionFunc()
 	{
@@ -113,6 +85,35 @@ public class CONNECTOR : MonoBehaviour {
 				
 			yield return new WaitForSeconds (1f);
 		}
+	}
+		
+	void OnUpdateAttention(int value)
+	{ 
+		Attention = value;
+	}
+
+	void OnUpdateMeditation(int value)
+	{
+		Meditation = value;
+	}
+
+	void OnUpdatePoorSignal(int value)
+	{      
+		poorSignal = value;
+
+		if (value == 200) //No connection
+		{   
+			isSignal = false;
+		} 
+		else if (value == 0)  // Stable connection
+		{
+			isSignal = true;
+		} 
+		else // Weak connection
+		{
+			isSignal = true;
+		}
+
 	}
 
 	void FixedUpdate()

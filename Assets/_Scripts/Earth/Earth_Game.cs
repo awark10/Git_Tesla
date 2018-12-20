@@ -42,7 +42,6 @@ public class Earth_Game : MonoBehaviour {
 
 	void Update()
 	{
-
 		Attention = CONNECTOR.Instance.Attention;
 		Meditation = CONNECTOR.Instance.Meditation;
 
