@@ -32,6 +32,11 @@ public class Earth_Game : MonoBehaviour {
 	public float downCounter = 0;
 	public float gameTime = 0;
 
+	[Header("RES")]
+	public Sprite meditationIcon; 
+	public Sprite attentionIcon;
+	public Image iconPad;
+
 
 	// Initialization
 	void Start()
