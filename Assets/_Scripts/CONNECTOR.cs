@@ -8,20 +8,19 @@ public class CONNECTOR : MonoBehaviour {
 	public static CONNECTOR Instance { get; set;}
 	ThinkGearController controller;
 
-	public bool connectionStart = false;
-	public int timeConnection = 0;
-    
-    public Texture2D[] signalIcons;
-	public static float indexSignalIcons = 1;
-	private float animationInterval = 0.06f;
-
 	public bool isSignal = false;
-	public float poorSignal=0;
-
+	private float poorSignal=0;
 	[Range(0, 100)]
 	public int Attention = 0;
 	[Range(0, 100)]
 	public int Meditation = 0;
+
+	bool connectionStart = false;
+	int timeConnection = 0;
+    
+    public Texture2D[] signalIcons;
+	public static float indexSignalIcons = 1;
+	private float animationInterval = 0.06f;
 
     void Awake ()
 	{
@@ -41,12 +40,16 @@ public class CONNECTOR : MonoBehaviour {
 	void Start () 
 	{
 		controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
-
 		controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
+
 		// Never Turn OFF Screen
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;    
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;  
+
+		//Pre init variables
+		Attention = 49;
+		Meditation = 51;
 	}
 
 	public void OpenConnection()
@@ -60,6 +63,39 @@ public class CONNECTOR : MonoBehaviour {
 			UnityThinkGear.StartStream();
 		}
     }
+
+	IEnumerator ConnectionFunc()
+	{
+		while (true) 
+		{
+			timeConnection++;
+
+            if (isSignal)
+            {
+				connectionStart = false;
+				break;
+
+			} 
+			else if (timeConnection > 15) 
+			{
+				connectionStart = false;
+				UnityThinkGear.StopStream();
+				break;
+			}
+				
+			yield return new WaitForSeconds (1f);
+		}
+	}
+		
+	void OnUpdateAttention(int value)
+	{ 
+		Attention = value;
+	}
+
+	void OnUpdateMeditation(int value)
+	{
+		Meditation = value;
+	}
 
 	void OnUpdatePoorSignal(int value)
 	{      
@@ -78,42 +114,6 @@ public class CONNECTOR : MonoBehaviour {
 			isSignal = true;
 		}
 
-	}
-
-	void OnUpdateAttention(int value)
-	{ 
-		Attention = value;
-	}
-
-	void OnUpdateMeditation(int value)
-	{
-		Meditation = value;
-	}
-
-	IEnumerator ConnectionFunc()
-	{
-		while (true) 
-		{
-			timeConnection++;
-
-            if (isSignal)
-            {
-				connectionStart = false;
-				break;
-
-			} 
-			else if (timeConnection > 15) 
-			{
-				connectionStart = false;
-				UnityThinkGear.StopStream();
-
-				Attention = 49;
-				Meditation = 51;
-				break;
-			}
-				
-			yield return new WaitForSeconds (1f);
-		}
 	}
 
 	void FixedUpdate()
