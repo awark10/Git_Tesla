@@ -35,6 +35,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
     {
         animator.SetInteger("setState", 1);
         hideButton.SetActive(false);
+        image.raycastTarget = false;
     }
 
     public void ShowAbout()
@@ -90,12 +91,12 @@ public class SwipeMenu_Controller : MonoBehaviour {
                 case TouchPhase.Began: startPos = touch.position; break;
                 case TouchPhase.Moved:
                     //swipe horizontal?
-                    if ((touch.position.x - startPos.x )> 10 || (touch.position.x - startPos.x) < -10) {
+                    if ((touch.position.x - startPos.x )> 16 || (touch.position.x - startPos.x) < -16) {
                         image.raycastTarget = true;
-                        if (touch.position.x - startPos.x > 40)
+                        if (touch.position.x - startPos.x > 50)
                         OpenedState();
                     // target = new Vector2(tr.sizeDelta.x / 2, tr.anchoredPosition.y);//show menu
-                    if (touch.position.x - startPos.x < -20)
+                    if (touch.position.x - startPos.x < -30)
                         IdleStay();
                     }
                     //target = new Vector2(-tr.sizeDelta.x / 2, tr.anchoredPosition.y);//hide menu
