@@ -45,7 +45,10 @@ public class CONNECTOR : MonoBehaviour {
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
 		// Never Turn OFF Screen
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;    
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;  
+		//Pre init variables
+		Attention = 49;
+		Meditation = 51;
 	}
 
 	public void OpenConnection()
@@ -105,9 +108,6 @@ public class CONNECTOR : MonoBehaviour {
 			{
 				connectionStart = false;
 				UnityThinkGear.StopStream();
-
-				Attention = 49;
-				Meditation = 51;
 				break;
 			}
 				
