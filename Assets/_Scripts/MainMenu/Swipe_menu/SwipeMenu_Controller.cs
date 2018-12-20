@@ -9,7 +9,11 @@ public class SwipeMenu_Controller : MonoBehaviour {
     public GameObject aboutMenu;
     public GameObject statMenu;
     public GameObject closeSettingsBTN;
+    public GameObject hideButton;
     public AudioClip clickSound;
+
+    private Vector2 startPos;
+    private Vector2 target;
     // Use this for initialization
     void Start () {
         GetComponent<AudioSource>().clip = clickSound;
@@ -20,11 +24,12 @@ public class SwipeMenu_Controller : MonoBehaviour {
     public void IdleStay()
     {
         animator.SetInteger("setState", 0);
-
+        hideButton.SetActive(true);
     }
     public void OpenedState()
     {
         animator.SetInteger("setState", 1);
+        hideButton.SetActive(false);
     }
 
     public void ShowAbout()
@@ -64,5 +69,26 @@ public class SwipeMenu_Controller : MonoBehaviour {
         SceneManager.LoadScene("MenuScene");
         GetComponent<AudioSource>().Play();
     }
+    public void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
 
+            switch (touch.phase)
+            {
+                case TouchPhase.Began: startPos = touch.position; break;
+                case TouchPhase.Moved:
+                    //swipe horizontal?
+                    if (touch.position.x - startPos.x > 40)
+                        OpenedState();
+                    // target = new Vector2(tr.sizeDelta.x / 2, tr.anchoredPosition.y);//show menu
+                    if (touch.position.x - startPos.x < -20)
+                        IdleStay();
+                        //target = new Vector2(-tr.sizeDelta.x / 2, tr.anchoredPosition.y);//hide menu
+                    break;
+            }
+        }
+
+}
 }
