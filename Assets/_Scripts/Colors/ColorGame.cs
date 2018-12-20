@@ -30,16 +30,8 @@ public class ColorGame : MonoBehaviour {
 
 	void Update()
 	{
-		if (!CONNECTOR.Instance.isDemo) 
-		{
-			Attention = CONNECTOR.Instance.Attention;
-			Meditation = CONNECTOR.Instance.Meditation;
-		}
-		else 
-		{
-			Attention = 46;
-			Meditation = 75;
-		}
+		Attention = CONNECTOR.Instance.Attention;
+		Meditation = CONNECTOR.Instance.Meditation;
 
 		UIupdate ();
 

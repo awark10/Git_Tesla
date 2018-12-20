@@ -12,7 +12,6 @@ public class Earth_Game : MonoBehaviour {
 	public GameObject pauseMenu;
 
 	public Text levelText;
-	//public Text downTimeText;
 	public Text attText;
 	public Text medText;
 	public Image attSlImage;
@@ -43,29 +42,18 @@ public class Earth_Game : MonoBehaviour {
 
 	void Update()
 	{
-		if (!CONNECTOR.Instance.isDemo) 
-		{
-			Attention = CONNECTOR.Instance.Attention;
-			Meditation = CONNECTOR.Instance.Meditation;
-		}
-		else 
-		{
-			Attention = 46;
-			Meditation = 75;
-		}
 
-		UIupdate ();
+		Attention = CONNECTOR.Instance.Attention;
+		Meditation = CONNECTOR.Instance.Meditation;
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			ShowPauseMenu();
 		}
-	}
 
-    private void OnGUI()
-    {
-        
-    }
+		UIupdate ();
+		GameLogic ();
+	}
 
 	public void ShowPauseMenu()
     {

@@ -15,7 +15,6 @@ public class CONNECTOR : MonoBehaviour {
 	public static float indexSignalIcons = 1;
 	private float animationInterval = 0.06f;
 
-	public bool isDemo = false;
 	public bool isSignal = false;
 	public float poorSignal=0;
 
@@ -102,10 +101,14 @@ public class CONNECTOR : MonoBehaviour {
 				connectionStart = false;
 				break;
 
-			} else if (timeConnection > 15) 
+			} 
+			else if (timeConnection > 15) 
 			{
 				connectionStart = false;
 				UnityThinkGear.StopStream();
+
+				Attention = 49;
+				Meditation = 51;
 				break;
 			}
 				

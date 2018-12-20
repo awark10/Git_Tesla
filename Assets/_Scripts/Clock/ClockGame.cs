@@ -40,16 +40,8 @@ public class ClockGame: MonoBehaviour {
 	
 	void Update()
 	{
-		if (!CONNECTOR.Instance.isDemo) 
-		{
-			Attention = CONNECTOR.Instance.Attention;
-			Meditation = 0;
-		}
-		else 
-		{
-			Attention = 46;
-			Meditation = 0;
-		}
+		Attention = CONNECTOR.Instance.Attention;
+		Meditation = 0;
 
 		GameLogic ();
 		UIupdate ();
