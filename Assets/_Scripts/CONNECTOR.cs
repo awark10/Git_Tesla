@@ -48,8 +48,8 @@ public class CONNECTOR : MonoBehaviour {
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;  
 
 		//Pre init variables
-		Attention = 49;
-		Meditation = 48;
+		Attention = 20;
+		Meditation = 15;
 	}
 
 	public void OpenConnection()

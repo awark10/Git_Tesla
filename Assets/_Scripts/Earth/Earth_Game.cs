@@ -41,10 +41,15 @@ public class Earth_Game : MonoBehaviour {
 	// Initialization
 	void Start()
 	{
-		levelText.text = "> 50 during 15 sec";
+
+		gameLevel = 1;
+
+		sliderTask.value = 0;
+		iconPad.sprite = attentionIcon;
+		levelText.text = "> 30 during 15 sec";
 		levelText.color = Color.gray;
 		iconPad.color = Color.gray; 
-		//downTimeText.text = "";
+		sliderTask.gameObject.SetActive(false);
 	}
 
 	void Update()
@@ -69,114 +74,217 @@ public class Earth_Game : MonoBehaviour {
 
     void GameLogic()
 	{
+		// Level 1
+		if(gameLevel == 1 && Attention >= 30 && gameTime < 15)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 15;
+			sliderTask.gameObject.SetActive(true);
 
-			// Level 1
-			if (gameLevel == 0 && Meditation >= 50)
-			{
-				gameLevel = 1;
-				iconPad.sprite = meditationIcon;
-				iconPad.color = Color.white; 
-				levelText.text = "> 50 during 15 sec";
-				levelText.color = Color.white;
-			}
-			else if (gameLevel == 1 && gameTime < 7)
-			{
-				gameTime += Time.deltaTime;
-				sliderTask.value = (float)gameTime;
+			iconPad.sprite = attentionIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 30 during 15 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 1 && Attention < 30 && gameTime < 15)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 1 && Attention >= 30 && gameTime >= 15)
+		{
+			light.lightShow();
+			gameLevel = 2;
+			gameTime = 0;
 
-				if (Meditation < 50) { 
-					gameTime = 0;
-					gameLevel = 0;
-					levelText.color = Color.gray;
-                   // Nikolo_Tesla_animationController.moving = true;
-                }
+			iconPad.sprite = meditationIcon;
+			levelText.text = "> 20 during 20 sec";
+		}
 
-            }
-			else if (gameLevel == 1 && gameTime >= 7)
-			{
-				if (Meditation >= 60 && Attention >= 60) 
-					light.lightShow(); // next level will start
-				else 
-				{
-					light.lightShow();
-					//StopGame();
-                    tesla.Moving();
-                }
-			}
+		// Level 2
+		if(gameLevel == 2 && Meditation >= 20 && gameTime < 20)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 20;
+			sliderTask.gameObject.SetActive(true);
 
-			// Level 2
-			if (gameLevel == 1 && Meditation >= 60 && Attention >= 60 && gameTime >= 7)
-			{
-				gameLevel = 2;
-				iconPad.sprite = meditationIcon;
-				levelText.text = "> 50 during 15 sec";		
-			}
-			else if (gameLevel == 2 && gameTime < 14)
-			{
-                if (Meditation < 60 || Attention < 60)
-                {
-                   // StopGame();
-                    tesla.Moving();
-                }
-			}
-			else if (gameLevel == 2 && gameTime > 14)
-			{
-				if (Meditation >= 70 && Attention >= 70) 
-					light.lightShow(); // next level will start
-				else 
-				{
-					light.lightShow();
-					//StopGame();
-				}
-			}
+			iconPad.sprite = meditationIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 20 during 20 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 2 && Meditation < 20 && gameTime < 20)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 2 && Meditation >= 20 && gameTime >= 20)
+		{
+			light.lightShow();
+			gameLevel = 3;
+			gameTime = 0;
 
-			// Level 3
-			if (gameLevel == 2 && Meditation >= 70 && Attention >= 70 && gameTime >= 14)
-			{
+			iconPad.sprite = meditationIcon;
+			levelText.text = "> 40 during 15 sec";
+		}
 
-				gameLevel = 3;
-				levelText.text = "Level 3";
+		// Level 3
+		if(gameLevel == 3 && Meditation >= 40 && gameTime < 15)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 15;
+			sliderTask.gameObject.SetActive(true);
 
-			}
-			else if (gameLevel == 3 && gameTime < 21)
-			{
-				if (Meditation < 70 || Attention < 70)
-                {
-                   // StopGame();
-                    tesla.Moving();
-                }
-            }
-			else if (gameLevel == 3 && gameTime >= 21)
-			{
-				if (Meditation >= 80 && Attention >= 80) 
-					light.lightShow(); // next level will start
-				else 
-				{
-					light.lightShow();
-					//StopGame();
-				}
-			}
+			iconPad.sprite = meditationIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 40 during 15 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 3 && Meditation < 40 && gameTime < 15)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 3 && Meditation >= 40 && gameTime >= 15)
+		{
+			light.lightShow();
+			gameLevel = 4;
+			gameTime = 0;
 
-			// Level 4
-			if (gameLevel == 3 && Meditation >= 80 && Attention >= 80 && gameTime >= 21)
-			{
+			iconPad.sprite = attentionIcon;
+			levelText.text = "> 50 during 20 sec";
+		}
 
-				gameLevel = 4;
-				levelText.text = "";
+		// Level 4
+		if(gameLevel == 4 && Attention >= 50 && gameTime < 20)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 20;
+			sliderTask.gameObject.SetActive(true);
 
-			}
-			else if (gameLevel == 4 && Meditation < 70 && gameTime < 38)
-			{
+			iconPad.sprite = attentionIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 50 during 20 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 4 && Attention < 50 && gameTime < 20)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 4 && Attention >= 50 && gameTime >= 20)
+		{
+			light.lightShow();
+			gameLevel = 5;
+			gameTime = 0;
 
-				gameTime = 20;
+			iconPad.sprite = meditationIcon;
+			levelText.text = "> 60 during 15 sec";
+		}
+				
+		// Level 5
+		if(gameLevel == 5 && Meditation >= 60 && gameTime < 15)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 15;
+			sliderTask.gameObject.SetActive(true);
 
-			}
-			else if (gameLevel == 4 && Meditation >= 70 && gameTime >= 28)
-			{
-				light.lightShow();
-				gameTime = 28;
-			}
+			iconPad.sprite = meditationIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 60 during 15 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 5 && Meditation < 60 && gameTime < 15)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 5 && Meditation >= 60 && gameTime >= 15)
+		{
+			light.lightShow();
+			gameLevel = 6;
+			gameTime = 0;
 
+			iconPad.sprite = attentionIcon;
+			levelText.text = "> 75 during 10 sec";
+		}
+
+		// Level 6
+		if(gameLevel == 6 && Attention >= 75 && gameTime < 10)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 10;
+			sliderTask.gameObject.SetActive(true);
+
+			iconPad.sprite = attentionIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 75 during 10 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 6 && Attention < 75 && gameTime < 10)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 6 && Attention >= 75 && gameTime >= 10)
+		{
+			light.lightShow();
+			gameLevel = 7;
+			gameTime = 0;
+
+			iconPad.sprite = meditationIcon;
+			levelText.text = "> 80 during 15 sec";
+		}
+
+		// Level 7
+		if(gameLevel == 7 && Meditation >= 70 && gameTime < 15)
+		{
+			gameTime += Time.deltaTime;
+			sliderTask.value = gameTime;
+			sliderTask.maxValue = 15;
+			sliderTask.gameObject.SetActive(true);
+
+			iconPad.sprite = meditationIcon;
+			iconPad.color = Color.white; 
+			levelText.text = "> 80 during 15 sec";
+			levelText.color = Color.white;
+		}
+		else if(gameLevel == 7 && Meditation < 80 && gameTime < 15)
+		{
+			gameTime = 0;
+			sliderTask.gameObject.SetActive(false);
+			iconPad.color = Color.gray; 
+			levelText.color = Color.gray;
+		}
+		else if(gameLevel == 7 && Meditation >= 80 && gameTime >= 15)
+		{
+			light.lightShow();
+			gameLevel = 7;
+			gameTime = 0;
+
+			iconPad.sprite = meditationIcon;
+			levelText.text = "> 80 during 15 sec";
+		}
+
+	//	tesla.Moving();
 	}
 
 	void UIupdate()
