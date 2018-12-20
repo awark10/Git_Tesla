@@ -49,7 +49,7 @@ public class CONNECTOR : MonoBehaviour {
 
 		//Pre init variables
 		Attention = 49;
-		Meditation = 51;
+		Meditation = 48;
 	}
 
 	public void OpenConnection()

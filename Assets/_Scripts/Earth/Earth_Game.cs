@@ -42,6 +42,8 @@ public class Earth_Game : MonoBehaviour {
 	void Start()
 	{
 		levelText.text = "> 50 during 15 sec";
+		levelText.color = Color.gray;
+		iconPad.color = Color.gray; 
 		//downTimeText.text = "";
 	}
 
@@ -68,24 +70,24 @@ public class Earth_Game : MonoBehaviour {
     void GameLogic()
 	{
 
-		// Game start
-		if (Meditation >= 50 && Attention >= 50) {
-		
-			gameTime += Time.deltaTime;
-
-			sliderTask.value = (float)gameTime;
-
 			// Level 1
-			if (gameLevel == 0 && Meditation >= 50 && Attention >= 50)
+			if (gameLevel == 0 && Meditation >= 50)
 			{
 				gameLevel = 1;
-				iconPad.sprite = attentionIcon;
+				iconPad.sprite = meditationIcon;
+				iconPad.color = Color.white; 
 				levelText.text = "> 50 during 15 sec";
+				levelText.color = Color.white;
 			}
 			else if (gameLevel == 1 && gameTime < 7)
 			{
-				if (Meditation < 50 || Attention < 50) { 
-					StopGame();
+				gameTime += Time.deltaTime;
+				sliderTask.value = (float)gameTime;
+
+				if (Meditation < 50) { 
+					gameTime = 0;
+					gameLevel = 0;
+					levelText.color = Color.gray;
                    // Nikolo_Tesla_animationController.moving = true;
                 }
 
@@ -97,7 +99,7 @@ public class Earth_Game : MonoBehaviour {
 				else 
 				{
 					light.lightShow();
-					StopGame();
+					//StopGame();
                     tesla.Moving();
                 }
 			}
@@ -113,7 +115,7 @@ public class Earth_Game : MonoBehaviour {
 			{
                 if (Meditation < 60 || Attention < 60)
                 {
-                    StopGame();
+                   // StopGame();
                     tesla.Moving();
                 }
 			}
@@ -124,7 +126,7 @@ public class Earth_Game : MonoBehaviour {
 				else 
 				{
 					light.lightShow();
-					StopGame();
+					//StopGame();
 				}
 			}
 
@@ -140,7 +142,7 @@ public class Earth_Game : MonoBehaviour {
 			{
 				if (Meditation < 70 || Attention < 70)
                 {
-                    StopGame();
+                   // StopGame();
                     tesla.Moving();
                 }
             }
@@ -151,7 +153,7 @@ public class Earth_Game : MonoBehaviour {
 				else 
 				{
 					light.lightShow();
-					StopGame();
+					//StopGame();
 				}
 			}
 
@@ -175,9 +177,6 @@ public class Earth_Game : MonoBehaviour {
 				gameTime = 28;
 			}
 
-		} else 
-			StopGame();
-
 	}
 
 	void UIupdate()
@@ -191,10 +190,4 @@ public class Earth_Game : MonoBehaviour {
 		attSlImage.fillAmount = tmpAtSliderVal / 100;
 		medSlImage.fillAmount = tmpMedSliderVal / 100;
 	}
-
-	void StopGame()
-	{
-		gameTime = 0;
-		gameLevel = 0;
-    }
 }
