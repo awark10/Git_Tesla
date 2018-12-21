@@ -26,17 +26,16 @@ public class ClockGame : MonoBehaviour {
     private float tmpAtSliderVal = 0;
 
     public bool gameAtt = true;
-    // Use this for initialization
-    void Start () {
+    
+	// Use this for initialization
+    void Start () 
+	{
+		clock.hour = System.DateTime.Now.Hour;
+		clock.minutes = System.DateTime.Now.Minute;
+		clock.seconds = System.DateTime.Now.Second;
+		clock.rotateSecondAngle = System.DateTime.Now.Second;
+
         GameAtt();
-    }
-
-    void OnEnable() {
-
-        clock.hour = System.DateTime.Now.Hour;
-        clock.minutes = System.DateTime.Now.Minute;
-        clock.seconds = System.DateTime.Now.Second;
-        clock.rotateSecondAngle = System.DateTime.Now.Second;
     }
 
     void Update()
@@ -65,6 +64,7 @@ public class ClockGame : MonoBehaviour {
         medText.color = Color.gray;
         medSlImage.color = Color.gray;
     }
+
     public void GameMed()
     {
         gameAtt = false;
@@ -99,8 +99,8 @@ public class ClockGame : MonoBehaviour {
     }
 
    
-	void UIupdate() {
-
+	void UIupdate() 
+	{
 		attText.text = "" + Attention+"%";
 		medText.text = "" + Meditation+"%";
 
