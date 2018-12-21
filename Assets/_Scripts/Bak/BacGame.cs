@@ -7,6 +7,8 @@ public class BacGame : MonoBehaviour {
 
 	public float Attention, Meditation;
 	public float avgAttention, avgMeditation;
+	public float maxAttention, maxMeditation;
+
 
 	public float Delta = 0.0f;
 	public float Theta = 0.0f;
@@ -26,12 +28,23 @@ public class BacGame : MonoBehaviour {
 	public float avgLowGamma = 0.0f;
 	public float avgHighGamma = 0.0f;
 
+	public float maxDelta = 0.0f;
+	public float maxTheta = 0.0f;
+	public float maxLowAlpha = 0.0f;
+	public float maxHighAlpha = 0.0f;
+	public float maxLowBeta = 0.0f;
+	public float maxHighBeta = 0.0f;
+	public float maxLowGamma = 0.0f;
+	public float maxHighGamma = 0.0f;
+
 	void Start () {
 		
 	}
 	
 	void Update () 
-	{
+	{		
+		if (CONNECTOR.Instance.Attention > Attention)
+			maxAttention = CONNECTOR.Instance.Attention;
 		avgAttention = (Attention + CONNECTOR.Instance.Attention) / 2;
 		Attention = CONNECTOR.Instance.Attention;
 
@@ -66,6 +79,12 @@ public class BacGame : MonoBehaviour {
 
 		collector ();
 		UIupdate ();
+	}
+
+
+	float filter()
+	{
+		
 	}
 
 	void collector ()
