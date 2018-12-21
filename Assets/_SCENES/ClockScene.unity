@@ -3352,6 +3352,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf79c99cd1049b43a5eae493d74828e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clockGame: {fileID: 1311796352}
+  avgMeditation: 0
+  avgAttention: 0
+  deepMeditationTime: 0
+  deepAttentionTime: 0
+  ballsVal: 0
+  avgMedText: {fileID: 1248865356}
+  avgAttText: {fileID: 670987864}
+  deepAttText: {fileID: 939272310}
+  deepMedText: {fileID: 1729191327}
+  gpText: {fileID: 595115090}
+  descriptionGameText: {fileID: 1672484644}
 --- !u!114 &1311796352
 MonoBehaviour:
   m_ObjectHideFlags: 0
