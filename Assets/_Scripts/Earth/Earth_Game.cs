@@ -81,7 +81,6 @@ public class Earth_Game : MonoBehaviour {
 			sliderTask.value = gameTime;
 			sliderTask.maxValue = 15;
 			 
-
 			iconPad.sprite = attentionIcon;
 			iconPad.color = Color.red; 
 			levelText.text = "> 30 during 15 sec";
@@ -91,7 +90,6 @@ public class Earth_Game : MonoBehaviour {
 		else if(gameLevel == 1 && Attention < 30 && gameTime < 15)
 		{
 			gameTime = 0;
-			
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
             taskSliderImage.color = Color.gray;
@@ -101,7 +99,6 @@ public class Earth_Game : MonoBehaviour {
 			light.lightShow();
 			gameLevel = 2;
 			gameTime = 0;
-
 			iconPad.sprite = meditationIcon;
 			levelText.text = "> 20 during 20 sec";
 		}
@@ -112,7 +109,6 @@ public class Earth_Game : MonoBehaviour {
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
 			sliderTask.maxValue = 20;
-			
 
 			iconPad.sprite = meditationIcon;
 			iconPad.color = Color.green; 
@@ -144,7 +140,6 @@ public class Earth_Game : MonoBehaviour {
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
 			sliderTask.maxValue = 15;
-			
 
 			iconPad.sprite = meditationIcon;
 			iconPad.color = Color.green; 
@@ -178,9 +173,10 @@ public class Earth_Game : MonoBehaviour {
 			 
 
 			iconPad.sprite = attentionIcon;
-			iconPad.color = Color.white; 
+			iconPad.color = Color.red; 
 			levelText.text = "> 50 during 20 sec";
-			levelText.color = Color.white;
+			levelText.color = Color.red;
+			taskSliderImage.color = Color.red;
 		}
 		else if(gameLevel == 4 && Attention < 50 && gameTime < 20)
 		{
@@ -188,6 +184,7 @@ public class Earth_Game : MonoBehaviour {
 			 
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
+			taskSliderImage.color = Color.gray;
 		}
 		else if(gameLevel == 4 && Attention >= 50 && gameTime >= 20)
 		{
@@ -208,9 +205,10 @@ public class Earth_Game : MonoBehaviour {
 			 
 
 			iconPad.sprite = meditationIcon;
-			iconPad.color = Color.white; 
+			iconPad.color = Color.green; 
 			levelText.text = "> 60 during 15 sec";
-			levelText.color = Color.white;
+			levelText.color = Color.green;
+			taskSliderImage.color = Color.green;
 		}
 		else if(gameLevel == 5 && Meditation < 60 && gameTime < 15)
 		{
@@ -218,6 +216,7 @@ public class Earth_Game : MonoBehaviour {
 			 
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
+			taskSliderImage.color = Color.gray;
 		}
 		else if(gameLevel == 5 && Meditation >= 60 && gameTime >= 15)
 		{
@@ -238,9 +237,10 @@ public class Earth_Game : MonoBehaviour {
 			 
 
 			iconPad.sprite = attentionIcon;
-			iconPad.color = Color.white; 
+			iconPad.color = Color.red; 
 			levelText.text = "> 75 during 10 sec";
-			levelText.color = Color.white;
+			levelText.color = Color.red;
+			taskSliderImage.color = Color.red;
 		}
 		else if(gameLevel == 6 && Attention < 75 && gameTime < 10)
 		{
@@ -248,6 +248,7 @@ public class Earth_Game : MonoBehaviour {
 			 
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
+			taskSliderImage.color = Color.gray;
 		}
 		else if(gameLevel == 6 && Attention >= 75 && gameTime >= 10)
 		{
@@ -268,9 +269,10 @@ public class Earth_Game : MonoBehaviour {
 			 
 
 			iconPad.sprite = meditationIcon;
-			iconPad.color = Color.white; 
+			iconPad.color = Color.green; 
 			levelText.text = "> 80 during 15 sec";
-			levelText.color = Color.white;
+			levelText.color = Color.green;
+			taskSliderImage.color = Color.green;
 		}
 		else if(gameLevel == 7 && Meditation < 80 && gameTime < 15)
 		{
@@ -278,6 +280,7 @@ public class Earth_Game : MonoBehaviour {
 			 
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
+			taskSliderImage.color = Color.gray;
 		}
 		else if(gameLevel == 7 && Meditation >= 80 && gameTime >= 15)
 		{
@@ -294,7 +297,6 @@ public class Earth_Game : MonoBehaviour {
 
 	void UIupdate()
 	{
-
 		attText.text = "" + Attention+"%";
 		medText.text = "" + Meditation+"%";
 
