@@ -25,6 +25,8 @@ public class ClockGame : MonoBehaviour {
     private float tmpMedSliderVal = 0;
     private float tmpAtSliderVal = 0;
 
+	public float saveTime; 
+
     public bool gameAtt = true;
     
 	// Use this for initialization
@@ -97,7 +99,10 @@ public class ClockGame : MonoBehaviour {
 			clock.clockSpeed = 1f;
 
 		if (value < 90)
-			lock90 = 0;        
+			lock90 = 0;     
+
+		if (value > 65)
+			saveTime += Time.deltaTime;
     }
 
    

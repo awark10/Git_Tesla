@@ -49,7 +49,7 @@ public class TimeStatistic : MonoBehaviour {
 
     void Balls()
     {
-        ballsVal = (avgMeditation + avgAttention);
+		ballsVal = (avgMeditation + avgAttention) + clockGame.saveTime;
         gpText.text = "" + ballsVal;
 
     }
