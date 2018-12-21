@@ -93,7 +93,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
                     //swipe horizontal?
                     if ((touch.position.x - startPos.x )> 16 || (touch.position.x - startPos.x) < -16) {
                         image.raycastTarget = true;
-                        if (touch.position.x - startPos.x > 50)
+                        if (touch.position.x - startPos.x > 70)
                         OpenedState();
                     // target = new Vector2(tr.sizeDelta.x / 2, tr.anchoredPosition.y);//show menu
                     if (touch.position.x - startPos.x < -30)
