@@ -116,10 +116,14 @@ public class CONNECTOR : MonoBehaviour {
 	}
 
 	void OnUpdateDelta(float value){
+        if(value >Delta)
 		Delta = value;
 	}
 	void OnUpdateTheta(float value){
-		Theta = value;
+        if (value > Theta)
+        {
+            Theta = value;
+        }
 	}
 	void OnUpdateHighAlpha(float value){
 		HighAlpha = value;
@@ -182,7 +186,18 @@ public class CONNECTOR : MonoBehaviour {
 		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
 		GUILayout.EndHorizontal();
 		GUILayout.EndArea();
-	}
+        /*
+        GUILayout.BeginVertical();
+        GUILayout.Label("Delta:" + Delta);
+        GUILayout.Label("Theta:" + Theta);
+        GUILayout.Label("LowAlpha:" + LowAlpha);
+        GUILayout.Label("HighAlpha:" + HighAlpha);
+        GUILayout.Label("LowBeta:" + LowBeta);
+        GUILayout.Label("HighBeta:" + HighBeta);
+        GUILayout.Label("LowGamma:" + LowGamma);
+        GUILayout.Label("HighGamma:" + HighGamma);
+        GUILayout.EndVertical();*/
+    }
 
     void OnApplicationQuit()
 	{

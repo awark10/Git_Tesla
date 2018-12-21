@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class SwipeMenu_Controller : MonoBehaviour {
     public Animator animator;
     public GameObject swipeMenu;
-    public GameObject aboutMenu;
-    public GameObject statMenu;
+   // public GameObject aboutMenu;
+  //  public GameObject statMenu;
     public GameObject closeSettingsBTN;
     public GameObject hideButton;
     public AudioClip clickSound;
@@ -36,31 +36,6 @@ public class SwipeMenu_Controller : MonoBehaviour {
         animator.SetInteger("setState", 1);
         hideButton.SetActive(false);
         image.raycastTarget = false;
-    }
-
-    public void ShowAbout()
-    {
-        
-        aboutMenu.SetActive(true);
-        GetComponent<AudioSource>().Play();
-    }
-    public void HideAbout()
-    {
-        aboutMenu.SetActive(false);
-        animator.SetInteger("setState", 0);
-        GetComponent<AudioSource>().Play();
-    }
-    public void ShowStat()
-    {
-        
-        statMenu.SetActive(true);
-        GetComponent<AudioSource>().Play();
-    }
-    public void HideStat()
-    {
-        animator.SetInteger("setState", 0);
-        statMenu.SetActive(false);
-        GetComponent<AudioSource>().Play();
     }
 
     public void AppQuit()
