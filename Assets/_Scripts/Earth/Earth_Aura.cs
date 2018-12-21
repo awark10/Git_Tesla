@@ -20,14 +20,6 @@ public class Earth_Aura : MonoBehaviour {
 		Meditation = CONNECTOR.Instance.Meditation;
 		Attention  = CONNECTOR.Instance.Attention;
 
-		if (Meditation > 50 && Attention > 50)
-			auraSprite.color = Color.magenta;
-		else if (Meditation > Attention)
-			auraSprite.color = Color.green;
-		else if (Attention > Meditation)
-			auraSprite.color = Color.red;
-
-		/*
 		if (Meditation == Attention)
 
 			x = Mathf.MoveTowards(x, 50, Time.deltaTime * 100);
@@ -41,7 +33,5 @@ public class Earth_Aura : MonoBehaviour {
 			x = Mathf.MoveTowards(x, 50 + Attention / 2, Time.deltaTime * 100);
 
 		auraSprite.color = Color.Lerp(Color.green, Color.red, x / 100);
-		*/
 	}
-
 }
