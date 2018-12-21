@@ -8,8 +8,7 @@ public class Earth_Game : MonoBehaviour {
 	public Earth_light light;
     public Nikolo_Tesla_animationController tesla;
     public GameObject gameUI;
-	public GameObject connectMenu;
-	public GameObject pauseMenu;
+	
 
 	public Text levelText;
 	public Text attText;
@@ -59,18 +58,13 @@ public class Earth_Game : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			ShowPauseMenu();
+			//ShowPauseMenu();
 		}
 
 		UIupdate ();
 		GameLogic ();
 	}
 
-	public void ShowPauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        gameUI.SetActive(false);
-    }
 
     void GameLogic()
 	{
