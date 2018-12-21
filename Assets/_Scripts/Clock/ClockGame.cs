@@ -46,7 +46,8 @@ public class ClockGame : MonoBehaviour {
 
         if (gameAtt == true)
             GameLogic(Attention);
-        else GameLogic(Meditation);
+        else 
+			GameLogic(Meditation);
 
         UIupdate();
 
@@ -54,12 +55,6 @@ public class ClockGame : MonoBehaviour {
         {
             //ShowPauseMenu();
         }
-    }
-
-    public void ShowPauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        gameUI.SetActive(false);
     }
 
     public void GameAtt()
@@ -80,27 +75,27 @@ public class ClockGame : MonoBehaviour {
     }
 
     public float lock90;
+    public void GameLogic(int value)
+	{
+		if (value > 90)
+		{
+			lock90 += Time.deltaTime;
+			if (lock90 > 7)
+				clock.clockSpeed = -1f;
+			else
+				clock.clockSpeed = 0.2f;
+		}
+		else if (value > 85)
+			clock.clockSpeed = 0.4f;
+		else if (value > 75)
+			clock.clockSpeed = 0.6f;
+		else if (value > 65)
+			clock.clockSpeed = 0.8f;
+		else
+			clock.clockSpeed = 1f;
 
-    public void GameLogic(int value) {
-            if (value > 90)
-            {
-                lock90 += Time.deltaTime;
-                if (lock90 > 7)
-                    clock.clockSpeed = -1f;
-                else
-                    clock.clockSpeed = 0.2f;
-            }
-            else if (value > 85)
-                clock.clockSpeed = 0.4f;
-            else if (value > 75)
-                clock.clockSpeed = 0.6f;
-            else if (value > 65)
-                clock.clockSpeed = 0.8f;
-            else
-                clock.clockSpeed = 1f;
-
-            if (value < 90)
-                lock90 = 0;
+		if (value < 90)
+			lock90 = 0;        
     }
 
    
