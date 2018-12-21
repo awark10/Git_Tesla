@@ -5,18 +5,19 @@ using UnityEngine;
 
 public class Earth_Statistic_P1 : MonoBehaviour {
 
+	public Earth_Game earthGame;
+
 	public int avgMeditation, avgAttention;
 	public float deepMeditationTime, deepAttentionTime;
 	public int ballsVal;
-	
-	// Update is called once per frame
+
 	void Update () 
 	{		
 		if (CONNECTOR.Instance.Attention > 0 && CONNECTOR.Instance.Meditation > 0) 
 		{
 			AvgLevel();
 			DeepLevel ();
-			balls();
+			Balls();
 		}		
 	}
 
@@ -34,8 +35,8 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 			deepAttentionTime += Time.deltaTime;
 	}
 
-	void balls()
+	void Balls()
 	{
-
+		ballsVal = (avgMeditation + avgAttention)*earthGame.gameLevel;
 	}
 }
