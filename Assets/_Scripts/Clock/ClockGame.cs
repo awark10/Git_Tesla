@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class ClockGame : MonoBehaviour {
 
     public Clock clock;
-
+    public GameObject fog;
     public GameObject gameUI;
-    public GameObject connectMenu;
-    public GameObject pauseMenu;
+   // public GameObject connectMenu;
+   // public GameObject pauseMenu;
 
     public Text attText;
     public Text medText;
@@ -59,6 +59,7 @@ public class ClockGame : MonoBehaviour {
     public void GameAtt()
     {
         gameAtt = true;
+        fog.GetComponent<ParticleSystem>().startColor = Color.red;
         attText.color = Color.black;
         attSlImage.color = Color.red;
         medText.color = Color.gray;
@@ -68,6 +69,7 @@ public class ClockGame : MonoBehaviour {
     public void GameMed()
     {
         gameAtt = false;
+        fog.GetComponent<ParticleSystem>().startColor = Color.green;
         attText.color = Color.gray;
         attSlImage.color = Color.gray;
         medText.color = Color.black;
