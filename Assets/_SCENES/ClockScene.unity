@@ -3364,9 +3364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clock: {fileID: 401183807}
+  fog: {fileID: 1329469354}
   gameUI: {fileID: 1311796349}
-  connectMenu: {fileID: 0}
-  pauseMenu: {fileID: 0}
   attText: {fileID: 2033933418}
   medText: {fileID: 2143070396}
   attSlImage: {fileID: 1101747905}
@@ -3437,6 +3436,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1329469354 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1854592375732070, guid: f45bc1e69b3a5b3429d4524a0423f430,
+    type: 2}
+  m_PrefabInternal: {fileID: 1379204946}
 --- !u!1001 &1379204946
 Prefab:
   m_ObjectHideFlags: 0
