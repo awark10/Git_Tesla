@@ -5,21 +5,24 @@ using UnityEngine.UI;
 
 public class TimeStatistic : MonoBehaviour {
 
+	GDATA data;
     public ClockGame clockGame;
 
-    public int avgMeditation, avgAttention;
+    public float avgMeditation, avgAttention;
     public float deepMeditationTime, deepAttentionTime;
-    public int ballsVal;
+    public float ballsVal;
     public Text avgMedText, avgAttText, deepAttText, deepMedText, gpText, descriptionGameText;
 
     private void Start()
     {
+		data = GDATA.Instance.GetComponent<GDATA>();
+
         descriptionGameText.text = "текст описани для игр, условий уровней и тд";
     }
 
     void Update()
     {
-        if (CONNECTOR.Instance.Attention > 0 && CONNECTOR.Instance.Meditation > 0)
+		if (data.Attention > 0 && data.Meditation > 0)
         {
             AvgLevel();
             DeepLevel();
@@ -29,18 +32,18 @@ public class TimeStatistic : MonoBehaviour {
 
     void AvgLevel()
     {
-        avgMeditation = (avgMeditation + CONNECTOR.Instance.Meditation) / 2;
-        avgAttention = (avgAttention + CONNECTOR.Instance.Attention) / 2;
+		avgMeditation = (avgMeditation + data.Meditation) / 2;
+		avgAttention = (avgAttention + data.Attention) / 2;
         avgMedText.text = "" + avgMeditation;
         avgAttText.text = "" + avgAttention;
     }
 
     void DeepLevel()
     {
-        if (CONNECTOR.Instance.Meditation > 80)
+		if (data.Meditation > 80)
             deepMeditationTime += Time.deltaTime;
 
-        if (CONNECTOR.Instance.Attention > 80)
+		if (data.Attention > 80)
             deepAttentionTime += Time.deltaTime;
         deepMedText.text = "" + (int)deepMeditationTime + " сек";
         deepAttText.text = "" + (int)deepAttentionTime + " сек";

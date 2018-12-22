@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ClockGame : MonoBehaviour {
 
+	GDATA data;
+
     public Clock clock;
     public GameObject fog;
     public GameObject gameUI;
@@ -32,6 +34,8 @@ public class ClockGame : MonoBehaviour {
 	// Use this for initialization
     void Start () 
 	{
+		data = GDATA.Instance.GetComponent<GDATA>();
+
 		clock.hour = System.DateTime.Now.Hour;
 		clock.minutes = System.DateTime.Now.Minute;
 		clock.seconds = System.DateTime.Now.Second;
@@ -42,8 +46,8 @@ public class ClockGame : MonoBehaviour {
 
     void Update()
     {
-        Attention = CONNECTOR.Instance.Attention;
-        Meditation = CONNECTOR.Instance.Meditation;
+		Attention = data.Attention;
+		Meditation = data.Meditation;
 
         if (gameAtt == true)
             GameLogic(Attention);

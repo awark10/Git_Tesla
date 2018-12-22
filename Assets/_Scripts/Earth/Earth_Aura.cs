@@ -17,8 +17,8 @@ public class Earth_Aura : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Meditation = CONNECTOR.Instance.Meditation;
-		Attention  = CONNECTOR.Instance.Attention;
+		Meditation = GDATA.Instance.Meditation;
+		Attention  = GDATA.Instance.Attention;
 
 		if (Meditation == Attention)
 

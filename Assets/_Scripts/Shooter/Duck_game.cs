@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Duck_game : MonoBehaviour {
 
+	GDATA data;
+
     #region
     [Header("UI elements")]
     
@@ -41,14 +43,15 @@ public class Duck_game : MonoBehaviour {
     // Initialization
     void Start()
     {
+
+		data = GDATA.Instance.GetComponent<GDATA>();
         scoreText.text = "";
-       
     }
 
 	void Update()
 	{
-		Attention = CONNECTOR.Instance.Attention;
-		Meditation = CONNECTOR.Instance.Meditation;
+		Attention = data.Attention;
+		Meditation = data.Meditation;
 
 		UIupdate ();
 		GameLogic ();

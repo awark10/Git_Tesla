@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ColorGame : MonoBehaviour {
 
+	GDATA data;
+
 	public GameObject gameUI;
 	public GameObject connectMenu;
 	public GameObject pauseMenu;
@@ -24,14 +26,15 @@ public class ColorGame : MonoBehaviour {
 	private float tmpAtSliderVal = 0;
 
 	// Use this for initialization
-	/*void Start () {
-		
-	}*/
+	void Start () {
+
+		data = GDATA.Instance.GetComponent<GDATA>();
+	}
 
 	void Update()
 	{
-		Attention = CONNECTOR.Instance.Attention;
-		Meditation = CONNECTOR.Instance.Meditation;
+		Attention = data.Attention;
+		Meditation = data.Meditation;
 
 		UIupdate ();
 

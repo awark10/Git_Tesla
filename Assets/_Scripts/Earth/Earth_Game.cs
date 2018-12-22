@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Earth_Game : MonoBehaviour {
 
+	GDATA data;
+
 	#region
 	[Header("UI elements")]
 	public Earth_light light;
@@ -40,6 +42,7 @@ public class Earth_Game : MonoBehaviour {
 	// Initialization
 	void Start()
 	{
+		data = GDATA.Instance.GetComponent<GDATA>();
 
 		gameLevel = 1;
 
@@ -53,8 +56,8 @@ public class Earth_Game : MonoBehaviour {
 
 	void Update()
 	{
-		Attention = CONNECTOR.Instance.Attention;
-		Meditation = CONNECTOR.Instance.Meditation;
+		Attention = data.Attention;
+		Meditation = data.Meditation;
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
