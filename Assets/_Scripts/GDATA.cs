@@ -126,11 +126,11 @@ public class GDATA : MonoBehaviour {
 		else return val1;
 	}
 
-	int filterSmooth(float n_1, float n)
+	float filterSmooth(float n_1, float n)
 	{
 		float val, k = 0.01f;
 		val = n * k + (1 - k) * n_1;
-		return (int)val;
+		return val;
 	}
 
 	int normalize(float val1, float val2)
