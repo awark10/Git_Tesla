@@ -33,8 +33,8 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 
 	void AvgLevel()
 	{
-		avgMeditation = ( avgMeditation + data.Meditation ) / 2;
-		avgAttention  = ( avgAttention + data.Attention ) / 2;
+		avgMeditation = (int)data.avgMeditation;
+		avgAttention  = (int)data.avgAttention;
         avgMedText.text = "" + avgMeditation;
         avgAttText.text = "" + avgAttention;
     }
