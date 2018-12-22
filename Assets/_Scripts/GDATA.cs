@@ -24,9 +24,9 @@ public class GDATA : MonoBehaviour {
 	{
 		GUILayout.BeginArea(new Rect(35, 125, Screen.width - 25, Screen.height - 25));
 		GUILayout.BeginVertical();
-		GUILayout.Label("maxDelta:" + maxDelta);
-		GUILayout.Label("avgDelta:" + avgDelta);
-		GUILayout.Label("Delta:" + Delta);
+		//GUILayout.Label("maxDelta:" + maxDelta);
+		//GUILayout.Label("avgDelta:" + avgDelta);
+		//GUILayout.Label("Delta:" + Delta);
 		GUILayout.EndVertical();
 		GUILayout.EndArea();
 	}
