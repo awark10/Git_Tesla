@@ -51,12 +51,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a994dbc44bbed4abe13863b891eb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attention: 0
-  Meditation: 0
   userName: Petro
   userAge: 29
-  isDemo: 0
-  isSignal: 0
-  debugTextField: {fileID: 0}
-  poorSignalText: {fileID: 0}
-  poorSignal: 0
+  Attention: 0
+  Meditation: 0
+  Delta: 0
+  Theta: 0
+  LowAlpha: 0
+  HighAlpha: 0
+  LowBeta: 0
+  HighBeta: 0
+  LowGamma: 0
+  HighGamma: 0
+  maxAttention: 0
+  maxMeditation: 0
+  maxDelta: 0
+  maxTheta: 0
+  maxLowAlpha: 0
+  maxHighAlpha: 0
+  maxLowBeta: 0
+  maxHighBeta: 0
+  maxLowGamma: 0
+  maxHighGamma: 0
+  avgAttention: 0
+  avgMeditation: 0
+  avgDelta: 0
+  avgTheta: 0
+  avgLowAlpha: 0
+  avgHighAlpha: 0
+  avgLowBeta: 0
+  avgHighBeta: 0
+  avgLowGamma: 0
+  avgHighGamma: 0
