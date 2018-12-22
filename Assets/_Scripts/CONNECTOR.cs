@@ -10,20 +10,6 @@ public class CONNECTOR : MonoBehaviour {
 
 	public bool isSignal = false;
 	private float poorSignal=0;
-	[Range(0, 100)]
-	public int Attention = 0;
-	[Range(0, 100)]
-	public int Meditation = 0;
-
-	public float Delta = 0.0f;
-	public float Theta = 0.0f;
-	public float LowAlpha = 0.0f;
-	public float HighAlpha = 0.0f;
-	public float LowBeta = 0.0f;
-	public float HighBeta = 0.0f;
-	public float LowGamma = 0.0f;
-	public float HighGamma = 0.0f;
-
 	private bool connectionStart = false;
 	private int timeConnection = 0;
     
@@ -42,32 +28,15 @@ public class CONNECTOR : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-
-		print ("CONNECTOR - Awake");
     }
 
 	void Start () 
 	{
 		controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
-
-		controller.UpdateAttentionEvent += OnUpdateAttention;
-		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-		controller.UpdateDeltaEvent += OnUpdateDelta;
-		controller.UpdateThetaEvent += OnUpdateTheta;
-		controller.UpdateHighAlphaEvent += OnUpdateHighAlpha;
-		controller.UpdateHighBetaEvent += OnUpdateHighBeta;
-		controller.UpdateHighGammaEvent += OnUpdateHighGamma;
-		controller.UpdateLowAlphaEvent += OnUpdateLowAlpha;
-		controller.UpdateLowBetaEvent += OnUpdateLowBeta;
-		controller.UpdateLowGammaEvent += OnUpdateLowGamma;
 
 		// Never Turn OFF Screen
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;  
-
-		//Pre init variables
-		Attention = 20;
-		Meditation = 15;
 	}
 
 	public void OpenConnection()
@@ -103,45 +72,6 @@ public class CONNECTOR : MonoBehaviour {
 				
 			yield return new WaitForSeconds (1f);
 		}
-	}
-		
-	void OnUpdateAttention(int value)
-	{ 
-		Attention = value;
-	}
-
-	void OnUpdateMeditation(int value)
-	{
-		Meditation = value;
-	}
-
-	void OnUpdateDelta(float value){
-        if(value >Delta)
-		Delta = value;
-	}
-	void OnUpdateTheta(float value){
-        if (value > Theta)
-        {
-            Theta = value;
-        }
-	}
-	void OnUpdateHighAlpha(float value){
-		HighAlpha = value;
-	}
-	void OnUpdateHighBeta(float value){
-		HighBeta = value;
-	}
-	void OnUpdateHighGamma(float value){
-		HighGamma = value;
-	}
-	void OnUpdateLowAlpha(float value){
-		LowAlpha = value;
-	}
-	void OnUpdateLowBeta(float value){
-		LowBeta = value;
-	}
-	void OnUpdateLowGamma(float value){
-		LowGamma = value;
 	}
 
 	void OnUpdatePoorSignal(int value)
@@ -186,18 +116,7 @@ public class CONNECTOR : MonoBehaviour {
 		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
 		GUILayout.EndHorizontal();
 		GUILayout.EndArea();
-        /*
-        GUILayout.BeginVertical();
-        GUILayout.Label("Delta:" + Delta);
-        GUILayout.Label("Theta:" + Theta);
-        GUILayout.Label("LowAlpha:" + LowAlpha);
-        GUILayout.Label("HighAlpha:" + HighAlpha);
-        GUILayout.Label("LowBeta:" + LowBeta);
-        GUILayout.Label("HighBeta:" + HighBeta);
-        GUILayout.Label("LowGamma:" + LowGamma);
-        GUILayout.Label("HighGamma:" + HighGamma);
-        GUILayout.EndVertical();*/
-    }
+	}
 
     void OnApplicationQuit()
 	{
