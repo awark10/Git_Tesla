@@ -17,7 +17,7 @@ public class GDATA : MonoBehaviour {
 	[Range(0, 100)]
 	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float maxAttention, maxMeditation, maxDelta, maxTheta, maxLowAlpha, maxHighAlpha, maxLowBeta, maxHighBeta, maxLowGamma, maxHighGamma;
-	public int avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
+	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
 	// EEG DATA END
 
 	void OnGUI()
@@ -128,7 +128,7 @@ public class GDATA : MonoBehaviour {
 
 	int filterSmooth(float n_1, float n)
 	{
-		float val, k = 0.1f;
+		float val, k = 0.01f;
 		val = n * k + (1 - k) * n_1;
 		return (int)val;
 	}
