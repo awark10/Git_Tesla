@@ -5,9 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public Duck_game duck_Game;
+    public Duck_statistic duck_Statistic;
     public GameObject destructionVFX;
     public GameObject scoreVFX;
     public int score;
+   // [Range 1..3]
+    public int scorecoef;
     // Use this for initialization
     void Start () {
         
@@ -16,6 +19,7 @@ public class Enemy : MonoBehaviour {
     private void OnEnable()
     {
         duck_Game = GameObject.Find("GameUI").GetComponent<Duck_game>();
+        duck_Statistic = GameObject.Find("GameUI").GetComponent<Duck_statistic>();
         if (duck_Game == null)
             Debug.Log("Cant find duck_Game");
     }
@@ -35,7 +39,7 @@ public class Enemy : MonoBehaviour {
         Instantiate(destructionVFX, transform.position, Quaternion.identity);
         Instantiate(scoreVFX, transform.position, Quaternion.identity);
         duck_Game.AddScore(score);
-       // duck_Game.tmpDuckLilled++;
+        duck_Statistic.Balls(scorecoef);
         Destroy(gameObject);
     }
 }

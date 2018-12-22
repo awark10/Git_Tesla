@@ -11,8 +11,8 @@ public class Duck_game : MonoBehaviour {
     [Header("UI elements")]
     
     public GameObject gameUI;
-    public GameObject connectMenu;
-    public GameObject pauseMenu;
+   // public GameObject connectMenu;
+   // public GameObject pauseMenu;
     public Scope_controller scope;
 
     public Text scoreText;
@@ -38,12 +38,8 @@ public class Duck_game : MonoBehaviour {
     private float tmpMedSliderVal = 0;
     private float tmpAtSliderVal = 0;
 
-    
-
-    // Initialization
     void Start()
     {
-
 		data = GDATA.Instance.GetComponent<GDATA>();
         scoreText.text = "";
     }
@@ -55,18 +51,7 @@ public class Duck_game : MonoBehaviour {
 
 		UIupdate ();
 		GameLogic ();
-
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			ShowPauseMenu();
-		}
 	}
-
-	public void ShowPauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        gameUI.SetActive(false);
-    }
 
     void GameLogic()
     {

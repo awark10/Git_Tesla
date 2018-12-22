@@ -122,10 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duck_Game: {fileID: 0}
+  duck_Statistic: {fileID: 0}
   destructionVFX: {fileID: 1214460074288858, guid: 805b83c745fa9da4cad9520d612ae33f,
     type: 2}
   scoreVFX: {fileID: 1551414884983938, guid: f483e98fc92984148b5d6227ce660129, type: 2}
   score: 1000
+  scorecoef: 2
 --- !u!212 &212436078472284770
 SpriteRenderer:
   m_ObjectHideFlags: 1

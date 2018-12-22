@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+public class Duck_statistic : MonoBehaviour {
 
-public class TimeStatistic : MonoBehaviour {
-
-	GDATA data;
-    public ClockGame clockGame;
+    GDATA data;
+    //public Duck_game duck_Game;
 
     public float avgMeditation, avgAttention;
     public float deepMeditationTime, deepAttentionTime;
@@ -15,47 +14,44 @@ public class TimeStatistic : MonoBehaviour {
 
     private void Start()
     {
-		data = GDATA.Instance.GetComponent<GDATA>();
-
+        data = GDATA.Instance.GetComponent<GDATA>();
+        gpText.text = "0";
         descriptionGameText.text = "текст описани для игр, условий уровней и тд";
     }
 
     void Update()
     {
-		if (data.Attention > 0 && data.Meditation > 0)
+        if (data.Attention > 0 && data.Meditation > 0)
         {
             AvgLevel();
             DeepLevel();
-            Balls();
+           // Balls();
         }
     }
 
     void AvgLevel()
     {
-		avgMeditation = (avgMeditation + data.Meditation) / 2;
-		avgAttention = (avgAttention + data.Attention) / 2;
+        avgMeditation = (avgMeditation + data.Meditation) / 2;
+        avgAttention = (avgAttention + data.Attention) / 2;
         avgMedText.text = "" + (int)avgMeditation;
         avgAttText.text = "" + (int)avgAttention;
     }
 
     void DeepLevel()
     {
-		if (data.Meditation > 80)
+        if (data.Meditation > 80)
             deepMeditationTime += Time.deltaTime;
 
-		if (data.Attention > 80)
+        if (data.Attention > 80)
             deepAttentionTime += Time.deltaTime;
         deepMedText.text = "" + (int)deepMeditationTime + " сек";
         deepAttText.text = "" + (int)deepAttentionTime + " сек";
 
     }
 
-    void Balls()
+  public  void Balls(int coeficient)
     {
-        if (clockGame.gameAtt == true)
-            ballsVal = (avgAttention) + (int)clockGame.saveTime;
-        else
-            ballsVal = (avgMeditation ) + (int)clockGame.saveTime;
+            ballsVal += (avgAttention+avgMeditation) * coeficient;
         gpText.text = "" + ballsVal;
     }
 }
