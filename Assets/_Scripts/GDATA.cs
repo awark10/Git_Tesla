@@ -18,6 +18,7 @@ public class GDATA : MonoBehaviour {
 	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float maxAttention, maxMeditation, maxDelta, maxTheta, maxLowAlpha, maxHighAlpha, maxLowBeta, maxHighBeta, maxLowGamma, maxHighGamma;
 	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
+	public bool isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
 
 	void OnGUI()
@@ -57,19 +58,22 @@ public class GDATA : MonoBehaviour {
 		controller.UpdateLowAlphaEvent += OnUpdateLowAlpha;
 		controller.UpdateLowBetaEvent += OnUpdateLowBeta;
 		controller.UpdateLowGammaEvent += OnUpdateLowGamma;
+
+		isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
+			= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = false;
     }
 
 	void OnUpdateAttention(int value)
 	{ 
 		maxAttention = maxReturn (maxAttention, value);
+		avgAttention = filterSmooth (avgAttention, value);
 		Attention = value;
-		avgAttention = filterSmooth (avgAttention, Attention);
 	}
 	void OnUpdateMeditation(int value)
 	{
 		maxMeditation = maxReturn (maxMeditation, value);
+		avgMeditation = filterSmooth (avgMeditation, value);
 		Meditation = value;
-		avgMeditation = filterSmooth (avgMeditation, Meditation);
 	}
 	void OnUpdateDelta(float value)
 	{
@@ -137,19 +141,5 @@ public class GDATA : MonoBehaviour {
 	{
 		return (int)(( val2 * 100 ) / val1);
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
