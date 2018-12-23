@@ -93,11 +93,11 @@ public class ClockGame : MonoBehaviour {
 			else
 				clock.clockSpeed = 0.2f;
 		}
-		else if (value > 85)
+		else if (value > 80)
 			clock.clockSpeed = 0.4f;
-		else if (value > 75)
+		else if (value > 70)
 			clock.clockSpeed = 0.6f;
-		else if (value > 65)
+		else if (value > 50)
 			clock.clockSpeed = 0.8f;
 		else
 			clock.clockSpeed = 1f;
