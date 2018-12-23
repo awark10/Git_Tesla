@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BacGame : MonoBehaviour {
 
@@ -24,9 +25,11 @@ public class BacGame : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			//ShowPauseMenu();
-		}
+            SceneManager.LoadScene("MenuScene");
+        }
 	}
+
+
 
 	void gameLogic ()
 	{
@@ -44,7 +47,7 @@ public class BacGame : MonoBehaviour {
 		}
 
 		if (data.getIsNewDelta()) 
-			bacDelta.play (data.Delta, ladLevel, DeltaSoundArray);
+			bacDelta.play (data.Delta, data.avgDelta, ladLevel, DeltaSoundArray);
 
 		if (data.isNewTheta) 
 		{
