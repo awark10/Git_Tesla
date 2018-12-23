@@ -11,8 +11,6 @@ public class Duck_game : MonoBehaviour {
     [Header("UI elements")]
     
     public GameObject gameUI;
-   // public GameObject connectMenu;
-   // public GameObject pauseMenu;
     public Scope_controller scope;
 
     public Text scoreText;
@@ -20,14 +18,10 @@ public class Duck_game : MonoBehaviour {
     public int scoreCount;
     public int duckCount;
 
-   // public int tmpDuckLilled;
-
-
     public Text attText;
     public Text medText;
     public Image attSlImage;
     public Image medSlImage;
-
     #endregion
     [Header("Received Values")]
     [Range(0, 100)]
@@ -68,7 +62,7 @@ public class Duck_game : MonoBehaviour {
 
         attText.text = "" + Attention + "%";
         medText.text = "" + Meditation + "%";
-        scoreText.text = "Score: "+scoreCount; 
+        scoreText.text = ""+scoreCount; 
         tmpAtSliderVal = Mathf.Lerp(tmpAtSliderVal, Attention, Time.deltaTime * 5);
         tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
         attSlImage.fillAmount = tmpAtSliderVal / 100;
