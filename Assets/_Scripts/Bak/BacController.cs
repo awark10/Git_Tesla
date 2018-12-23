@@ -1,27 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BacDelta : MonoBehaviour {
+public class BacController : MonoBehaviour {
 
 	public AudioSource MpPlayer;
 	public AudioClip MpClip;
-
+	public Slider slider;
 	// Use this for initialization
 	void Start () 
 	{
 		MpPlayer = GetComponent<AudioSource> ();
 		MpPlayer.clip = MpClip;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	public void play(int val, int[] ladLevel, float[,] soundArray)
 	{
 		MpPlayer.Stop ();
+		slider.value = val;
 
 		if (val > ladLevel[0] && val < ladLevel[1]) 
 		{
@@ -67,3 +69,4 @@ public class BacDelta : MonoBehaviour {
 		}
 	}
 }
+

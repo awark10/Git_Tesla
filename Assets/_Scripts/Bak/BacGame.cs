@@ -6,7 +6,7 @@ public class BacGame : MonoBehaviour {
 
 	GDATA data;
 
-	BacDelta bacDelta;
+	public BacController bacDelta;
 
 	int [] ladLevel = {0,15,30,45,60,75,90,100};
 	float [,] DeltaSoundArray = { {0f,10f}, {11.2f,20f}, {0f,0f}, {0f,0f}, {0f,0f}, {0f,0f}, {0f,0f} };
