@@ -77,10 +77,21 @@ public class GDATA : MonoBehaviour {
 	}
 	void OnUpdateDelta(float value)
 	{
+		isNewDelta = true;
 		maxDelta = maxReturn (maxDelta, value);
 		Delta = normalize (maxDelta, value);
 		avgDelta = filterSmooth (avgDelta, Delta);
 	}
+	public bool getIsNewDelta ()
+	{
+		if (isNewDelta == true) 
+		{
+			isNewDelta = false;
+			return true;
+		} else 
+			return false;
+	}
+
 	void OnUpdateTheta(float value)
 	{
 		maxTheta = maxReturn (maxTheta, value);
