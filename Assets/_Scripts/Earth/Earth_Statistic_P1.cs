@@ -12,12 +12,15 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	public float avgMeditation, avgAttention;
 	public float deepMeditationTime, deepAttentionTime;
 	public float ballsVal;
-    public Text avgMedText, avgAttText, deepAttText, deepMedText, gpText, descriptionGameText;
+    public float gameTime;
+    public Text gpText, timeGameText, avgMedText, deepMedText, avgAttText, deepAttText, descriptionGameText;
+    public int seconds, minutes, hours;
 
     private void Start()
     {
 		data = GDATA.Instance.GetComponent<GDATA>();
-
+        timeGameText.text = "0:00";
+        gameTime = 0;
         descriptionGameText.text = "текст описани для игр, условий уровней и тд";
     }
 
@@ -28,7 +31,8 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 			AvgLevel();
 			DeepLevel ();
 			Balls();
-		}		
+            GameTime();
+        }		
 	}
 
 	void AvgLevel()
@@ -56,5 +60,36 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 		ballsVal = (avgMeditation + avgAttention)*earthGame.gameLevel;
         gpText.text = "" + ballsVal;
 
+    }
+    public void GameTime()
+    {
+        gameTime += Time.deltaTime;
+        if (gameTime >= 1.0f)
+        {
+            seconds++;
+            gameTime -= 1.0f;
+            if (seconds >= 60)
+            {
+                seconds = 0;
+                minutes++;
+                if (minutes > 60)
+                {
+                    minutes = 0;
+                    hours++;
+                    if (hours >= 24)
+                    {
+                        hours = 0;
+                    }
+                }
+            }
+        }
+        if (seconds < 10)
+        {
+            timeGameText.text = minutes + ":0" + seconds;
+        }
+        else
+        {
+            timeGameText.text = minutes + ":" + seconds;
+        }
     }
 }

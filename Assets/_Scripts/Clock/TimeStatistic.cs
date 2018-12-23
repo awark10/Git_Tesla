@@ -11,13 +11,16 @@ public class TimeStatistic : MonoBehaviour {
     public float avgMeditation, avgAttention;
     public float deepMeditationTime, deepAttentionTime;
     public float ballsVal;
-    public Text avgMedText, avgAttText, deepAttText, deepMedText, gpText, descriptionGameText;
+    public float gameTime;
+    public Text gpText, timeGameText, avgMedText, deepMedText, avgAttText, deepAttText, descriptionGameText;
+    public int seconds, minutes, hours;
 
     private void Start()
     {
 		data = GDATA.Instance.GetComponent<GDATA>();
-
-        descriptionGameText.text = "текст описани для игр, условий уровней и тд";
+        timeGameText.text = "0:00";
+        gameTime = 0;
+        descriptionGameText.text = "текст описания для игр, условий уровней и тд";
     }
 
     void Update()
@@ -27,15 +30,16 @@ public class TimeStatistic : MonoBehaviour {
             AvgLevel();
             DeepLevel();
             Balls();
+            GameTime();
         }
     }
 
     void AvgLevel()
     {
-		avgMeditation = (avgMeditation + data.Meditation) / 2;
-		avgAttention = (avgAttention + data.Attention) / 2;
-        avgMedText.text = "" + (int)avgMeditation;
-        avgAttText.text = "" + (int)avgAttention;
+		//avgMeditation = (avgMeditation + data.Meditation) / 2;
+		//avgAttention = (avgAttention + data.Attention) / 2;
+        avgMedText.text = "" + (int)data.avgMeditation;
+        avgAttText.text = "" + (int)data.avgAttention;
     }
 
     void DeepLevel()
@@ -45,8 +49,8 @@ public class TimeStatistic : MonoBehaviour {
 
 		if (data.Attention > 80)
             deepAttentionTime += Time.deltaTime;
-        deepMedText.text = "" + (int)deepMeditationTime + " сек";
-        deepAttText.text = "" + (int)deepAttentionTime + " сек";
+        deepMedText.text = "" + (int)deepMeditationTime + "s";
+        deepAttText.text = "" + (int)deepAttentionTime + "s";
 
     }
 
@@ -57,5 +61,36 @@ public class TimeStatistic : MonoBehaviour {
         else
             ballsVal = (avgMeditation ) + (int)clockGame.saveTime;
         gpText.text = "" + ballsVal;
+    }
+    public void GameTime()
+    {
+        gameTime += Time.deltaTime;
+        if (gameTime >= 1.0f)
+        {
+            seconds++;
+            gameTime -= 1.0f;
+            if (seconds >= 60)
+            {
+                seconds = 0;
+                minutes++;
+                if (minutes > 60)
+                {
+                    minutes = 0;
+                    hours++;
+                    if (hours >= 24)
+                    {
+                        hours = 0;
+                    }
+                }
+            }
+        }
+        if (seconds < 10)
+        {
+            timeGameText.text = minutes + ":0" + seconds;
+        }
+        else
+        {
+            timeGameText.text = minutes + ":" + seconds;
+        }
     }
 }

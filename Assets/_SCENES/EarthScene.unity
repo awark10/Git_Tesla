@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.387
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926113378}
-  m_IndirectSpecularColor: {r: 0.0034834477, g: 0.0034849432, b: 0.0034443808, a: 0.387}
+  m_IndirectSpecularColor: {r: 0.00347437, g: 0.0034753366, b: 0.0034359628, a: 0.387}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -334,6 +334,48 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224448944382308010, guid: 648b700bf8ff06a489b8b5329cfa446f,
     type: 2}
   m_PrefabInternal: {fileID: 133419908}
+--- !u!114 &133419910 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114250451980074706, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133419911 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114530933941513990, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133419912 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114716338569297486, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133419913 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114084141892368266, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133419914 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114584342377420380, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133419915 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114619673427840476, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &133419916 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114591351021996008, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 133419908}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &145051266
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,12 +810,17 @@ MonoBehaviour:
   deepMeditationTime: 0
   deepAttentionTime: 0
   ballsVal: 0
-  avgMedText: {fileID: 0}
-  avgAttText: {fileID: 0}
-  deepAttText: {fileID: 0}
-  deepMedText: {fileID: 0}
-  gpText: {fileID: 0}
-  descriptionGameText: {fileID: 0}
+  gameTime: 0
+  gpText: {fileID: 133419915}
+  timeGameText: {fileID: 133419914}
+  avgMedText: {fileID: 133419913}
+  deepMedText: {fileID: 133419912}
+  avgAttText: {fileID: 133419911}
+  deepAttText: {fileID: 133419910}
+  descriptionGameText: {fileID: 133419916}
+  seconds: 0
+  minutes: 0
+  hours: 0
 --- !u!1 &517003022
 GameObject:
   m_ObjectHideFlags: 0

@@ -230,6 +230,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 14877544}
+--- !u!114 &68599644 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114530933941513990, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &156609018
 Prefab:
   m_ObjectHideFlags: 0
@@ -272,6 +278,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fd471e0755fa734e9cd89b6bf08bd0a, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &182929840 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114619673427840476, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &208353414
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1005,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996714390 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114591351021996008, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &998544177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1232,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4972274902185986, guid: f45bc1e69b3a5b3429d4524a0423f430,
     type: 2}
   m_PrefabInternal: {fileID: 1379204946}
+--- !u!114 &1245521912 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114716338569297486, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1268728446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,12 +1363,17 @@ MonoBehaviour:
   deepMeditationTime: 0
   deepAttentionTime: 0
   ballsVal: 0
+  gameTime: 0
+  gpText: {fileID: 182929840}
+  timeGameText: {fileID: 1566261736}
   avgMedText: {fileID: 2115505744}
-  avgAttText: {fileID: 0}
-  deepAttText: {fileID: 0}
-  deepMedText: {fileID: 0}
-  gpText: {fileID: 0}
-  descriptionGameText: {fileID: 0}
+  deepMedText: {fileID: 1245521912}
+  avgAttText: {fileID: 68599644}
+  deepAttText: {fileID: 1894778626}
+  descriptionGameText: {fileID: 996714390}
+  seconds: 0
+  minutes: 0
+  hours: 0
 --- !u!114 &1311796352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,6 +1896,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1539888940}
+--- !u!114 &1566261736 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114584342377420380, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1622779644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,6 +2138,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224668490570735956, guid: 8d290167900820f49b72cee3bfc63395,
     type: 2}
   m_PrefabInternal: {fileID: 1875821147}
+--- !u!114 &1894778626 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114250451980074706, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1979173353
 Prefab:
   m_ObjectHideFlags: 0

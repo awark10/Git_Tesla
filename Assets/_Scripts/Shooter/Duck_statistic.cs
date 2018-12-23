@@ -83,8 +83,8 @@ public class Duck_statistic : MonoBehaviour {
 
         if (data.Attention > 80)
             deepAttentionTime += Time.deltaTime;
-        deepMedText.text = "" + (int)deepMeditationTime + " сек";
-        deepAttText.text = "" + (int)deepAttentionTime + " сек";
+        deepMedText.text = "" + (int)deepMeditationTime + "s";
+        deepAttText.text = "" + (int)deepAttentionTime + "s";
 
     }
 
