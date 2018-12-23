@@ -9,7 +9,7 @@ public class BacGame : MonoBehaviour {
 	public BacController bacDelta;
 
 	int [] ladLevel = {0,15,30,45,60,75,90,100};
-	float [,] DeltaSoundArray = { {0f,10f}, {11.2f,20f}, {0f,0f}, {0f,0f}, {0f,0f}, {0f,0f}, {0f,0f} };
+	float [,] DeltaSoundArray = { {0f,10f}, {11.2f,20f}, {21.4f,31f}, {33.6f,45f}, {47.3f,59f}, {60.8f,73f}, {74.8f,84f} };
 
 	void Start () {
 
