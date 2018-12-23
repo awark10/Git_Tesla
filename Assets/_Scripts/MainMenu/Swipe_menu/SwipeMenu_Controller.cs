@@ -11,8 +11,8 @@ public class SwipeMenu_Controller : MonoBehaviour {
     public GameObject closeSettingsBTN;
     public GameObject hideButton;
     public AudioClip clickSound;
-    private Vector2 startPos;
-    private Vector2 target;
+    private Vector2 startPos = new Vector2(-600, 0f);
+    private Vector2 target= new Vector2(0, 0f);
     private bool isScrolling;
     public float speed;
     public bool opened;
@@ -20,7 +20,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
     void Start () {
         GetComponent<AudioSource>().clip = clickSound;
         opened = false;
-        rectTransform.anchoredPosition = new Vector2(-300, 0f);
+        rectTransform.anchoredPosition = startPos;
         
     }
     
@@ -32,13 +32,17 @@ public class SwipeMenu_Controller : MonoBehaviour {
     {
         opened = true;
     }
-    public void MovOpen()
-    {
-        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, new Vector2(-300, 0), speed * Time.deltaTime);
-    }
     public void MovClose()
     {
-        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, new Vector2(300, 0f), speed * Time.deltaTime);
+        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, startPos, speed * Time.deltaTime);
+        
+            Time.timeScale = 1;
+    }
+    public void MovOpen()
+    {
+        rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, target, speed * Time.deltaTime);
+        if (rectTransform.anchoredPosition == target)
+            Time.timeScale = 0.01f;
     }
 
     public void AppQuit()
@@ -62,14 +66,30 @@ public class SwipeMenu_Controller : MonoBehaviour {
      {
          if (!opened)
          {
-            MovOpen();
-         }
+            MovClose();
+        }
          else
          {
-            MovClose();
+            MovOpen();
          }
-    
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began: startPos = touch.position; break;
+                case TouchPhase.Moved:
+                    //swipe horizontal?
+                    if (touch.position.x - startPos.x > 20)
+                        OpenedState();
+                    if (touch.position.x - startPos.x < -20)
+                        IdleStay();
+                    break;
+            }
+        }
     }
-    
+
 }
 
