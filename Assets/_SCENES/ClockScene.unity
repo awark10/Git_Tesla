@@ -1902,6 +1902,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2115505743}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1616125288 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114468878822211046, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2115505743}
+  m_Script: {fileID: 11500000, guid: 9a07b0096a55e604e9c5f2cfb545a51c, type: 3}
 --- !u!1 &1622779644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2135,16 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681904849131792, guid: 8d290167900820f49b72cee3bfc63395,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1616125288}
+    - target: {fileID: 114681904849131792, guid: 8d290167900820f49b72cee3bfc63395,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenedState
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d290167900820f49b72cee3bfc63395, type: 2}

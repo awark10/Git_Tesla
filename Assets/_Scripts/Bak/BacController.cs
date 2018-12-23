@@ -10,6 +10,7 @@ public class BacController : MonoBehaviour {
 	public Slider slider;
     public GameObject mask;
     public Text currentValText, avgValText;
+    public int sliderNewVal;
 	// Use this for initialization
 	void Start () 
 	{
@@ -22,9 +23,10 @@ public class BacController : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
-
-	}
+	void Update ()
+    {
+        slider.value = Mathf.Lerp(slider.value, sliderNewVal, Time.deltaTime * 5);
+    }
 
   
     public bool controllerState = true;
@@ -50,7 +52,7 @@ public class BacController : MonoBehaviour {
 	{
 		if (controllerState)
         {
-            slider.value = Mathf.Lerp(slider.value, val, Time.deltaTime * 5);
+            sliderNewVal = val;
             currentValText.text = ""+val;
             avgValText.text = ""+ (int)avg;
 
