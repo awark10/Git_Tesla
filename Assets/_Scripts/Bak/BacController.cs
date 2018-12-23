@@ -20,73 +20,73 @@ public class BacController : MonoBehaviour {
 
 	}
 
-	int val_1;
+	int lad_1;
 	public void play(int val, int[] ladLevel, float[,] soundArray)
 	{
 		slider.value = val;
 
-		if (val >= ladLevel[0] && val < ladLevel[1] && val_1 != val) 
+		if (val >= ladLevel[0] && val < ladLevel[1] && lad_1 != 0) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[0,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[0,1] - soundArray[0,0]));
 
-			val_1 = val;
+			lad_1 = 0;
 		}
-		if (val >= ladLevel[1] && val < ladLevel[2] && val_1 != val) 
+		if (val >= ladLevel[1] && val < ladLevel[2] && lad_1 != 1) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[1,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[1,1] - soundArray[1,0]));
 
-			val_1 = val;
+			lad_1 = 1;
 		}
-		if (val >= ladLevel[2] && val < ladLevel[3] && val_1 != val) 
+		if (val >= ladLevel[2] && val < ladLevel[3] && lad_1 != 2) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[2,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[2,1] - soundArray[2,0]));
 
-			val_1 = val;
+			lad_1 = 2;
 		}
-		if (val >= ladLevel[3] && val < ladLevel[4] && val_1 != val) 
+		if (val >= ladLevel[3] && val < ladLevel[4] && lad_1 != 3) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[3,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[3,1] - soundArray[3,0]));
 
-			val_1 = val;
+			lad_1 = 3;
 		}
-		if (val >= ladLevel[4] && val < ladLevel[5] && val_1 != val) 
+		if (val >= ladLevel[4] && val < ladLevel[5] && lad_1 != 4) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[4,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[4,1] - soundArray[4,0]));
 
-			val_1 = val;
+			lad_1 = 4;
 		}
-		if (val >= ladLevel[5] && val < ladLevel[6] && val_1 != val) 
+		if (val >= ladLevel[5] && val < ladLevel[6] && lad_1 != 5) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[5,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[5,1] - soundArray[5,0]));
 
-			val_1 = val;
+			lad_1 = 5;
 		}
-		if (val >= ladLevel[6] && val <= ladLevel[7] && val_1 != val) 
+		if (val >= ladLevel[6] && val <= ladLevel[7] && lad_1 != 6) 
 		{
 			MpPlayer.Stop ();
 			MpPlayer.time = soundArray[6,0];
 			MpPlayer.Play ();
 			MpPlayer.SetScheduledEndTime(AudioSettings.dspTime + (soundArray[6,1] - soundArray[6,0]));
 
-			val_1 = val;
+			lad_1 = 6;
 		}
 	}
 }
