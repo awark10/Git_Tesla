@@ -51,7 +51,7 @@ public class Duck_statistic : MonoBehaviour {
 
   public  void Balls(int coeficient)
     {
-            ballsVal += (avgAttention+avgMeditation) * coeficient;
+            ballsVal += ((int)avgAttention+ (int)avgMeditation) * coeficient;
         gpText.text = "" + ballsVal;
     }
 }
