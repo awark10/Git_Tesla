@@ -35,4 +35,9 @@ public class GamesMenu : MonoBehaviour {
         SceneManager.LoadScene("DuckKill");
         GetComponent<AudioSource>().Play();
     }
+    public void LoadNATGame()
+    {
+        SceneManager.LoadScene("BAK");
+        GetComponent<AudioSource>().Play();
+    }
 }

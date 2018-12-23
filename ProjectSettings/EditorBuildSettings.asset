@@ -20,6 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_SCENES/DuckKill.unity
     guid: 21bf74438d9ca4048975e70dd130b39a
-  - enabled: 0
+  - enabled: 1
     path: Assets/_SCENES/BAK.unity
     guid: 702cd347fcd110649b29e962b531c698
