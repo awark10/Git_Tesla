@@ -8,14 +8,10 @@ public class CONNECTOR : MonoBehaviour {
 	public static CONNECTOR Instance { get; set;}
 	ThinkGearController controller;
 
+	public bool connectionStart = false;
 	public bool isSignal = false;
 	private float poorSignal=0;
-	private bool connectionStart = false;
 	private int timeConnection = 0;
-    
-    public Texture2D[] signalIcons;
-	public static float indexSignalIcons = 1;
-	private float animationInterval = 0.06f;
 
     void Awake ()
 	{
@@ -91,31 +87,6 @@ public class CONNECTOR : MonoBehaviour {
 			isSignal = true;
 		}
 
-	}
-
-	void FixedUpdate()
-	{
-		if (connectionStart)
-		{
-			if (indexSignalIcons >= 4.8)
-			{
-				indexSignalIcons = 2;
-			}
-			indexSignalIcons += animationInterval;
-		}
-        else if (isSignal == true)
-            indexSignalIcons = 0;
-        else if (isSignal == false)
-            indexSignalIcons = 1;
-    }
-
-	void OnGUI()
-	{
-		GUILayout.BeginArea(new Rect(Screen.width - 50, 25, Screen.width-25 , Screen.height-25 ));
-		GUILayout.BeginHorizontal();
-		GUILayout.Label(signalIcons[(int)indexSignalIcons]);
-		GUILayout.EndHorizontal();
-		GUILayout.EndArea();
 	}
 
     void OnApplicationQuit()
