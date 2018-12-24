@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class BacController : MonoBehaviour {
 
-	public AudioSource MpPlayer;
+	AudioSource MpPlayer;
 	public AudioClip MpClip;
 	public Slider slider;
     public GameObject mask;
     public Text currentValText, avgValText;
-    public int sliderNewVal;
+    int sliderNewVal;
+	int lad_1;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,6 +21,7 @@ public class BacController : MonoBehaviour {
         slider.value = 0;
         currentValText.text = "0";
         avgValText.text = "0";
+		lad_1 = -1;
         controllerState = true;
     }
 
@@ -46,9 +49,7 @@ public class BacController : MonoBehaviour {
         }
     }
 
-   
-    int lad_1;
-	public void play(int val, float avg, int[] ladLevel, float[,] soundArray)
+   	public void play(int val, float avg, int[] ladLevel, float[,] soundArray)
 	{
 		if (controllerState)
         {

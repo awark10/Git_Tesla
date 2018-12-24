@@ -29,8 +29,6 @@ public class BacGame : MonoBehaviour {
         }
 	}
 
-
-
 	void gameLogic ()
 	{
 		if (data.isNewAttention) 
@@ -50,7 +48,10 @@ public class BacGame : MonoBehaviour {
 			bacDelta.play (data.Delta, data.avgDelta, ladLevel, DeltaSoundArray);
 
 		if (data.getIsNewTheta()) 
-			bacDelta.play (data.Theta, data.avgTheta, ladLevel, DeltaSoundArray);
+			bacTheta.play (data.Theta, data.avgTheta, ladLevel, DeltaSoundArray);
+
+		if (data.getIsNewHighAlpha()) 
+			bacAlphaH.play (data.HighAlpha, data.HighAlpha, ladLevel, DeltaSoundArray);
 	}
 
 	void UIupdate()
