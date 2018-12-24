@@ -21,6 +21,8 @@ public class GDATA : MonoBehaviour {
 	public bool isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
 
+	public int deepAttentionTime, deepMeditationTime;
+
 	void Awake ()
 	{
 		if (Instance == null) 
@@ -58,6 +60,9 @@ public class GDATA : MonoBehaviour {
 		maxAttention = maxReturn (maxAttention, value);
 		avgAttention = filterSmooth (avgAttention, value);
 		Attention = value;
+
+		if (value > 80)
+			deepAttentionTime++;
 	}
 	void OnUpdateMeditation(int value)
 	{
@@ -65,6 +70,9 @@ public class GDATA : MonoBehaviour {
 		maxMeditation = maxReturn (maxMeditation, value);
 		avgMeditation = filterSmooth (avgMeditation, value);
 		Meditation = value;
+
+		if (value > 80)
+			deepMeditationTime++;
 	}
 
 	void OnUpdateDelta(float value)
@@ -226,4 +234,10 @@ public class GDATA : MonoBehaviour {
         maxDelta = maxTheta = maxLowAlpha = maxHighAlpha = maxLowBeta = maxHighBeta = maxLowGamma = maxHighGamma = 0;
         avgDelta = avgTheta = avgLowAlpha = avgHighAlpha = avgLowBeta = avgHighBeta = avgLowGamma = avgHighGamma = 0;
     }
+
+	public void ResetUserData()
+	{
+		deepAttentionTime = deepMeditationTime = 0;
+		avgAttention = avgMeditation = 0;
+	}
 }
