@@ -13,6 +13,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
     public AudioClip clickSound;
     private Vector2 startPos = new Vector2(-600, 0f);
     private Vector2 target= new Vector2(0, 0f);
+    private Vector2 tochStart;
     private bool isScrolling;
     public float speed;
     public bool opened;
@@ -62,7 +63,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
     {
         isScrolling = scroll;
     }
-     public void Update()
+     public void FixedUpdate()
      {
          if (!opened)
          {
@@ -73,22 +74,22 @@ public class SwipeMenu_Controller : MonoBehaviour {
             MovOpen();
          }
 
-       /* if (Input.touchCount > 0)
-        {
-            Touch touch = Input.touches[0];
+         if (Input.touchCount > 0)
+         {
+             Touch touch = Input.touches[0];
 
-            switch (touch.phase)
-            {
-                case TouchPhase.Began: startPos = touch.position; break;
-                case TouchPhase.Moved:
-                    //swipe horizontal?
-                    if (touch.position.x - startPos.x > 20)
-                        OpenedState();
-                    if (touch.position.x - startPos.x < -20)
-                        IdleStay();
-                    break;
-            }
-        }*/
+             switch (touch.phase)
+             {
+                 case TouchPhase.Began: tochStart = touch.position; break;
+                 case TouchPhase.Moved:
+                     //swipe horizontal?
+                     if (touch.position.x - tochStart.x > 20)
+                         OpenedState();
+                     if (touch.position.x - tochStart.x < -20)
+                         IdleStay();
+                     break;
+             }
+         }
     }
 
 }

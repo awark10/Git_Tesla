@@ -6,10 +6,15 @@ public class GamesMenu : MonoBehaviour {
 	public GameObject connectMenu;
 	public GameObject gamesMenus;
     public AudioClip clickSound;
-
+    public UserMenu userMenu;
     public void Start()
     {
         GetComponent<AudioSource>().clip = clickSound;
+    }
+
+    public void ShowGameMenu()
+    { if(userMenu.opened ==true)
+        userMenu.ChangeState();
     }
 
 	public void LoadTimeGame()
