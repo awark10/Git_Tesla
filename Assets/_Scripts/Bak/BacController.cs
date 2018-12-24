@@ -12,6 +12,7 @@ public class BacController : MonoBehaviour {
     public Text currentValText, avgValText;
     int sliderNewVal;
 	int lad_1;
+	public bool controllerState;
 
 	// Use this for initialization
 	void Start () 
@@ -25,28 +26,28 @@ public class BacController : MonoBehaviour {
         controllerState = true;
     }
 
+	public void ChangeState()
+	{
+		controllerState = !controllerState;
+	}
+
 	// Update is called once per frame
 	void Update ()
     {
-        slider.value = Mathf.Lerp(slider.value, sliderNewVal, Time.deltaTime * 5);
-    }
-
-  
-    public bool controllerState = true;
-
-    public void ChangeState()
-    {
-        controllerState = !controllerState;
-
-        if (controllerState)
-            mask.SetActive(false);
-        else
-        {
-            mask.SetActive(true);
-            slider.value = 0;
-            currentValText.text = "0";
-            avgValText.text = "0";
-        }
+		if (controllerState)
+		{
+			mask.SetActive(false);
+			slider.value = Mathf.Lerp(slider.value, sliderNewVal, Time.deltaTime * 5);
+		} 
+		else 
+		{
+			mask.SetActive(true);
+			slider.value = 0;
+			currentValText.text = "0";
+			avgValText.text = "0";
+			lad_1 = -1;
+			MpPlayer.Stop();
+		}
     }
 
    	public void play(int val, float avg, int[] ladLevel, float[,] soundArray)
@@ -120,8 +121,7 @@ public class BacController : MonoBehaviour {
 
                 lad_1 = 6;
             }
-        }
-
+        } 
 	}
 }
 
