@@ -232,4 +232,10 @@ public class GDATA : MonoBehaviour {
 		return (int)(( val2 * 100 ) / val1);
 	}
 
+    public void ResetEEG()
+    {
+        maxDelta = maxTheta = maxLowAlpha = maxHighAlpha = maxLowBeta = maxHighBeta = maxLowGamma = maxHighGamma = 0;
+        avgDelta = avgTheta = avgLowAlpha = avgHighAlpha = avgLowBeta = avgHighBeta = avgLowGamma = avgHighGamma = 0;
+
+    }
 }

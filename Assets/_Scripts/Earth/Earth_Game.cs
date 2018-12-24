@@ -58,12 +58,6 @@ public class Earth_Game : MonoBehaviour {
 	{
 		Attention = data.Attention;
 		Meditation = data.Meditation;
-
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			//ShowPauseMenu();
-		}
-
 		UIupdate ();
 		GameLogic ();
 	}

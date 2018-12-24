@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class BacGame : MonoBehaviour {
 
 	GDATA data;
 
 	public BacController bacDelta, bacTheta, bacAlphaH, bacAplhaL, bacBetaH, bacBetaL, bacGammaH, bacGammaL;
+
+    public Text avgMedText, avgAttText;
+    public Slider sliderMed, sliderAtt;
 
 	int [] ladLevel = {0,15,30,45,60,75,90,100};
 	float [,] DeltaSoundArray = { {0f,10f}, {11.2f,20f}, {21.4f,31f}, {33.6f,45f}, {47.3f,59f}, {60.8f,73f}, {74.8f,84f} };
@@ -24,19 +28,17 @@ public class BacGame : MonoBehaviour {
 		data = GDATA.Instance.GetComponent<GDATA>();
 	}
 	
-	void Update () 
+	void FixedUpdate () 
 	{
-
 		gameLogic ();
 		UIupdate ();
-
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-            SceneManager.LoadScene("MenuScene");
-        }
 	}
+    void OnEnable()
+    {
+       // data.ResetEEG();
+    }
 
-	void gameLogic ()
+    void gameLogic ()
 	{
 		if (data.isNewAttention) 
 		{
@@ -78,6 +80,10 @@ public class BacGame : MonoBehaviour {
 
 	void UIupdate()
 	{
-		
-	}
+        avgMedText.text =""+ data.avgMeditation;
+        sliderMed.value = data.Meditation;
+
+        avgAttText.text = "" + data.avgAttention;
+        sliderAtt.value = data.Attention;
+    }
 }
