@@ -7,7 +7,7 @@ public class BacGame : MonoBehaviour {
 
 	GDATA data;
 
-	public BacController bacDelta;
+	public BacController bacDelta, bacTheta, bacAlphaH, bacAplhaL, bacBetaH, bacBetaL, bacGammaH, bacGammaL;
 
 	int [] ladLevel = {0,15,30,45,60,75,90,100};
 	float [,] DeltaSoundArray = { {0f,10f}, {11.2f,20f}, {21.4f,31f}, {33.6f,45f}, {47.3f,59f}, {60.8f,73f}, {74.8f,84f} };
@@ -49,12 +49,8 @@ public class BacGame : MonoBehaviour {
 		if (data.getIsNewDelta()) 
 			bacDelta.play (data.Delta, data.avgDelta, ladLevel, DeltaSoundArray);
 
-		if (data.isNewTheta) 
-		{
-
-
-			data.isNewTheta = false;
-		}
+		if (data.getIsNewTheta()) 
+			bacDelta.play (data.Theta, data.avgTheta, ladLevel, DeltaSoundArray);
 	}
 
 	void UIupdate()
