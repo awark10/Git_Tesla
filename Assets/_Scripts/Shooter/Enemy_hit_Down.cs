@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_hit_Down : MonoBehaviour {
 
     public GameObject fallObject;
+
     public float timer;
     public float holdtime;  
     // Use this for initialization

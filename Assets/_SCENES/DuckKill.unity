@@ -548,7 +548,7 @@ Transform:
   - {fileID: 1219761242}
   - {fileID: 34364945}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &491527670
 MonoBehaviour:
@@ -928,6 +928,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 648b700bf8ff06a489b8b5329cfa446f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &571281594 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114530933941513990, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 571281593}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &571281595 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114716338569297486, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 571281593}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &571281596 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114084141892368266, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 571281593}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &571281597 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114584342377420380, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 571281593}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &571281598 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114619673427840476, guid: 648b700bf8ff06a489b8b5329cfa446f,
+    type: 2}
+  m_PrefabInternal: {fileID: 571281593}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &639039699
 Prefab:
   m_ObjectHideFlags: 0
@@ -1090,12 +1120,12 @@ MonoBehaviour:
   deepAttentionTime: 0
   ballsVal: 0
   gameTime: 0
-  gpText: {fileID: 1808835497}
-  timeGameText: {fileID: 0}
-  avgMedText: {fileID: 0}
-  deepMedText: {fileID: 0}
-  avgAttText: {fileID: 0}
-  deepAttText: {fileID: 0}
+  gpText: {fileID: 571281598}
+  timeGameText: {fileID: 571281597}
+  avgMedText: {fileID: 571281596}
+  deepMedText: {fileID: 571281595}
+  avgAttText: {fileID: 571281594}
+  deepAttText: {fileID: 1808835497}
   descriptionGameText: {fileID: 2012044695}
   seconds: 0
   minutes: 0
@@ -1227,7 +1257,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 79f15994e58f34cafa601e7401a4531c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79f15994e58f34cafa601e7401a4531c, type: 2}
@@ -1269,7 +1299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4365329886275070, guid: 4fd471e0755fa734e9cd89b6bf08bd0a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fd471e0755fa734e9cd89b6bf08bd0a, type: 2}
@@ -1551,7 +1581,7 @@ RectTransform:
   - {fileID: 1953298299}
   - {fileID: 639039700}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5309,7 +5339,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4884585696266414, guid: 3692a28c6b18ddb4abbe59ecc0445a5e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3692a28c6b18ddb4abbe59ecc0445a5e, type: 2}

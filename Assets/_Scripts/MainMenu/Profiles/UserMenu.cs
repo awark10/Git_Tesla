@@ -36,7 +36,7 @@ public class UserMenu : MonoBehaviour {
         rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, startPos, speed * Time.deltaTime);
     }
 	
-	void FixedUpdate () {
+	void Update () {
 
         if (opened)
             OpenMenu();

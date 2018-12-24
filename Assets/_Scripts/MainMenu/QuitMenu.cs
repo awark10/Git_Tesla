@@ -23,20 +23,21 @@ public class QuitMenu : MonoBehaviour {
     public void OpenMenu()
     {
         rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, open, speed * Time.deltaTime);
-        if (rectTransform.localScale == open)
-            Time.timeScale = 0.01f;
+       // if (rectTransform.localScale == open)
+        //    Time.timeScale = 0.01f;
     }
     public void CloseMenu()
     {
-        rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, close, 5*speed * Time.deltaTime);
-        Time.timeScale = 1f;
+      //  Time.timeScale = 1;
+        rectTransform.localScale = close;
     }
     public void QuitToMenu()
     {
+       // Time.timeScale = 1;
         SceneManager.LoadScene("MenuScene");
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
     }
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
