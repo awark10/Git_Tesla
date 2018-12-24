@@ -13,7 +13,7 @@ public class UserMenu : MonoBehaviour {
     // Use this for initialization
     void Start () {
         opened = false;
-
+        rectTransform.anchoredPosition = startPos;
     }
 	
     public void ChangeState()
