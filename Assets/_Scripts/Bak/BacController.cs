@@ -43,8 +43,6 @@ public class BacController : MonoBehaviour {
 		{
 			mask.SetActive(true);
 			slider.value = 0;
-			currentValText.text = "0";
-			avgValText.text = "0";
 			lad_1 = -1;
 			MpPlayer.Stop();
 		}
