@@ -73,7 +73,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
             MovOpen();
          }
 
-        if (Input.touchCount > 0)
+       /* if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
 
@@ -88,7 +88,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
                         IdleStay();
                     break;
             }
-        }
+        }*/
     }
 
 }
