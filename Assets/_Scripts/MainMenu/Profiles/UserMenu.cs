@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class UserMenu : MonoBehaviour {
 
     public RectTransform rectTransform;
@@ -10,12 +10,18 @@ public class UserMenu : MonoBehaviour {
     public float speed;
     public bool opened;
     public AudioClip clickSound;
+    public Dropdown dropdown;
     // Use this for initialization
     void Start () {
         opened = false;
         rectTransform.anchoredPosition = startPos;
     }
-	
+
+   /* public AddUser()
+    {
+        dropdown.AddOptions    ;
+    }
+	*/
     public void ChangeState()
     {
         opened = !opened;
