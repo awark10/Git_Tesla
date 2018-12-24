@@ -21,17 +21,6 @@ public class GDATA : MonoBehaviour {
 	public bool isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
 
-	void OnGUI()
-	{
-		GUILayout.BeginArea(new Rect(35, 125, Screen.width - 25, Screen.height - 25));
-		GUILayout.BeginVertical();
-		//GUILayout.Label("maxDelta:" + maxDelta);
-		//GUILayout.Label("avgDelta:" + avgDelta);
-		//GUILayout.Label("Delta:" + Delta);
-		GUILayout.EndVertical();
-		GUILayout.EndArea();
-	}
-
 	void Awake ()
 	{
 		if (Instance == null) 
@@ -236,6 +225,5 @@ public class GDATA : MonoBehaviour {
     {
         maxDelta = maxTheta = maxLowAlpha = maxHighAlpha = maxLowBeta = maxHighBeta = maxLowGamma = maxHighGamma = 0;
         avgDelta = avgTheta = avgLowAlpha = avgHighAlpha = avgLowBeta = avgHighBeta = avgLowGamma = avgHighGamma = 0;
-
     }
 }

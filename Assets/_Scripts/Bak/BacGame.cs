@@ -23,9 +23,10 @@ public class BacGame : MonoBehaviour {
 	float [,] GammaLSoundArray = { {9.5f,160.0f}, {21.4f,160.2f}, {30.8f,160.2f}, {39.0f,160.3f}, {50.0f,160.0f}, {78.5f,160.0f}, {94.6f,160.0f} };
 	float [,] GammaHSoundArray = { {30.0f,480.0f}, {51.0f,480.2f}, {74.0f,480.2f}, {110.0f,480.3f}, {260.0f,480.0f}, {280.5f,480.0f}, {305.6f,480.0f} };
 
-	void Start () {
-
+	void Start ()
+	{
 		data = GDATA.Instance.GetComponent<GDATA>();
+		data.ResetEEG();
 	}
 	
 	void FixedUpdate () 
@@ -33,10 +34,6 @@ public class BacGame : MonoBehaviour {
 		gameLogic ();
 		UIupdate ();
 	}
-    void OnEnable()
-    {
-       // data.ResetEEG();
-    }
 
     void gameLogic ()
 	{
