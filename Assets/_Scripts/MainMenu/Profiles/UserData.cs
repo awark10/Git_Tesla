@@ -13,7 +13,18 @@ public class UserData : MonoBehaviour {
         data = GDATA.Instance.GetComponent<GDATA>();
         avgMedText.text = "" + (int)data.avgMeditation;
         avgAttText.text = "" + (int)data.avgAttention;
-        deepMedText.text = "" + data.deepMeditationTime;
-        deepAttText.text = "" + data.deepAttentionTime;
+        deepMedText.text = "" + data.deepMeditationTime+"s";
+        deepAttText.text = "" + data.deepAttentionTime+"s";
     }
+
+    public void ResetUserStat()
+    {
+        data.ResetUserData();
+        data.ResetEEG();
+        avgMedText.text = "0";
+        avgAttText.text = "0";
+        deepMedText.text = "0s" ;
+        deepAttText.text = "0s" ;
+    }
+
 }

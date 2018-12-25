@@ -45,7 +45,10 @@ public class SwipeMenu_Controller : MonoBehaviour {
         if (rectTransform.anchoredPosition == target)
             Time.timeScale = 0.01f;
     }
-
+    public void ChangeState()
+    {
+        opened = !opened;
+    }
     public void AppQuit()
     {
         GetComponent<AudioSource>().Play();
@@ -73,8 +76,11 @@ public class SwipeMenu_Controller : MonoBehaviour {
          {
             MovOpen();
          }
-
-         if (Input.touchCount > 0)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ChangeState();
+        }
+        if (Input.touchCount > 0)
          {
              Touch touch = Input.touches[0];
 

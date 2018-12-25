@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BackGameTime : MonoBehaviour {
     public float gameTime;
+    GDATA data;
     public Text  timeGameText;
     public int seconds, minutes;
    
@@ -12,8 +13,16 @@ public class BackGameTime : MonoBehaviour {
     void Start () {
         timeGameText.text = minutes + ":" + seconds;
         gameTime = 0;
+        data = GDATA.Instance.GetComponent<GDATA>();
+        data.ResetEEG();
     }
 	
+    public void ResetGame()
+    {
+        seconds = 0;
+        minutes = 10;
+        data.ResetEEG();
+    }
 	// Update is called once per frame
 	void Update () {
 

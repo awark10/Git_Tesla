@@ -29,7 +29,7 @@ public class BacGame : MonoBehaviour {
 		data.ResetEEG();
 	}
 	
-	void FixedUpdate () 
+	void Update () 
 	{
 		gameLogic ();
 		UIupdate ();
@@ -77,10 +77,10 @@ public class BacGame : MonoBehaviour {
 
 	void UIupdate()
 	{
-        avgMedText.text =""+ data.avgMeditation;
-        sliderMed.value = data.Meditation;
+        avgMedText.text =""+ (int)data.avgMeditation;
+        sliderMed.value = Mathf.Lerp(sliderMed.value, data.Meditation, Time.deltaTime * 5);
 
-        avgAttText.text = "" + data.avgAttention;
-        sliderAtt.value = data.Attention;
+        avgAttText.text = "" + (int)data.avgAttention;
+        sliderAtt.value = Mathf.Lerp(sliderAtt.value, data.Attention, Time.deltaTime * 5);
     }
 }

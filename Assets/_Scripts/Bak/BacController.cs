@@ -50,11 +50,12 @@ public class BacController : MonoBehaviour {
 
    	public void play(int val, float avg, int[] ladLevel, float[,] soundArray)
 	{
-		if (controllerState)
+        currentValText.text = "" + val;
+        avgValText.text = "" + (int)avg;
+        if (controllerState)
         {
             sliderNewVal = val;
-            currentValText.text = ""+val;
-            avgValText.text = ""+ (int)avg;
+           
 
             if (val >= ladLevel[0] && val < ladLevel[1] && lad_1 != 0)
             {
