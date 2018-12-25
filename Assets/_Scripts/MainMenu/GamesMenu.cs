@@ -24,6 +24,10 @@ public class GamesMenu : MonoBehaviour {
 
 	void Update ()
 	{
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (connector.connectionStart)
         {
             stateText.text = "подключение";
@@ -64,26 +68,26 @@ public class GamesMenu : MonoBehaviour {
     public void LoadEarthGame()
     {
         SceneManager.LoadScene("LoadingScene");
-        SceneLoader.sceneId = 2;
+        SceneLoader.sceneId = 1;
         GetComponent<AudioSource>().Play();
     }
 
     public void LoadTimeGame()
 	{
 		SceneManager.LoadScene("LoadingScene");
-        SceneLoader.sceneId = 3;
+        SceneLoader.sceneId = 2;
         GetComponent<AudioSource>().Play();
     }
     public void LoadDuckGame()
     {
         SceneManager.LoadScene("LoadingScene");
-        SceneLoader.sceneId = 4;
+        SceneLoader.sceneId = 3;
         GetComponent<AudioSource>().Play();
     }
     public void LoadNATGame()
     {
         SceneManager.LoadScene("LoadingScene");
-        SceneLoader.sceneId = 5;
+        SceneLoader.sceneId = 4;
         GetComponent<AudioSource>().Play();
     }
 }

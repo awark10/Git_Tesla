@@ -7,7 +7,7 @@ public class SceneLoader : MonoBehaviour {
 
     public Slider progressSlider;
    
-    public static int sceneId=1;
+    public static int sceneId;
    
 	// Use this for initialization
 	void Start () {

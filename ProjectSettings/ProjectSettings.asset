@@ -11,11 +11,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: dot
-  productName: mindvibe
+  productName: Mindvibe
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.022166941, g: 0.029465811, b: 0.03676468, a: 1}
-  m_ShowUnitySplashScreen: 1
+  m_ShowUnitySplashScreen: 0
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 2
@@ -219,7 +219,7 @@ PlayerSettings:
   appleEnableAutomaticSigning: 0
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 0}
+  androidSplashScreen: {fileID: 2800000, guid: e49b0cab69831024ba46337bc41a502f, type: 3}
   AndroidKeystoreName: C:/Users/awark/Desktop/neuro.keystore
   AndroidKeyaliasName: neuro
   AndroidTVCompatibility: 0
@@ -235,14 +235,14 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 8715620ef14a8ff41a94ff539e420140, type: 3}
+      m_Icon: {fileID: 2800000, guid: 0a2dea9b1552f07409613602759b09a3, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
   - m_BuildTarget: Android
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 8715620ef14a8ff41a94ff539e420140, type: 3}
+      m_Icon: {fileID: 2800000, guid: 0a2dea9b1552f07409613602759b09a3, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
