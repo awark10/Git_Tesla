@@ -988,10 +988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUI: {fileID: 682433308}
   scope: {fileID: 34364948}
-  scoreText: {fileID: 431637160}
-  countDuckText: {fileID: 0}
-  scoreCount: 0
-  duckCount: 0
   attText: {fileID: 1794990324}
   medText: {fileID: 1993841895}
   attSlImage: {fileID: 545781946}
@@ -1025,6 +1021,7 @@ MonoBehaviour:
   seconds: 0
   minutes: 0
   hours: 0
+  gp2text: {fileID: 431637160}
 --- !u!224 &682433311
 RectTransform:
   m_ObjectHideFlags: 0

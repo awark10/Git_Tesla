@@ -12,12 +12,6 @@ public class Duck_game : MonoBehaviour {
     
     public GameObject gameUI;
     public Scope_controller scope;
-
-    public Text scoreText;
-    public Text countDuckText;
-    public int scoreCount;
-    public int duckCount;
-
     public Text attText;
     public Text medText;
     public Image attSlImage;
@@ -35,7 +29,7 @@ public class Duck_game : MonoBehaviour {
     void Start()
     {
 		data = GDATA.Instance.GetComponent<GDATA>();
-        scoreText.text = "";
+      
     }
 
 	void Update()
@@ -52,25 +46,15 @@ public class Duck_game : MonoBehaviour {
         scope.MovingScope(Meditation, Attention);
     }
 
-    public void AddScore(int newscore)
-    {
-        scoreCount += newscore;
-    }
-
     void UIupdate()
     {
 
         attText.text = "" + Attention + "%";
         medText.text = "" + Meditation + "%";
-        scoreText.text = ""+scoreCount; 
         tmpAtSliderVal = Mathf.Lerp(tmpAtSliderVal, Attention, Time.deltaTime * 5);
         tmpMedSliderVal = Mathf.Lerp(tmpMedSliderVal, Meditation, Time.deltaTime * 5);
         attSlImage.fillAmount = tmpAtSliderVal / 100;
         medSlImage.fillAmount = tmpMedSliderVal / 100;
     }
 
-    void StopGame()
-    {
-      //  scoreText.text = "";
-    }
 }

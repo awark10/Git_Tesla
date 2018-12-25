@@ -13,6 +13,7 @@ public class Duck_statistic : MonoBehaviour {
     public float gameTime;
     public Text gpText, timeGameText, avgMedText, deepMedText, avgAttText, deepAttText,  descriptionGameText;
     public int seconds, minutes, hours;
+    public Text gp2text;
 
     private void Start()
     {
@@ -30,7 +31,9 @@ public class Duck_statistic : MonoBehaviour {
             AvgLevel();
             DeepLevel();
             GameTime();
-           // Balls();
+            gpText.text = "" + ballsVal;
+            gp2text.text = "" + ballsVal;
+            
         }
     }
     
@@ -70,8 +73,6 @@ public class Duck_statistic : MonoBehaviour {
 
     void AvgLevel()
     {
-        //avgMeditation = (avgMeditation + data.Meditation) / 2;
-        //avgAttention = (avgAttention + data.Attention) / 2;
         avgMedText.text = "" + (int)data.avgMeditation;
         avgAttText.text = "" + (int)data.avgAttention;
     }
@@ -90,7 +91,6 @@ public class Duck_statistic : MonoBehaviour {
 
   public  void Balls(int coeficient)
     {
-            ballsVal += ((int)avgAttention+ (int)avgMeditation) * coeficient;
-        gpText.text = "" + ballsVal;
+            ballsVal += (data.Attention+ data.Attention) * coeficient;
     }
 }

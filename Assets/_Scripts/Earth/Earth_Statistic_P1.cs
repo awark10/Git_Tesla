@@ -52,7 +52,6 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 			deepAttentionTime += Time.deltaTime;
         deepMedText.text = "" + (int)deepMeditationTime + " сек";
         deepAttText.text = "" + (int)deepAttentionTime + " сек";
-
     }
 
 	void Balls()

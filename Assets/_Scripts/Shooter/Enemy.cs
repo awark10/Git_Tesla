@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
     public Duck_game duck_Game;
     public Duck_statistic duck_Statistic;
     public GameObject destructionVFX;
-    public GameObject scoreVFX;
+  //  public GameObject scoreVFX;
     public int score;
    // [Range 1..3]
     public int scorecoef;
@@ -37,8 +37,8 @@ public class Enemy : MonoBehaviour {
     public void Destraction()
     {
         Instantiate(destructionVFX, transform.position, Quaternion.identity);
-        Instantiate(scoreVFX, transform.position, Quaternion.identity);
-        duck_Game.AddScore(score);
+      //  Instantiate(scoreVFX, transform.position, Quaternion.identity);
+        //duck_Game.AddScore(score);
         duck_Statistic.Balls(scorecoef);
         Destroy(gameObject);
     }
