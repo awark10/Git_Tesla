@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class GamesMenu : MonoBehaviour {
 
 	private CONNECTOR connector;
-	public GameObject gamesMenus;
+  
+    public GameObject gamesMenus;
     public AudioClip clickSound;
     public UserMenu userMenu;
 	public Image stateImg;
@@ -18,7 +19,7 @@ public class GamesMenu : MonoBehaviour {
 		connector = CONNECTOR.Instance.GetComponent<CONNECTOR>();
     }
 
-	private float animationInterval = 0.015f;
+	
 	private float time;
 
 	void Update ()
@@ -29,7 +30,7 @@ public class GamesMenu : MonoBehaviour {
             if (time < 0.25f)
             {
                 stateImg.color = Color.blue;
-               // stateImg.fillAmount = Mathf.Lerp(0, 1, time);
+                // stateImg.fillAmount = Mathf.Lerp(0, 1, time);
                 time += Time.deltaTime;
             }
             else if (time >= 0.25f && time < 0.5f)
@@ -49,13 +50,16 @@ public class GamesMenu : MonoBehaviour {
             stateText.text = "подключено";
         }
         else if (connector.isSignal == false)
+        {
             stateImg.color = Color.black;
-        stateText.text = "подключить";
+            stateText.text = "подключить";
+        }
     }
 
     public void ShowGameMenu()
-    { if(userMenu.opened ==true)
+    { if(userMenu.opened == true) { 
         userMenu.ChangeState();
+        }
     }
     public void LoadEarthGame()
     {

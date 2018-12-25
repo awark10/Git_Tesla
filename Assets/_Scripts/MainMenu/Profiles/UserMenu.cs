@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class UserMenu : MonoBehaviour {
-
+    public MenuButtonsContr menuButtonsContr;
     public RectTransform rectTransform;
     private Vector2 startPos = new Vector2(0, -990f);
     private Vector2 target = new Vector2(0, 0f);
@@ -33,6 +33,7 @@ public class UserMenu : MonoBehaviour {
     }
     public void CloseMenu()
     {
+        menuButtonsContr.Games();
         rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, startPos, speed * Time.deltaTime);
     }
 	
