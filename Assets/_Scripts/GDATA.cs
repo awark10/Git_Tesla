@@ -11,10 +11,10 @@ public class GDATA : MonoBehaviour {
 	// USER DATA
 	public string userName = "Petro";
 	public int userAge = 29;
-	// EEG DATA END
+    // USER DATA END
 
-	// EEG DATA
-	[Range(0, 100)]
+    // EEG DATA
+    [Range(0, 100)]
 	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float maxAttention, maxMeditation, maxDelta, maxTheta, maxLowAlpha, maxHighAlpha, maxLowBeta, maxHighBeta, maxLowGamma, maxHighGamma;
 	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
