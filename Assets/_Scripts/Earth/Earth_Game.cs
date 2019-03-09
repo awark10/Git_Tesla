@@ -10,9 +10,9 @@ public class Earth_Game : MonoBehaviour {
 	public Earth_light light;
     public Nikolo_Tesla_animationController tesla;
     public GameObject gameUI;
-	
+    public Earth_Statistic_P1 earthStat;
 
-	public Text levelText;
+    public Text levelText,currLvlText;
 	public Text attText;
 	public Text medText;
 	public Image attSlImage;
@@ -49,7 +49,8 @@ public class Earth_Game : MonoBehaviour {
 		sliderTask.value = 0;
 		iconPad.sprite = attentionIcon;
 		levelText.text = "> 30 during 15 sec";
-		levelText.color = Color.gray;
+        currLvlText.text = "Level "+ gameLevel;
+        levelText.color = Color.gray;
 		iconPad.color = Color.gray; 
 		 
 	}
@@ -66,48 +67,51 @@ public class Earth_Game : MonoBehaviour {
     void GameLogic()
 	{
 		// Level 1
-		if(gameLevel == 1 && Attention >= 30 && gameTime < 15)
+		if(gameLevel == 1 && Attention >= 25 && gameTime < 20)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
-			sliderTask.maxValue = 15;
+			sliderTask.maxValue = 20;
 			 
 			iconPad.sprite = attentionIcon;
 			iconPad.color = Color.red; 
-			levelText.text = "> 30 during 15 sec";
+			levelText.text = "> 25 during 20 sec";
 			levelText.color = Color.red;
             taskSliderImage.color = Color.red;
         }
-		else if(gameLevel == 1 && Attention < 30 && gameTime < 15)
+		else if(gameLevel == 1 && Attention < 25 && gameTime < 20)
 		{
 			gameTime = 0;
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
             taskSliderImage.color = Color.gray;
         }
-		else if(gameLevel == 1 && Attention >= 30 && gameTime >= 15)
+		else if(gameLevel == 1 && Attention >= 25 && gameTime >= 20)
 		{
 			light.lightShow();
 			gameLevel = 2;
-			gameTime = 0;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 			iconPad.sprite = meditationIcon;
 			levelText.text = "> 20 during 20 sec";
-		}
+            earthStat.Balls();
+
+        }
 
 		// Level 2
-		if(gameLevel == 2 && Meditation >= 20 && gameTime < 20)
+		if(gameLevel == 2 && Meditation >= 20 && gameTime < 15)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
-			sliderTask.maxValue = 20;
+			sliderTask.maxValue = 15;
 
 			iconPad.sprite = meditationIcon;
 			iconPad.color = Color.green; 
-			levelText.text = "> 20 during 20 sec";
+			levelText.text = "> 20 during 15 sec";
 			levelText.color = Color.green;
             taskSliderImage.color = Color.green;
         }
-		else if(gameLevel == 2 && Meditation < 20 && gameTime < 20)
+		else if(gameLevel == 2 && Meditation < 20 && gameTime < 15)
 		{
 			gameTime = 0;
 			
@@ -115,61 +119,64 @@ public class Earth_Game : MonoBehaviour {
 			levelText.color = Color.gray;
             taskSliderImage.color = Color.gray;
         }
-		else if(gameLevel == 2 && Meditation >= 20 && gameTime >= 20)
+		else if(gameLevel == 2 && Meditation >= 20 && gameTime >= 15)
 		{
 			light.lightShow();
 			gameLevel = 3;
-			gameTime = 0;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 
 			iconPad.sprite = meditationIcon;
-			levelText.text = "> 40 during 15 sec";
-		}
+			levelText.text = "> 30 during 10 sec";
+            earthStat.Balls();
+        }
 
 		// Level 3
-		if(gameLevel == 3 && Meditation >= 40 && gameTime < 15)
+		if(gameLevel == 3 && Meditation >= 30 && gameTime < 10)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
-			sliderTask.maxValue = 15;
+			sliderTask.maxValue = 10;
 
 			iconPad.sprite = meditationIcon;
 			iconPad.color = Color.green; 
-			levelText.text = "> 40 during 15 sec";
+			levelText.text = "> 30 during 10 sec";
 			levelText.color = Color.green;
             taskSliderImage.color = Color.green;
         }
-		else if(gameLevel == 3 && Meditation < 40 && gameTime < 15)
+		else if(gameLevel == 3 && Meditation < 30 && gameTime < 10)
 		{
 			gameTime = 0;
 			iconPad.color = Color.gray; 
 			levelText.color = Color.gray;
             taskSliderImage.color = Color.gray;
         }
-		else if(gameLevel == 3 && Meditation >= 40 && gameTime >= 15)
+		else if(gameLevel == 3 && Meditation >= 30 && gameTime >= 10)
 		{
 			light.lightShow();
 			gameLevel = 4;
-			gameTime = 0;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 
 			iconPad.sprite = attentionIcon;
-			levelText.text = "> 50 during 20 sec";
-		}
+			levelText.text = "> 35 during 15 sec";
+            earthStat.Balls();
+        }
 
 		// Level 4
-		if(gameLevel == 4 && Attention >= 50 && gameTime < 20)
+		if(gameLevel == 4 && Attention >= 35 && gameTime < 15)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
-			sliderTask.maxValue = 20;
-			 
-
+			sliderTask.maxValue = 15;
+			
 			iconPad.sprite = attentionIcon;
 			iconPad.color = Color.red; 
-			levelText.text = "> 50 during 20 sec";
+			levelText.text = "> 35 during 15 sec";
 			levelText.color = Color.red;
 			taskSliderImage.color = Color.red;
 		}
-		else if(gameLevel == 4 && Attention < 50 && gameTime < 20)
+		else if(gameLevel == 4 && Attention < 35 && gameTime < 15)
 		{
 			gameTime = 0;
 			 
@@ -177,18 +184,20 @@ public class Earth_Game : MonoBehaviour {
 			levelText.color = Color.gray;
 			taskSliderImage.color = Color.gray;
 		}
-		else if(gameLevel == 4 && Attention >= 50 && gameTime >= 20)
+		else if(gameLevel == 4 && Attention >= 35 && gameTime >= 15)
 		{
 			light.lightShow();
 			gameLevel = 5;
-			gameTime = 0;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 
 			iconPad.sprite = meditationIcon;
-			levelText.text = "> 60 during 15 sec";
-		}
+			levelText.text = "> 40 during 15 sec";
+            earthStat.Balls();
+        }
 				
 		// Level 5
-		if(gameLevel == 5 && Meditation >= 60 && gameTime < 15)
+		if(gameLevel == 5 && Meditation >= 40 && gameTime < 15)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
@@ -197,11 +206,11 @@ public class Earth_Game : MonoBehaviour {
 
 			iconPad.sprite = meditationIcon;
 			iconPad.color = Color.green; 
-			levelText.text = "> 60 during 15 sec";
+			levelText.text = "> 40 during 15 sec";
 			levelText.color = Color.green;
 			taskSliderImage.color = Color.green;
 		}
-		else if(gameLevel == 5 && Meditation < 60 && gameTime < 15)
+		else if(gameLevel == 5 && Meditation < 40 && gameTime < 15)
 		{
 			gameTime = 0;
 			 
@@ -209,18 +218,20 @@ public class Earth_Game : MonoBehaviour {
 			levelText.color = Color.gray;
 			taskSliderImage.color = Color.gray;
 		}
-		else if(gameLevel == 5 && Meditation >= 60 && gameTime >= 15)
+		else if(gameLevel == 5 && Meditation >= 40 && gameTime >= 15)
 		{
 			light.lightShow();
 			gameLevel = 6;
-			gameTime = 0;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 
 			iconPad.sprite = attentionIcon;
-			levelText.text = "> 75 during 10 sec";
-		}
+			levelText.text = "> 50 during 10 sec";
+            earthStat.Balls();
+        }
 
 		// Level 6
-		if(gameLevel == 6 && Attention >= 75 && gameTime < 10)
+		if(gameLevel == 6 && Attention >= 50 && gameTime < 10)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
@@ -229,11 +240,11 @@ public class Earth_Game : MonoBehaviour {
 
 			iconPad.sprite = attentionIcon;
 			iconPad.color = Color.red; 
-			levelText.text = "> 75 during 10 sec";
+			levelText.text = "> 50 during 10 sec";
 			levelText.color = Color.red;
 			taskSliderImage.color = Color.red;
 		}
-		else if(gameLevel == 6 && Attention < 75 && gameTime < 10)
+		else if(gameLevel == 6 && Attention < 50 && gameTime < 10)
 		{
 			gameTime = 0;
 			 
@@ -241,31 +252,33 @@ public class Earth_Game : MonoBehaviour {
 			levelText.color = Color.gray;
 			taskSliderImage.color = Color.gray;
 		}
-		else if(gameLevel == 6 && Attention >= 75 && gameTime >= 10)
+		else if(gameLevel == 6 && Attention >= 50 && gameTime >= 10)
 		{
 			light.lightShow();
 			gameLevel = 7;
-			gameTime = 0;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 
-			iconPad.sprite = meditationIcon;
-			levelText.text = "> 80 during 15 sec";
-		}
+			iconPad.sprite = attentionIcon;
+			levelText.text = "> 60 during 10 sec";
+            earthStat.Balls();
+        }
 
 		// Level 7
-		if(gameLevel == 7 && Meditation >= 70 && gameTime < 15)
+		if(gameLevel == 7 && Attention >= 60 && gameTime < 10)
 		{
 			gameTime += Time.deltaTime;
 			sliderTask.value = gameTime;
-			sliderTask.maxValue = 15;
+			sliderTask.maxValue = 10;
 			 
 
-			iconPad.sprite = meditationIcon;
-			iconPad.color = Color.green; 
-			levelText.text = "> 80 during 15 sec";
-			levelText.color = Color.green;
-			taskSliderImage.color = Color.green;
+			iconPad.sprite = attentionIcon;
+			iconPad.color = Color.red; 
+			levelText.text = "> 60 during 10 sec";
+			levelText.color = Color.red;
+			taskSliderImage.color = Color.red;
 		}
-		else if(gameLevel == 7 && Meditation < 80 && gameTime < 15)
+		else if(gameLevel == 7 && Attention < 60 && gameTime < 10)
 		{
 			gameTime = 0;
 			 
@@ -273,18 +286,119 @@ public class Earth_Game : MonoBehaviour {
 			levelText.color = Color.gray;
 			taskSliderImage.color = Color.gray;
 		}
-		else if(gameLevel == 7 && Meditation >= 80 && gameTime >= 15)
+		else if(gameLevel == 7 && Attention >= 60 && gameTime >= 10)
 		{
 			light.lightShow();
-			gameLevel = 7;
-			gameTime = 0;
+			gameLevel = 8;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
 
 			iconPad.sprite = meditationIcon;
-			levelText.text = "> 80 during 15 sec";
-		}
+			levelText.text = "> 60 during 12 sec";
+            earthStat.Balls();
+        }
+        // Level 8
+        if (gameLevel == 8 && Meditation >= 60 && gameTime < 12)
+        {
+            gameTime += Time.deltaTime;
+            sliderTask.value = gameTime;
+            sliderTask.maxValue = 12;
 
-	//	tesla.Moving();
-	}
+
+            iconPad.sprite = meditationIcon;
+            iconPad.color = Color.green;
+            levelText.text = "> 60 during 12 sec";
+            levelText.color = Color.green;
+            taskSliderImage.color = Color.green;
+        }
+        else if (gameLevel == 8 && Meditation < 60 && gameTime < 12)
+        {
+            gameTime = 0;
+
+            iconPad.color = Color.gray;
+            levelText.color = Color.gray;
+            taskSliderImage.color = Color.gray;
+        }
+        else if (gameLevel == 8 && Meditation >= 60 && gameTime >= 12)
+        {
+            light.lightShow();
+            gameLevel = 9;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
+
+            iconPad.sprite = attentionIcon;
+            levelText.text = "> 75 during 15 sec";
+            earthStat.Balls();
+        }
+
+        // Level 9
+        if (gameLevel == 9 && Attention >= 75 && gameTime < 15)
+        {
+            gameTime += Time.deltaTime;
+            sliderTask.value = gameTime;
+            sliderTask.maxValue = 15;
+
+
+            iconPad.sprite = attentionIcon;
+            iconPad.color = Color.red;
+            levelText.text = "> 75 during 15 sec";
+            levelText.color = Color.red;
+            taskSliderImage.color = Color.red;
+        }
+        else if (gameLevel == 9 && Attention < 75 && gameTime < 15)
+        {
+            gameTime = 0;
+
+            iconPad.color = Color.gray;
+            levelText.color = Color.gray;
+            taskSliderImage.color = Color.gray;
+        }
+        else if (gameLevel == 9 && Attention >= 75 && gameTime >= 15)
+        {
+            light.lightShow();
+            gameLevel = 10;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
+
+            iconPad.sprite = meditationIcon;
+            levelText.text = "> 80 during 15 sec";
+            earthStat.Balls();
+        }
+        // Level 10
+        if (gameLevel == 10 && Meditation >= 80 && gameTime < 15)
+        {
+            gameTime += Time.deltaTime;
+            sliderTask.value = gameTime;
+            sliderTask.maxValue = 15;
+
+
+            iconPad.sprite = meditationIcon;
+            iconPad.color = Color.green;
+            levelText.text = "> 80 during 15 sec";
+            levelText.color = Color.green;
+            taskSliderImage.color = Color.green;
+        }
+        else if (gameLevel == 10 && Meditation < 80 && gameTime < 15)
+        {
+            gameTime = 0;
+
+            iconPad.color = Color.gray;
+            levelText.color = Color.gray;
+            taskSliderImage.color = Color.gray;
+        }
+        else if (gameLevel == 10 && Meditation >= 80 && gameTime >= 15)
+        {
+            light.lightShow();
+            gameLevel = 10;
+            currLvlText.text = "Level " + gameLevel;
+            gameTime = 0;
+
+            iconPad.sprite = meditationIcon;
+            levelText.text = "> 80 during 15 sec";
+            earthStat.Balls();
+        }
+        //	tesla.Moving();
+    }
 
 	void UIupdate()
 	{

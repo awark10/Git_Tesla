@@ -13,7 +13,7 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 	public float deepMeditationTime, deepAttentionTime;
 	public float ballsVal;
     public float gameTime;
-    public Text gpText, timeGameText, avgMedText, deepMedText, avgAttText, deepAttText, descriptionGameText;
+    public Text gpText,gpTextUI, timeGameText, avgMedText, deepMedText, avgAttText, deepAttText, descriptionGameText;
     public int seconds, minutes, hours;
 
     private void Start()
@@ -30,7 +30,7 @@ public class Earth_Statistic_P1 : MonoBehaviour {
 		{
 			AvgLevel();
 			DeepLevel ();
-			Balls();
+			//Balls();
             GameTime();
         }		
 	}
@@ -54,10 +54,11 @@ public class Earth_Statistic_P1 : MonoBehaviour {
         deepAttText.text = "" + (int)deepAttentionTime + " сек";
     }
 
-	void Balls()
+	public void Balls()
 	{
-		ballsVal = (avgMeditation + avgAttention)*earthGame.gameLevel;
+        ballsVal += 100;//(avgMeditation + avgAttention)*earthGame.gameLevel;
         gpText.text = "" + ballsVal;
+        gpTextUI.text = "" + ballsVal;
 
     }
     public void GameTime()

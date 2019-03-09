@@ -10,7 +10,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
     public RectTransform rectTransform;
     public GameObject closeSettingsBTN;
     public GameObject hideButton;
-    public AudioClip clickSound;
+   // public AudioClip clickSound;
     private Vector2 startPos = new Vector2(-600, 0f);
     private Vector2 target= new Vector2(0, 0f);
     private Vector2 tochStart;
@@ -19,7 +19,7 @@ public class SwipeMenu_Controller : MonoBehaviour {
     public bool opened;
     // Use this for initialization
     void Start () {
-        GetComponent<AudioSource>().clip = clickSound;
+      //  GetComponent<AudioSource>().clip = clickSound;
         opened = false;
         rectTransform.anchoredPosition = startPos;
         

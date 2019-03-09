@@ -45,6 +45,6 @@ public class Scope_controller : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-       // MovingScope();
+       
     }
 }
