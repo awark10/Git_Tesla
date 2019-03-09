@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114220057313141826}
   m_Layer: 0
   m_Name: Enemy8_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   duck_Statistic: {fileID: 0}
   destructionVFX: {fileID: 1519715261905460, guid: e9358f0fe6f6ef442829ecbf3c5fb6ab,
     type: 2}
-  scoreVFX: {fileID: 1656292719301180, guid: 9fefe6b4e6fe6f7419668bc8fc745543, type: 2}
   score: 500
   scorecoef: 1
 --- !u!212 &212930100650374402

@@ -23,8 +23,8 @@ public class Bomb : MonoBehaviour {
             ducks = GameObject.FindGameObjectsWithTag("Enemy");
             for (int i = 0; i < ducks.Length; i++)
             {
-               // enemies = ducks[i].GetComponent<Enemy>();
-                //enemies.Destraction();
+                ducks[i].GetComponent<Enemy>().Destraction();
+                
             }
                 // Destroy(ducks[i]);
             Destroy(gameObject);
