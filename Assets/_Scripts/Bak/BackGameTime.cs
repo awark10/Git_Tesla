@@ -19,7 +19,7 @@ public class BackGameTime : MonoBehaviour {
 	
     public void ResetGame()
     {
-        seconds = 0;
+        seconds = 30;
         minutes = 10;
         data.ResetEEG();
     }
