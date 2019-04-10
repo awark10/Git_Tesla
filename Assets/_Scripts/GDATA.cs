@@ -17,7 +17,6 @@ public class GDATA : MonoBehaviour {
     [Range(0, 100)]
 	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float DeltaRaw, ThetaRaw, LowAlphaRaw, HighAlphaRaw, LowBetaRaw, HighBetaRaw, LowGammaRaw, HighGammaRaw;
-	public float maxAttention, maxMeditation, maxDelta, maxTheta, maxLowAlpha, maxHighAlpha, maxLowBeta, maxHighBeta, maxLowGamma, maxHighGamma;
 	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
 
 	public int isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
@@ -65,24 +64,152 @@ public class GDATA : MonoBehaviour {
 
 			float sumRaw = DeltaRaw + ThetaRaw + LowAlphaRaw + HighAlphaRaw + LowBetaRaw + HighBetaRaw + LowGammaRaw + HighGammaRaw;
 
-			Delta     = DeltaRaw * 100 / sumRaw;
-			Theta     = ThetaRaw * 100 / sumRaw;
-			LowAlpha  = LowAlphaRaw * 100 / sumRaw;
-			HighAlpha = HighAlphaRaw * 100 / sumRaw;
-			LowBeta   = LowBetaRaw * 100 / sumRaw;
-			HighBeta  = HighBetaRaw * 100 / sumRaw;
-			LowGamma  = LowGammaRaw * 100 / sumRaw;
-			HighGamma = HighGammaRaw * 100 / sumRaw;
+			Delta     = (int) ( DeltaRaw * 100 / sumRaw );
+			Theta     = (int) ( ThetaRaw * 100 / sumRaw );
+			LowAlpha  = (int) ( LowAlphaRaw * 100 / sumRaw );
+			HighAlpha = (int) ( HighAlphaRaw * 100 / sumRaw );
+			LowBeta   = (int) ( LowBetaRaw * 100 / sumRaw );
+			HighBeta  = (int) ( HighBetaRaw * 100 / sumRaw );
+			LowGamma  = (int) ( LowGammaRaw * 100 / sumRaw );
+			HighGamma = (int) ( HighGammaRaw * 100 / sumRaw );
+
+			avgDelta = filterSmooth (avgDelta, Delta);
+			avgTheta = filterSmooth (avgTheta, Theta);	
+			avgHighAlpha = filterSmooth (avgHighAlpha, HighAlpha);	
+			avgHighBeta = filterSmooth (avgHighBeta, HighBeta);	
+			avgHighGamma = filterSmooth (avgHighGamma, HighGamma);	
+			avgLowAlpha = filterSmooth (avgLowAlpha, LowAlpha);
+			avgLowBeta = filterSmooth (avgLowBeta, LowBeta);
+			avgLowGamma = filterSmooth (avgLowGamma, LowGamma);
 
 			isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
-				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 3;
+				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 2;
 		}
 	}
+
+	void OnUpdateDelta(float value)
+	{
+		isNewDelta = 1;
+		normalize2 ();
+	}
+	public bool getIsNewDelta ()
+	{
+		if (isNewDelta == 2) 
+		{
+			isNewDelta = 0;
+			return true;
+		} else 
+			return false;
+	}
+
+	void OnUpdateTheta(float value)
+	{
+		isNewTheta = 1;
+		normalize2 ();
+	}
+	public bool getIsNewTheta ()
+	{
+		if (isNewTheta == 2) 
+		{
+			isNewTheta = 0;
+			return true;
+		} else 
+			return false;
+	}
+		
+	void OnUpdateHighAlpha(float value)
+	{
+		isNewHighAlpha = 1;
+		normalize2 ();
+	}
+	public bool getIsNewHighAlpha ()
+	{
+		if (isNewHighAlpha == 2) 
+		{
+			isNewHighAlpha = 0;
+			return true;
+		} else 
+			return false;
+	}
+
+	void OnUpdateHighBeta(float value)
+	{
+		isNewHighBeta = 1;
+		normalize2 ();
+	}
+	public bool getIsNewHighBeta ()
+	{
+		if (isNewHighBeta == 2) 
+		{
+			isNewHighBeta = 0;
+			return true;
+		} else 
+			return false;
+	}
+
+	void OnUpdateHighGamma(float value)
+	{
+		isNewHighGamma = 1;
+		normalize2 ();
+	}
+	public bool getIsNewHighGamma ()
+	{
+		if (isNewHighGamma == 2) 
+		{
+			isNewHighGamma = 0;
+			return true;
+		} else 
+			return false;
+	}
+
+	void OnUpdateLowAlpha(float value)
+	{
+		isNewLowAlpha = 1;
+		normalize2 ();
+	}
+	public bool getIsNewLowAlpha ()
+	{
+		if (isNewLowAlpha == 2) 
+		{
+			isNewLowAlpha = 0;
+			return true;
+		} else 
+			return false;
+	}
+
+	void OnUpdateLowBeta(float value)
+	{
+		isNewLowBeta = 1;
+		normalize2 ();
+	}
+	public bool getIsNewLowBeta ()
+	{
+		if (isNewLowBeta == 2) 
+		{
+			isNewLowBeta = 0;
+			return true;
+		} else 
+			return false;
+	}
+
+	void OnUpdateLowGamma(float value)
+	{
+		isNewLowGamma = 1;
+		normalize2 ();
+	}
+	public bool getIsNewLowGamma ()
+	{
+		if (isNewLowGamma == 2) 
+		{
+			isNewLowGamma = 0;
+			return true;
+		} else 
+			return false;
+	}		
 
 	void OnUpdateAttention(int value)
 	{ 
 		isNewAttention = 1;
-		maxAttention = maxReturn (maxAttention, value);
 		avgAttention = filterSmooth (avgAttention, value);
 		Attention = value;
 
@@ -92,149 +219,12 @@ public class GDATA : MonoBehaviour {
 	void OnUpdateMeditation(int value)
 	{
 		isNewMeditation = 1;
-		maxMeditation = maxReturn (maxMeditation, value);
 		avgMeditation = filterSmooth (avgMeditation, value);
 		Meditation = value;
 
 		if (value > 80)
 			deepMeditationTime++;
 	}
-
-	void OnUpdateDelta(float value)
-	{
-		isNewDelta = 1;
-		maxDelta = maxReturn (maxDelta, value);
-		Delta = normalize (maxDelta, value);
-		avgDelta = filterSmooth (avgDelta, Delta);
-	}
-	public bool getIsNewDelta ()
-	{
-		if (isNewDelta == true) 
-		{
-			isNewDelta = false;
-			return true;
-		} else 
-			return false;
-	}
-
-	void OnUpdateTheta(float value)
-	{
-		isNewTheta = 1;
-		maxTheta = maxReturn (maxTheta, value);
-		Theta = normalize (maxTheta, value);
-		avgTheta = filterSmooth (avgTheta, Theta);	
-	}
-	public bool getIsNewTheta ()
-	{
-		if (isNewTheta == true) 
-		{
-			isNewTheta = false;
-			return true;
-		} else 
-			return false;
-	}
-		
-	void OnUpdateHighAlpha(float value)
-	{
-		isNewHighAlpha = 1;
-		maxHighAlpha = maxReturn (maxHighAlpha, value);
-		HighAlpha = normalize (maxHighAlpha, value);
-		avgHighAlpha = filterSmooth (avgHighAlpha, HighAlpha);	
-	}
-	public bool getIsNewHighAlpha ()
-	{
-		if (isNewHighAlpha == true) 
-		{
-			isNewHighAlpha = false;
-			return true;
-		} else 
-			return false;
-	}
-
-	void OnUpdateHighBeta(float value)
-	{
-		isNewHighBeta = 1;
-		maxHighBeta = maxReturn (maxHighBeta, value);
-		HighBeta = normalize (maxHighBeta, value);
-		avgHighBeta = filterSmooth (avgHighBeta, HighBeta);	
-	}
-	public bool getIsNewHighBeta ()
-	{
-		if (isNewHighBeta == true) 
-		{
-			isNewHighBeta = false;
-			return true;
-		} else 
-			return false;
-	}
-
-	void OnUpdateHighGamma(float value)
-	{
-		isNewHighGamma = 1;
-		maxHighGamma = maxReturn (maxHighGamma, value);
-		HighGamma = normalize (maxHighGamma, value);
-		avgHighGamma = filterSmooth (avgHighGamma, HighGamma);	
-	}
-	public bool getIsNewHighGamma ()
-	{
-		if (isNewHighGamma == true) 
-		{
-			isNewHighGamma = false;
-			return true;
-		} else 
-			return false;
-	}
-
-	void OnUpdateLowAlpha(float value)
-	{
-		isNewLowAlpha = 1;
-		maxLowAlpha = maxReturn (maxLowAlpha, value);
-		LowAlpha = normalize (maxLowAlpha, value);
-		avgLowAlpha = filterSmooth (avgLowAlpha, LowAlpha);
-	}
-	public bool getIsNewLowAlpha ()
-	{
-		if (isNewLowAlpha == true) 
-		{
-			isNewLowAlpha = false;
-			return true;
-		} else 
-			return false;
-	}
-
-	void OnUpdateLowBeta(float value)
-	{
-		isNewLowBeta = 1;
-		maxLowBeta = maxReturn (maxLowBeta, value);
-		LowBeta = normalize (maxLowBeta, value);
-		avgLowBeta = filterSmooth (avgLowBeta, LowBeta);
-	}
-	public bool getIsNewLowBeta ()
-	{
-		if (isNewLowBeta == true) 
-		{
-			isNewLowBeta = false;
-			return true;
-		} else 
-			return false;
-	}
-
-	void OnUpdateLowGamma(float value)
-	{
-		isNewLowGamma = 1;
-		maxLowGamma = maxReturn (maxLowGamma, value);
-		LowGamma = normalize (maxLowGamma, value);
-		avgLowGamma = filterSmooth (avgLowGamma, LowGamma);
-	}
-	public bool getIsNewLowGamma ()
-	{
-		if (isNewLowGamma == true) 
-		{
-			isNewLowGamma = false;
-			return true;
-		} else 
-			return false;
-	}		
 
 	float maxReturn (float val1, float val2)
 	{
@@ -246,7 +236,7 @@ public class GDATA : MonoBehaviour {
 
 	float filterSmooth(float n_1, float n)
 	{
-		float val, k = 0.01f;
+		float val, k = 0.1f;
 		val = n * k + (1 - k) * n_1;
 		return val;
 	}
@@ -258,7 +248,6 @@ public class GDATA : MonoBehaviour {
 
     public void ResetEEG()
     {
-        maxDelta = maxTheta = maxLowAlpha = maxHighAlpha = maxLowBeta = maxHighBeta = maxLowGamma = maxHighGamma = 0;
         avgDelta = avgTheta = avgLowAlpha = avgHighAlpha = avgLowBeta = avgHighBeta = avgLowGamma = avgHighGamma = 0;
     }
 

@@ -37,16 +37,6 @@ public class BacGame : MonoBehaviour {
 
     void gameLogic ()
 	{
-		if (data.isNewAttention) 
-		{
-			data.isNewAttention = false;
-		}
-
-		if (data.isNewMeditation) 
-		{
-			data.isNewMeditation = false;
-		}
-
 		if (data.getIsNewDelta()) 
 			bacDelta.play (data.Delta, data.avgDelta, ladLevel, DeltaSoundArray);
 
