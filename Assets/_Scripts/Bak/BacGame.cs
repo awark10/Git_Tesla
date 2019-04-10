@@ -39,14 +39,11 @@ public class BacGame : MonoBehaviour {
 	{
 		if (data.isNewAttention) 
 		{
-
-
 			data.isNewAttention = false;
 		}
 
 		if (data.isNewMeditation) 
 		{
-
 			data.isNewMeditation = false;
 		}
 

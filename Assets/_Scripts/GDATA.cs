@@ -39,6 +39,7 @@ public class GDATA : MonoBehaviour {
     void Start () 
 	{  
 		controller = ThinkGearController.Instance.GetComponent<ThinkGearController>();
+
 		controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		controller.UpdateDeltaEvent += OnUpdateDelta;
@@ -213,8 +214,10 @@ public class GDATA : MonoBehaviour {
 
 	float maxReturn (float val1, float val2)
 	{
-		if (val2 > val1) return val2;
-		else return val1;
+		if (val2 > val1) 
+			return val2;
+		else 
+			return val1;
 	}
 
 	float filterSmooth(float n_1, float n)
