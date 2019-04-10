@@ -16,9 +16,11 @@ public class GDATA : MonoBehaviour {
     // EEG DATA
     [Range(0, 100)]
 	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
+	public float DeltaRaw, ThetaRaw, LowAlphaRaw, HighAlphaRaw, LowBetaRaw, HighBetaRaw, LowGammaRaw, HighGammaRaw;
 	public float maxAttention, maxMeditation, maxDelta, maxTheta, maxLowAlpha, maxHighAlpha, maxLowBeta, maxHighBeta, maxLowGamma, maxHighGamma;
 	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
-	public bool isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
+
+	public int isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
 
 	public int deepAttentionTime, deepMeditationTime;
@@ -52,12 +54,34 @@ public class GDATA : MonoBehaviour {
 		controller.UpdateLowGammaEvent += OnUpdateLowGamma;
 
 		isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
-			= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = false;
+			= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 0;
     }
+
+	void normalize2()
+	{
+		if (isNewDelta == 1 && isNewTheta == 1 && isNewLowAlpha == 1 && isNewHighAlpha == 1 &&
+		   isNewLowBeta == 1 && isNewHighBeta == 1 && isNewLowGamma == 1 && isNewHighGamma == 1) 
+		{
+
+			float sumRaw = DeltaRaw + ThetaRaw + LowAlphaRaw + HighAlphaRaw + LowBetaRaw + HighBetaRaw + LowGammaRaw + HighGammaRaw;
+
+			Delta     = DeltaRaw * 100 / sumRaw;
+			Theta     = ThetaRaw * 100 / sumRaw;
+			LowAlpha  = LowAlphaRaw * 100 / sumRaw;
+			HighAlpha = HighAlphaRaw * 100 / sumRaw;
+			LowBeta   = LowBetaRaw * 100 / sumRaw;
+			HighBeta  = HighBetaRaw * 100 / sumRaw;
+			LowGamma  = LowGammaRaw * 100 / sumRaw;
+			HighGamma = HighGammaRaw * 100 / sumRaw;
+
+			isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
+				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 3;
+		}
+	}
 
 	void OnUpdateAttention(int value)
 	{ 
-		isNewAttention = true;
+		isNewAttention = 1;
 		maxAttention = maxReturn (maxAttention, value);
 		avgAttention = filterSmooth (avgAttention, value);
 		Attention = value;
@@ -67,7 +91,7 @@ public class GDATA : MonoBehaviour {
 	}
 	void OnUpdateMeditation(int value)
 	{
-		isNewMeditation = true;
+		isNewMeditation = 1;
 		maxMeditation = maxReturn (maxMeditation, value);
 		avgMeditation = filterSmooth (avgMeditation, value);
 		Meditation = value;
@@ -78,7 +102,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateDelta(float value)
 	{
-		isNewDelta = true;
+		isNewDelta = 1;
 		maxDelta = maxReturn (maxDelta, value);
 		Delta = normalize (maxDelta, value);
 		avgDelta = filterSmooth (avgDelta, Delta);
@@ -95,7 +119,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateTheta(float value)
 	{
-		isNewTheta = true;
+		isNewTheta = 1;
 		maxTheta = maxReturn (maxTheta, value);
 		Theta = normalize (maxTheta, value);
 		avgTheta = filterSmooth (avgTheta, Theta);	
@@ -112,7 +136,7 @@ public class GDATA : MonoBehaviour {
 		
 	void OnUpdateHighAlpha(float value)
 	{
-		isNewHighAlpha = true;
+		isNewHighAlpha = 1;
 		maxHighAlpha = maxReturn (maxHighAlpha, value);
 		HighAlpha = normalize (maxHighAlpha, value);
 		avgHighAlpha = filterSmooth (avgHighAlpha, HighAlpha);	
@@ -129,7 +153,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateHighBeta(float value)
 	{
-		isNewHighBeta = true;
+		isNewHighBeta = 1;
 		maxHighBeta = maxReturn (maxHighBeta, value);
 		HighBeta = normalize (maxHighBeta, value);
 		avgHighBeta = filterSmooth (avgHighBeta, HighBeta);	
@@ -146,7 +170,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateHighGamma(float value)
 	{
-		isNewHighGamma = true;
+		isNewHighGamma = 1;
 		maxHighGamma = maxReturn (maxHighGamma, value);
 		HighGamma = normalize (maxHighGamma, value);
 		avgHighGamma = filterSmooth (avgHighGamma, HighGamma);	
@@ -163,7 +187,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateLowAlpha(float value)
 	{
-		isNewLowAlpha = true;
+		isNewLowAlpha = 1;
 		maxLowAlpha = maxReturn (maxLowAlpha, value);
 		LowAlpha = normalize (maxLowAlpha, value);
 		avgLowAlpha = filterSmooth (avgLowAlpha, LowAlpha);
@@ -180,7 +204,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateLowBeta(float value)
 	{
-		isNewLowBeta = true;
+		isNewLowBeta = 1;
 		maxLowBeta = maxReturn (maxLowBeta, value);
 		LowBeta = normalize (maxLowBeta, value);
 		avgLowBeta = filterSmooth (avgLowBeta, LowBeta);
@@ -197,7 +221,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateLowGamma(float value)
 	{
-		isNewLowGamma = true;
+		isNewLowGamma = 1;
 		maxLowGamma = maxReturn (maxLowGamma, value);
 		LowGamma = normalize (maxLowGamma, value);
 		avgLowGamma = filterSmooth (avgLowGamma, LowGamma);
