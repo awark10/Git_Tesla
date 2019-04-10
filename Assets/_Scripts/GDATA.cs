@@ -224,7 +224,7 @@ public class GDATA : MonoBehaviour {
 		isNewMeditation = 1;
 		Meditation = value;
 
-		dataMass [9, indexMass] = Attention;
+		dataMass [9, indexMass] = Meditation;
 
 		for (int i = 0; i <= indexMass; i++)
 			avgMeditation += dataMass [9, i];
@@ -232,13 +232,6 @@ public class GDATA : MonoBehaviour {
 
 		if (value > 80)
 			deepMeditationTime++;
-	}
-
-	float filterSmooth(float n_1, float n)
-	{
-		float val, k = 0.1f;
-		val = n * k + (1 - k) * n_1;
-		return val;
 	}
 
     public void ResetEEG()
