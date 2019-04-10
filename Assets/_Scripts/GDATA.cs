@@ -15,12 +15,17 @@ public class GDATA : MonoBehaviour {
 
     // EEG DATA
     [Range(0, 100)]
-	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float DeltaRaw, ThetaRaw, LowAlphaRaw, HighAlphaRaw, LowBetaRaw, HighBetaRaw, LowGammaRaw, HighGammaRaw;
+	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
 
+	public bool isReadyToShow = false;
 	public int isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
+
+	private int [,] dataMass = new int [10, 1000];
+	private int indexMass = 0;
+
 
 	public int deepAttentionTime, deepMeditationTime;
 
@@ -54,9 +59,12 @@ public class GDATA : MonoBehaviour {
 
 		isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
 			= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 0;
+
+		isReadyToShow = false;
+		indexMass = 0;
     }
 
-	void normalize2()
+	void normalize()
 	{
 		if (isNewDelta == 1 && isNewTheta == 1 && isNewLowAlpha == 1 && isNewHighAlpha == 1 &&
 		   isNewLowBeta == 1 && isNewHighBeta == 1 && isNewLowGamma == 1 && isNewHighGamma == 1) 
@@ -73,99 +81,89 @@ public class GDATA : MonoBehaviour {
 			LowGamma  = (int) ( LowGammaRaw * 100 / sumRaw );
 			HighGamma = (int) ( HighGammaRaw * 100 / sumRaw );
 
-			avgDelta = filterSmooth (avgDelta, Delta);
-			avgTheta = filterSmooth (avgTheta, Theta);	
-			avgHighAlpha = filterSmooth (avgHighAlpha, HighAlpha);	
-			avgHighBeta = filterSmooth (avgHighBeta, HighBeta);	
-			avgHighGamma = filterSmooth (avgHighGamma, HighGamma);	
-			avgLowAlpha = filterSmooth (avgLowAlpha, LowAlpha);
-			avgLowBeta = filterSmooth (avgLowBeta, LowBeta);
-			avgLowGamma = filterSmooth (avgLowGamma, LowGamma);
+			dataMass [0, indexMass] = Delta;
+			dataMass [1, indexMass] = Theta;
+			dataMass [2, indexMass] = LowAlpha;
+			dataMass [3, indexMass] = HighAlpha;
+			dataMass [4, indexMass] = LowBeta;
+			dataMass [5, indexMass] = HighBeta;
+			dataMass [6, indexMass] = LowGamma;
+			dataMass [7, indexMass] = HighGamma;
+
+
+			for (int i = 0; i <= indexMass; i++)
+				avgDelta += dataMass [0, i];
+			avgDelta = avgDelta / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgTheta += dataMass [1, i];
+			avgTheta = avgTheta / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgLowAlpha += dataMass [2, i];
+			avgLowAlpha = avgLowAlpha / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgHighAlpha += dataMass [3, i];
+			avgHighAlpha = avgHighAlpha / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgLowBeta += dataMass [4, i];
+			avgLowBeta = avgLowBeta / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgHighBeta += dataMass [5, i];
+			avgHighBeta = avgHighBeta / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgLowGamma += dataMass [6, i];
+			avgLowGamma = avgLowGamma / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgHighGamma += dataMass [7, i];
+			avgHighGamma = avgHighGamma / indexMass;
 
 			isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
-				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 2;
+				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 0;
+
+			isReadyToShow = true;
 		}
 	}
 
 	void OnUpdateDelta(float value)
 	{
 		isNewDelta = 1;
-		normalize2 ();
-	}
-	public bool getIsNewDelta ()
-	{
-		if (isNewDelta == 2) 
-		{
-			isNewDelta = 0;
-			return true;
-		} else 
-			return false;
+		normalize ();
 	}
 
 	void OnUpdateTheta(float value)
 	{
 		isNewTheta = 1;
-		normalize2 ();
-	}
-	public bool getIsNewTheta ()
-	{
-		if (isNewTheta == 2) 
-		{
-			isNewTheta = 0;
-			return true;
-		} else 
-			return false;
+		normalize ();
 	}
 		
 	void OnUpdateHighAlpha(float value)
 	{
 		isNewHighAlpha = 1;
-		normalize2 ();
-	}
-	public bool getIsNewHighAlpha ()
-	{
-		if (isNewHighAlpha == 2) 
-		{
-			isNewHighAlpha = 0;
-			return true;
-		} else 
-			return false;
+		normalize ();
 	}
 
 	void OnUpdateHighBeta(float value)
 	{
 		isNewHighBeta = 1;
-		normalize2 ();
-	}
-	public bool getIsNewHighBeta ()
-	{
-		if (isNewHighBeta == 2) 
-		{
-			isNewHighBeta = 0;
-			return true;
-		} else 
-			return false;
+		normalize ();
 	}
 
 	void OnUpdateHighGamma(float value)
 	{
 		isNewHighGamma = 1;
-		normalize2 ();
-	}
-	public bool getIsNewHighGamma ()
-	{
-		if (isNewHighGamma == 2) 
-		{
-			isNewHighGamma = 0;
-			return true;
-		} else 
-			return false;
+		normalize ();
 	}
 
 	void OnUpdateLowAlpha(float value)
 	{
 		isNewLowAlpha = 1;
-		normalize2 ();
+		normalize ();
 	}
 	public bool getIsNewLowAlpha ()
 	{
@@ -180,7 +178,7 @@ public class GDATA : MonoBehaviour {
 	void OnUpdateLowBeta(float value)
 	{
 		isNewLowBeta = 1;
-		normalize2 ();
+		normalize ();
 	}
 	public bool getIsNewLowBeta ()
 	{
@@ -195,7 +193,7 @@ public class GDATA : MonoBehaviour {
 	void OnUpdateLowGamma(float value)
 	{
 		isNewLowGamma = 1;
-		normalize2 ();
+		normalize ();
 	}
 	public bool getIsNewLowGamma ()
 	{
@@ -210,8 +208,13 @@ public class GDATA : MonoBehaviour {
 	void OnUpdateAttention(int value)
 	{ 
 		isNewAttention = 1;
-		avgAttention = filterSmooth (avgAttention, value);
 		Attention = value;
+
+		dataMass [8, indexMass] = Attention;
+
+		for (int i = 0; i <= indexMass; i++)
+			avgAttention += dataMass [8, i];
+		avgAttention = avgAttention / indexMass;
 
 		if (value > 80)
 			deepAttentionTime++;
@@ -219,19 +222,16 @@ public class GDATA : MonoBehaviour {
 	void OnUpdateMeditation(int value)
 	{
 		isNewMeditation = 1;
-		avgMeditation = filterSmooth (avgMeditation, value);
 		Meditation = value;
+
+		dataMass [9, indexMass] = Attention;
+
+		for (int i = 0; i <= indexMass; i++)
+			avgMeditation += dataMass [9, i];
+		avgMeditation = avgMeditation / indexMass;
 
 		if (value > 80)
 			deepMeditationTime++;
-	}
-
-	float maxReturn (float val1, float val2)
-	{
-		if (val2 > val1) 
-			return val2;
-		else 
-			return val1;
 	}
 
 	float filterSmooth(float n_1, float n)
@@ -241,14 +241,10 @@ public class GDATA : MonoBehaviour {
 		return val;
 	}
 
-	int normalize(float val1, float val2)
-	{
-		return (int)(( val2 * 100 ) / val1);
-	}
-
     public void ResetEEG()
     {
         avgDelta = avgTheta = avgLowAlpha = avgHighAlpha = avgLowBeta = avgHighBeta = avgLowGamma = avgHighGamma = 0;
+		indexMass = 0;
     }
 
 	public void ResetUserData()

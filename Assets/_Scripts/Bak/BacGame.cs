@@ -37,29 +37,19 @@ public class BacGame : MonoBehaviour {
 
     void gameLogic ()
 	{
-		if (data.getIsNewDelta()) 
+		if (data.isReadyToShow)
+		{
 			bacDelta.play (data.Delta, data.avgDelta, ladLevel, DeltaSoundArray);
-
-		if (data.getIsNewTheta()) 
 			bacTheta.play (data.Theta, data.avgTheta, ladLevel, ThetaSoundArray);
-
-		if (data.getIsNewHighAlpha()) 
 			bacAlphaH.play (data.HighAlpha, data.avgHighAlpha, ladLevel, AlphaHSoundArray);
-
-		if (data.getIsNewLowAlpha()) 
 			bacAplhaL.play (data.LowAlpha, data.avgLowAlpha, ladLevel, AlphaHSoundArray);
-
-		if (data.getIsNewHighBeta()) 
 			bacBetaH.play (data.HighBeta, data.avgHighBeta, ladLevel, BetaHSoundArray);
-
-		if (data.getIsNewLowBeta()) 
 			bacBetaL.play (data.LowBeta, data.avgLowBeta, ladLevel, BetaLSoundArray);
-
-		if (data.getIsNewLowGamma()) 
 			bacGammaL.play (data.LowGamma, data.avgLowGamma, ladLevel, GammaLSoundArray);
-
-		if (data.getIsNewHighGamma()) 
 			bacGammaH.play (data.HighGamma, data.avgHighGamma, ladLevel, GammaHSoundArray);
+
+			data.isReadyToShow = false;
+		}
 	}
 
 	void UIupdate()
