@@ -15,12 +15,12 @@ public class GDATA : MonoBehaviour {
 
     // EEG DATA
     [Range(0, 100)]
-	public float DeltaRaw, ThetaRaw, LowAlphaRaw, HighAlphaRaw, LowBetaRaw, HighBetaRaw, LowGammaRaw, HighGammaRaw;
+	public float AttentionRaw, MeditationRaw, DeltaRaw, ThetaRaw, LowAlphaRaw, HighAlphaRaw, LowBetaRaw, HighBetaRaw, LowGammaRaw, HighGammaRaw;
 	public int Attention, Meditation, Delta, Theta, LowAlpha, HighAlpha, LowBeta, HighBeta, LowGamma, HighGamma;
 	public float avgAttention, avgMeditation, avgDelta, avgTheta, avgLowAlpha, avgHighAlpha, avgLowBeta, avgHighBeta, avgLowGamma, avgHighGamma;
 
 	public bool isReadyToShow = false;
-	public int isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
+	public int  isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
 
 	private int [,] dataMass = new int [10, 1000];
@@ -57,8 +57,10 @@ public class GDATA : MonoBehaviour {
 		controller.UpdateLowBetaEvent += OnUpdateLowBeta;
 		controller.UpdateLowGammaEvent += OnUpdateLowGamma;
 
-		isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
+		isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
 			= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 0;
+		
+		isNewAttention = isNewMeditation = 0;
 
 		isReadyToShow = false;
 		indexMass = 0;
@@ -89,6 +91,7 @@ public class GDATA : MonoBehaviour {
 			dataMass [5, indexMass] = HighBeta;
 			dataMass [6, indexMass] = LowGamma;
 			dataMass [7, indexMass] = HighGamma;
+			dataMass [8, indexMass] = AttentionRaw;
 
 
 			for (int i = 0; i <= indexMass; i++)
@@ -123,8 +126,18 @@ public class GDATA : MonoBehaviour {
 				avgHighGamma += dataMass [7, i];
 			avgHighGamma = avgHighGamma / indexMass;
 
-			isNewAttention = isNewMeditation = isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
+			for (int i = 0; i <= indexMass; i++)
+				avgAttention += dataMass [8, i];
+			avgAttention = avgAttention / indexMass;
+
+			for (int i = 0; i <= indexMass; i++)
+				avgMeditation += dataMass [9, i];
+			avgMeditation = avgMeditation / indexMass;
+
+			isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
 				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 0;
+
+			isNewAttention = isNewMeditation = 0;
 
 			isReadyToShow = true;
 		}
@@ -132,103 +145,71 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateDelta(float value)
 	{
+		DeltaRaw = value;
 		isNewDelta = 1;
 		normalize ();
 	}
 
 	void OnUpdateTheta(float value)
 	{
+		ThetaRaw = value;
 		isNewTheta = 1;
 		normalize ();
 	}
 		
 	void OnUpdateHighAlpha(float value)
 	{
+		HighAlphaRaw = value;
 		isNewHighAlpha = 1;
 		normalize ();
 	}
 
 	void OnUpdateHighBeta(float value)
 	{
+		HighBetaRaw = value;
 		isNewHighBeta = 1;
 		normalize ();
 	}
 
 	void OnUpdateHighGamma(float value)
 	{
+		HighGammaRaw = value;
 		isNewHighGamma = 1;
 		normalize ();
 	}
 
 	void OnUpdateLowAlpha(float value)
 	{
+		LowAlphaRaw = value;
 		isNewLowAlpha = 1;
 		normalize ();
-	}
-	public bool getIsNewLowAlpha ()
-	{
-		if (isNewLowAlpha == 2) 
-		{
-			isNewLowAlpha = 0;
-			return true;
-		} else 
-			return false;
 	}
 
 	void OnUpdateLowBeta(float value)
 	{
+		LowBetaRaw = value;
 		isNewLowBeta = 1;
 		normalize ();
-	}
-	public bool getIsNewLowBeta ()
-	{
-		if (isNewLowBeta == 2) 
-		{
-			isNewLowBeta = 0;
-			return true;
-		} else 
-			return false;
 	}
 
 	void OnUpdateLowGamma(float value)
 	{
+		LowGammaRaw = value;
 		isNewLowGamma = 1;
 		normalize ();
 	}
-	public bool getIsNewLowGamma ()
-	{
-		if (isNewLowGamma == 2) 
-		{
-			isNewLowGamma = 0;
-			return true;
-		} else 
-			return false;
-	}		
 
 	void OnUpdateAttention(int value)
 	{ 
-		isNewAttention = 1;
-		Attention = value;
-
-		dataMass [8, indexMass] = Attention;
-
-		for (int i = 0; i <= indexMass; i++)
-			avgAttention += dataMass [8, i];
-		avgAttention = avgAttention / indexMass;
+		AttentionRaw = value;
 
 		if (value > 80)
 			deepAttentionTime++;
 	}
+
 	void OnUpdateMeditation(int value)
 	{
-		isNewMeditation = 1;
-		Meditation = value;
-
-		dataMass [9, indexMass] = Meditation;
-
-		for (int i = 0; i <= indexMass; i++)
-			avgMeditation += dataMass [9, i];
-		avgMeditation = avgMeditation / indexMass;
+		MeditationRaw = value;
 
 		if (value > 80)
 			deepMeditationTime++;
