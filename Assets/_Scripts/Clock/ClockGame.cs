@@ -35,6 +35,7 @@ public class ClockGame : MonoBehaviour {
     void Start () 
 	{
 		data = GDATA.Instance.GetComponent<GDATA>();
+		data.ResetEEG();
 
 		clock.hour = System.DateTime.Now.Hour;
 		clock.minutes = System.DateTime.Now.Minute;

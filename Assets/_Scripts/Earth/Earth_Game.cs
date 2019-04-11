@@ -43,6 +43,7 @@ public class Earth_Game : MonoBehaviour {
 	void Start()
 	{
 		data = GDATA.Instance.GetComponent<GDATA>();
+		data.ResetEEG();
 
 		gameLevel = 1;
 

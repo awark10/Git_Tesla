@@ -29,6 +29,7 @@ public class Duck_game : MonoBehaviour {
     void Start()
     {
 		data = GDATA.Instance.GetComponent<GDATA>();
+		data.ResetEEG();
     }
 
 	void Update()
