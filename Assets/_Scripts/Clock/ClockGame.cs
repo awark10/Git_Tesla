@@ -46,6 +46,8 @@ public class ClockGame : MonoBehaviour {
 
     void Update()
     {
+		data.normalize ();
+
 		Attention = data.Attention;
 		Meditation = data.Meditation;
 

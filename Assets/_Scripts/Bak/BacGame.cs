@@ -31,6 +31,7 @@ public class BacGame : MonoBehaviour {
 	
 	void Update () 
 	{
+		data.normalize ();
 		gameLogic ();
 		UIupdate ();
 	}

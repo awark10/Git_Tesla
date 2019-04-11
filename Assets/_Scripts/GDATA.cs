@@ -23,7 +23,7 @@ public class GDATA : MonoBehaviour {
 	public int  isNewAttention, isNewMeditation, isNewDelta, isNewTheta, isNewLowAlpha, isNewHighAlpha, isNewLowBeta, isNewHighBeta, isNewLowGamma, isNewHighGamma;
 	// EEG DATA END
 
-	private int [,] dataMass = new int [10, 1000];
+	private int [,] dataMass = new int [10, 10000];
 	private int indexMass = 0;
 
 
@@ -66,10 +66,11 @@ public class GDATA : MonoBehaviour {
 		indexMass = 0;
     }
 
-	void normalize()
+	public void normalize()
 	{
 		if (isNewDelta == 1 && isNewTheta == 1 && isNewLowAlpha == 1 && isNewHighAlpha == 1 &&
-		   isNewLowBeta == 1 && isNewHighBeta == 1 && isNewLowGamma == 1 && isNewHighGamma == 1) 
+		   isNewLowBeta == 1 && isNewHighBeta == 1 && isNewLowGamma == 1 && isNewHighGamma == 1
+			&& isNewAttention == 1 && isNewMeditation == 1 && indexMass <= 9999) 
 		{
 
 			float sumRaw = DeltaRaw + ThetaRaw + LowAlphaRaw + HighAlphaRaw + LowBetaRaw + HighBetaRaw + LowGammaRaw + HighGammaRaw;
@@ -82,6 +83,8 @@ public class GDATA : MonoBehaviour {
 			HighBeta  = (int) ( HighBetaRaw * 100 / sumRaw );
 			LowGamma  = (int) ( LowGammaRaw * 100 / sumRaw );
 			HighGamma = (int) ( HighGammaRaw * 100 / sumRaw );
+			Attention = (int) AttentionRaw;
+			Meditation = (int) MeditationRaw;
 
 			dataMass [0, indexMass] = Delta;
 			dataMass [1, indexMass] = Theta;
@@ -91,8 +94,8 @@ public class GDATA : MonoBehaviour {
 			dataMass [5, indexMass] = HighBeta;
 			dataMass [6, indexMass] = LowGamma;
 			dataMass [7, indexMass] = HighGamma;
-			dataMass [8, indexMass] = AttentionRaw;
-
+			dataMass [8, indexMass] = (int) AttentionRaw;
+			dataMass [9, indexMass] = (int) MeditationRaw;
 
 			for (int i = 0; i <= indexMass; i++)
 				avgDelta += dataMass [0, i];
@@ -140,6 +143,8 @@ public class GDATA : MonoBehaviour {
 			isNewAttention = isNewMeditation = 0;
 
 			isReadyToShow = true;
+
+			indexMass++;
 		}
 	}
 
@@ -147,14 +152,12 @@ public class GDATA : MonoBehaviour {
 	{
 		DeltaRaw = value;
 		isNewDelta = 1;
-		normalize ();
 	}
 
 	void OnUpdateTheta(float value)
 	{
 		ThetaRaw = value;
 		isNewTheta = 1;
-		normalize ();
 	}
 		
 	void OnUpdateHighAlpha(float value)
@@ -168,39 +171,35 @@ public class GDATA : MonoBehaviour {
 	{
 		HighBetaRaw = value;
 		isNewHighBeta = 1;
-		normalize ();
 	}
 
 	void OnUpdateHighGamma(float value)
 	{
 		HighGammaRaw = value;
 		isNewHighGamma = 1;
-		normalize ();
 	}
 
 	void OnUpdateLowAlpha(float value)
 	{
 		LowAlphaRaw = value;
 		isNewLowAlpha = 1;
-		normalize ();
 	}
 
 	void OnUpdateLowBeta(float value)
 	{
 		LowBetaRaw = value;
 		isNewLowBeta = 1;
-		normalize ();
 	}
 
 	void OnUpdateLowGamma(float value)
 	{
 		LowGammaRaw = value;
 		isNewLowGamma = 1;
-		normalize ();
 	}
 
 	void OnUpdateAttention(int value)
 	{ 
+		isNewAttention = 1;
 		AttentionRaw = value;
 
 		if (value > 80)
@@ -209,6 +208,7 @@ public class GDATA : MonoBehaviour {
 
 	void OnUpdateMeditation(int value)
 	{
+		isNewMeditation = 1;
 		MeditationRaw = value;
 
 		if (value > 80)
@@ -218,12 +218,8 @@ public class GDATA : MonoBehaviour {
     public void ResetEEG()
     {
         avgDelta = avgTheta = avgLowAlpha = avgHighAlpha = avgLowBeta = avgHighBeta = avgLowGamma = avgHighGamma = 0;
-		indexMass = 0;
-    }
-
-	public void ResetUserData()
-	{
 		deepAttentionTime = deepMeditationTime = 0;
 		avgAttention = avgMeditation = 0;
-	}
+		indexMass = 0;
+    }
 }

@@ -29,11 +29,12 @@ public class Duck_game : MonoBehaviour {
     void Start()
     {
 		data = GDATA.Instance.GetComponent<GDATA>();
-      
     }
 
 	void Update()
 	{
+		data.normalize ();
+
 		Attention = data.Attention;
 		Meditation = data.Meditation;
 

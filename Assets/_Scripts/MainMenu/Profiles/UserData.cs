@@ -19,7 +19,6 @@ public class UserData : MonoBehaviour {
 
     public void ResetUserStat()
     {
-        data.ResetUserData();
         data.ResetEEG();
         avgMedText.text = "0";
         avgAttText.text = "0";

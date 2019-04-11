@@ -57,6 +57,8 @@ public class Earth_Game : MonoBehaviour {
 
 	void Update()
 	{
+		data.normalize ();
+
 		Attention = data.Attention;
 		Meditation = data.Meditation;
 		UIupdate ();
