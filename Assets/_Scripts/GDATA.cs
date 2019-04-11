@@ -99,43 +99,43 @@ public class GDATA : MonoBehaviour {
 
 			for (int i = 0; i <= indexMass; i++)
 				avgDelta += dataMass [0, i];
-			avgDelta = avgDelta / indexMass;
+			avgDelta = avgDelta / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgTheta += dataMass [1, i];
-			avgTheta = avgTheta / indexMass;
+			avgTheta = avgTheta / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgLowAlpha += dataMass [2, i];
-			avgLowAlpha = avgLowAlpha / indexMass;
+			avgLowAlpha = avgLowAlpha / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgHighAlpha += dataMass [3, i];
-			avgHighAlpha = avgHighAlpha / indexMass;
+			avgHighAlpha = avgHighAlpha / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgLowBeta += dataMass [4, i];
-			avgLowBeta = avgLowBeta / indexMass;
+			avgLowBeta = avgLowBeta / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgHighBeta += dataMass [5, i];
-			avgHighBeta = avgHighBeta / indexMass;
+			avgHighBeta = avgHighBeta / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgLowGamma += dataMass [6, i];
-			avgLowGamma = avgLowGamma / indexMass;
+			avgLowGamma = avgLowGamma / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgHighGamma += dataMass [7, i];
-			avgHighGamma = avgHighGamma / indexMass;
+			avgHighGamma = avgHighGamma / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgAttention += dataMass [8, i];
-			avgAttention = avgAttention / indexMass;
+			avgAttention = avgAttention / (indexMass + 1);
 
 			for (int i = 0; i <= indexMass; i++)
 				avgMeditation += dataMass [9, i];
-			avgMeditation = avgMeditation / indexMass;
+			avgMeditation = avgMeditation / (indexMass + 1);
 
 			isNewDelta = isNewTheta = isNewLowAlpha = isNewHighAlpha
 				= isNewLowBeta = isNewHighBeta = isNewLowGamma = isNewHighGamma = 0;
