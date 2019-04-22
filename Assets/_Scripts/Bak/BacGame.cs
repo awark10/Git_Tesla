@@ -10,7 +10,7 @@ public class BacGame : MonoBehaviour {
 
 	public BacController bacDelta, bacTheta, bacAlphaH, bacAplhaL, bacBetaH, bacBetaL, bacGammaH, bacGammaL;
 
-    public Text avgMedText, avgAttText;
+    public Text avgMedText, avgAttText, avgMedTextSide, avgAttTextSide;
     public Slider sliderMed, sliderAtt;
 
 	int [] ladLevel = {0,15,30,45,60,75,90,100};

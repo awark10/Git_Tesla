@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class UserMenu : MonoBehaviour {
-    public MenuButtonsContr menuButtonsContr;
+   // public MenuButtonsContr menuButtonsContr;
     public RectTransform rectTransform;
     private Vector2 startPos = new Vector2(0, -990f);
     private Vector2 target = new Vector2(0, 0f);
     public float speed;
     public bool opened;
-    public AudioClip clickSound;
-    public Dropdown dropdown;
+   // public AudioClip clickSound;
+  //  public Dropdown dropdown;
     // Use this for initialization
     void Start () {
         opened = false;
@@ -33,7 +33,7 @@ public class UserMenu : MonoBehaviour {
     }
     public void CloseMenu()
     {
-        menuButtonsContr.Games();
+       // menuButtonsContr.Games();
         rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, startPos, speed * Time.deltaTime);
     }
 	
@@ -42,6 +42,9 @@ public class UserMenu : MonoBehaviour {
         if (opened)
             OpenMenu();
         else CloseMenu();
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (opened) ChangeState();
+        }
     }
 }

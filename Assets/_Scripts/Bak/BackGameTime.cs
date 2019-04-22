@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class BackGameTime : MonoBehaviour {
     public float gameTime;
     GDATA data;
-    public Text  timeGameText;
+    public Text  timeGameText, deepMedText, deepAttText;
     public int seconds, minutes;
-   
+    public float deepMeditationTime, deepAttentionTime;
     // Use this for initialization
     void Start () {
         timeGameText.text = minutes + ":" + seconds;
@@ -28,6 +28,19 @@ public class BackGameTime : MonoBehaviour {
 
     
             GameTime();
+        DeepLevel();
+
+    }
+
+    void DeepLevel()
+    {
+        if (data.Meditation > 80)
+            deepMeditationTime += Time.deltaTime;
+
+        if (data.Attention > 80)
+            deepAttentionTime += Time.deltaTime;
+        deepMedText.text = "" + (int)deepMeditationTime + "s";
+        deepAttText.text = "" + (int)deepAttentionTime + "s";
 
     }
 
